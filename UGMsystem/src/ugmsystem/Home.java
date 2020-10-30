@@ -79,8 +79,6 @@ public class Home extends javax.swing.JFrame {
                 .addGap(65, 65, 65))
         );
 
-        jLabel3.getAccessibleContext().setAccessibleName("");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

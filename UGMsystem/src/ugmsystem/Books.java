@@ -57,13 +57,13 @@ public class Books extends javax.swing.JFrame {
         jTextField1.setText("Advertisement 1");
 
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("Advertisement 1");
+        jTextField2.setText("Advertisement 3");
 
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Advertisement 1");
+        jTextField3.setText("Advertisement 2");
 
         jTextField5.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField5.setText("Advertisement 1");
+        jTextField5.setText("Advertisement 4");
 
         jButton4.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
         jButton4.setText("New Ad");

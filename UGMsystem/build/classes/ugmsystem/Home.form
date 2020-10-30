@@ -110,12 +110,6 @@
               <Dimension value="[379, 16]"/>
             </Property>
           </Properties>
-<<<<<<< HEAD
-=======
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-          </AccessibilityProperties>
->>>>>>> 5833b73e4325e055262ecebf37c96f8ec6188a25
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>

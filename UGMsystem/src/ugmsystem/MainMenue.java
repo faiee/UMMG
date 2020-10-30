@@ -65,7 +65,7 @@ public class MainMenue extends javax.swing.JFrame {
         Home.setPreferredSize(new java.awt.Dimension(120, 35));
 
         jLabel1.setFont(new java.awt.Font("Malayalam MN", 0, 24)); // NOI18N
-        jLabel1.setText("Welcom to UMG system");
+        jLabel1.setText("Welcome to UMG system");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

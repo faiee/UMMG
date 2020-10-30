@@ -53,23 +53,26 @@ public class PaymentInfo extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/logo.jpg"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Malayalam MN", 1, 18)); // NOI18N
         jLabel1.setText("Order Details:");
 
-        jLabel2.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Malayalam MN", 1, 18)); // NOI18N
         jLabel2.setText("Please Enter Payment Information:");
 
-        jLabel3.setFont(new java.awt.Font("Malayalam MN", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Malayalam MN", 1, 24)); // NOI18N
         jLabel3.setText("Checkout");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jLabel4.setFont(new java.awt.Font("Malayalam MN", 0, 14)); // NOI18N
         jLabel4.setText("Card Number:");
 
+        jLabel5.setFont(new java.awt.Font("Malayalam MN", 0, 14)); // NOI18N
         jLabel5.setText("Expiry Date:");
 
+        jLabel6.setFont(new java.awt.Font("Malayalam MN", 0, 14)); // NOI18N
         jLabel6.setText("CV Code:");
 
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));

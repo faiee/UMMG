@@ -51,19 +51,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel2" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
+                              <Component id="jButton1" alignment="0" min="-2" pref="369" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                  <EmptySpace min="140" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -112,12 +110,6 @@
               <Dimension value="[379, 16]"/>
             </Property>
           </Properties>
-<<<<<<< HEAD
-=======
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-          </AccessibilityProperties>
->>>>>>> 5833b73e4325e055262ecebf37c96f8ec6188a25
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>

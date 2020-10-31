@@ -57,7 +57,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(222, 89, 0));
-        jLabel6.setText("Commodity");
+        jLabel6.setText("Advertisement");
 
         jLabel8.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jLabel8.setText("Title:");

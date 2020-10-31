@@ -17,7 +17,7 @@ public class Search extends javax.swing.JFrame {
      * Creates new form Search
      */
     public Search() {
-        setTitle("Search");
+        setTitle("Home");
         initComponents();
         setLocationRelativeTo(null);
     }

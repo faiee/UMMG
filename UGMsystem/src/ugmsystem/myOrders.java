@@ -5,6 +5,8 @@
  */
 package ugmsystem;
 
+import java.awt.Color;
+
 /**
  *
  * @author reemalsolami
@@ -15,7 +17,9 @@ public class myOrders extends javax.swing.JFrame {
      * Creates new form myOrders
      */
     public myOrders() {
+         setTitle("myOrders");
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -256,6 +260,9 @@ public class myOrders extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new myOrders().setVisible(true);
+                myOrders color = new myOrders();
+                color.getContentPane().setBackground(Color.WHITE);
+                color.setVisible(true);
             }
         });
     }

@@ -89,11 +89,15 @@ public class Chat extends javax.swing.JFrame {
         });
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setText("Add comment:");
         jScrollPane1.setViewportView(jTextArea1);
 
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jTextArea2.setRows(5);
+        jTextArea2.setText("Add comment:");
         jScrollPane2.setViewportView(jTextArea2);
 
         jLabel4.setText(" ");

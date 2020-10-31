@@ -210,7 +210,11 @@
         <Component class="javax.swing.JTextArea" name="jTextArea1">
           <Properties>
             <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Gadugi" size="13" style="0"/>
+            </Property>
             <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Add comment:"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -225,7 +229,11 @@
         <Component class="javax.swing.JTextArea" name="jTextArea2">
           <Properties>
             <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Gadugi" size="13" style="0"/>
+            </Property>
             <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Add comment:"/>
           </Properties>
         </Component>
       </SubComponents>

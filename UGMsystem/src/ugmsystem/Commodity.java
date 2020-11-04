@@ -94,7 +94,7 @@ public class Commodity {
     public boolean isAvailable(){
         
         
-        return ;
+        return false;
     }
     
     public void advertisee(){

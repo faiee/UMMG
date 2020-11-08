@@ -15,8 +15,9 @@ public class Vendor {
     private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private Buyer bID;
     private String stateLicense;
+    private int rate;
 
-    public Vendor(Buyer bID, String stateLicense) {
+    public Vendor(Buyer bID, String stateLicense,int rate) {
         this.bID = bID;
         this.stateLicense = stateLicense;
     }
@@ -33,6 +34,11 @@ public class Vendor {
         return stateLicense;
     }
 
+    public int getRate() {
+        return rate;
+    }
+    
+
     public void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
         this.vendorCommodity = vendorCommodity;
     }
@@ -44,6 +50,11 @@ public class Vendor {
     public void setStateLicense(String stateLicense) {
         this.stateLicense = stateLicense;
     }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+    
     
    public void createAd(Commodity item) {
         

@@ -36,8 +36,8 @@ public class Buyer {
         this.vID = vID;
     }
     
-    public void rateVendor(Vendor vID) {
-        
+    public void rateVendor(Vendor vID, int rate) {
+        vID.setRate(rate);
     }
     
   /*  public Order selectOrder(Order order) {

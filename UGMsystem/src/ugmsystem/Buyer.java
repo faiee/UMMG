@@ -11,14 +11,16 @@ import java.util.*;
  *
  * @author reemalsolami
  */
-public class Buyer {
+public class Buyer extends User {
     
     private ArrayList<Commodity> items = new ArrayList<Commodity>();
     private Vendor vID;
 
-    public Buyer(Vendor vID) {
+    public Buyer(Vendor vID, String id, int password, String fName, String lName, int phoneNumber) {
+        super(id, password, fName, lName, phoneNumber);
         this.vID = vID;
     }
+
 
     public ArrayList<Commodity> getItems() {
         return items;
@@ -36,8 +38,8 @@ public class Buyer {
         this.vID = vID;
     }
     
-    public void rateVendor(Vendor vID) {
-        
+    public void rateVendor(Vendor vID, int rate) {
+        vID.setRate(rate);
     }
     
   /*  public Order selectOrder(Order order) {

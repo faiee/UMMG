@@ -11,15 +11,19 @@ import java.util.*;
  *
  * @author reemalsolami
  */
-public class Vendor {
+public class Vendor extends User{
     private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private Buyer bID;
     private String stateLicense;
+    private int rate;
 
-    public Vendor(Buyer bID, String stateLicense) {
+    public Vendor(Buyer bID, String stateLicense, String id, int password, String fName, String lName, int phoneNumber) {
+        super(id, password, fName, lName, phoneNumber);
         this.bID = bID;
         this.stateLicense = stateLicense;
     }
+
+
 
     public ArrayList<Commodity> getVendorCommodity() {
         return vendorCommodity;
@@ -33,6 +37,11 @@ public class Vendor {
         return stateLicense;
     }
 
+    public int getRate() {
+        return rate;
+    }
+    
+
     public void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
         this.vendorCommodity = vendorCommodity;
     }
@@ -44,6 +53,11 @@ public class Vendor {
     public void setStateLicense(String stateLicense) {
         this.stateLicense = stateLicense;
     }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+    
     
    public void createAd(Commodity item) {
         

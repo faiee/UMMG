@@ -15,6 +15,21 @@ public class Commodity {
     private  static String Name, Description, YearOfPurchase;
     private static boolean State;
 
+    public Commodity(int ID, int Price, int Quantity, String Name, String Description, 
+            String YearOfPurchase, boolean State) {
+    
+    this.ID= ID;
+    this.Price= Price;
+    this.Quantity=Quantity;
+    this.Name= Name;
+    this.Description=Description;
+    this.YearOfPurchase=YearOfPurchase;
+    this.State=State;
+    
+    }
+
+    
+    
     public static int getID() {
         return ID;
     }

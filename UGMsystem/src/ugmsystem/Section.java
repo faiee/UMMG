@@ -15,6 +15,14 @@ public class Section {
      private static String Name;
      private static Commodity [] CommodityArray;
 
+    public Section( int ID, String Name, Commodity [] CommodityArray) {
+        
+        this.ID=ID;
+        this.Name=Name;
+        this.CommodityArray=CommodityArray;
+    }
+
+     
     public static int getID() {
         return ID;
     }

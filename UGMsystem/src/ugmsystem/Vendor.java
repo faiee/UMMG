@@ -47,6 +47,7 @@ public class Vendor {
     
    public void createAd(Commodity item) {
         
+       vendorCommodity.add(item);
     } 
     
 }

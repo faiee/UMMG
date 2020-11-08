@@ -11,16 +11,19 @@ import java.util.*;
  *
  * @author reemalsolami
  */
-public class Vendor {
+public class Vendor extends User{
     private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private Buyer bID;
     private String stateLicense;
     private int rate;
 
-    public Vendor(Buyer bID, String stateLicense,int rate) {
+    public Vendor(Buyer bID, String stateLicense, String id, int password, String fName, String lName, int phoneNumber) {
+        super(id, password, fName, lName, phoneNumber);
         this.bID = bID;
         this.stateLicense = stateLicense;
     }
+
+
 
     public ArrayList<Commodity> getVendorCommodity() {
         return vendorCommodity;

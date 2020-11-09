@@ -135,16 +135,16 @@ public class Commodity {
         
         
     }
-    /*
-    public Chat ContactVendor(Msg: Chat){
+    
+    public ChatUser ContactVendor(ChatUser Msg){
         
-        return;
+        return null;
     }
     
-    public Chat ContactBuyer(Msg: Chat){
+    public ChatUser ContactBuyer( ChatUser Msg){
         
-        return;
+        return null;
     }
 
-*/
+
 }

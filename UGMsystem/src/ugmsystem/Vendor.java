@@ -17,8 +17,8 @@ public class Vendor extends User{
     private String stateLicense;
     private int rate;
 
-    public Vendor(Buyer bID, String stateLicense, String id, int password, String fName, String lName, int phoneNumber) {
-        super(id, password, fName, lName, phoneNumber);
+    public Vendor(Buyer bID, String stateLicense, String id, int password, String fName, String lName, String phoneNumber) {
+        super( password, fName, lName, phoneNumber);
         this.bID = bID;
         this.stateLicense = stateLicense;
     }

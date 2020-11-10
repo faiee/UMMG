@@ -16,8 +16,8 @@ public class Buyer extends User {
     private ArrayList<Commodity> items = new ArrayList<Commodity>();
     private Vendor vID;
 
-    public Buyer(Vendor vID, String id, int password, String fName, String lName, int phoneNumber) {
-        super(id, password, fName, lName, phoneNumber);
+    public Buyer(Vendor vID, String id, int password, String fName, String lName, String phoneNumber) {
+        super(password, fName, lName, phoneNumber);
         this.vID = vID;
     }
 

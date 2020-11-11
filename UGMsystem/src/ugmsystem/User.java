@@ -15,18 +15,20 @@ import java.util.logging.Logger;
 
 public class User {
     private String id;
-    private int password;
+    private String password;
     private String fName;
     private String lName;
     private String phoneNumber;
     private String email;
     private int guestID=111;
-  //  static String usersArray [];
     static String userAccount [];
     public static File accounts= new File ("account.txt");
+    private FileWriter fileWriter;
+    private BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
    
     
-    public User(int password, String fName, String lName, String phoneNumber, String email) {
+    public User(String password, String fName, String lName, String phoneNumber, String email) throws IOException {
+        this.fileWriter = new FileWriter(accounts, true);
         this.id = this.generateID(phoneNumber);
         this.password = password;
         this.fName = fName;
@@ -36,7 +38,8 @@ public class User {
        
     }
     
-        public User(String id, int password, String fName, String lName, String phoneNumber, String email) {
+        public User(String id, String password, String fName, String lName, String phoneNumber, String email) {
+        this.fileWriter = new FileWriter(accounts, true);
         this.id = id;
         this.password = password;
         this.fName = fName;
@@ -47,6 +50,7 @@ public class User {
     }
     
         public User() {
+        this.fileWriter = new FileWriter(accounts, true);
         this.id = this.generateGuestID();
        
     }
@@ -55,7 +59,7 @@ public class User {
         return id;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -79,8 +83,10 @@ public class User {
         this.id = id;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
+        setMatch(password);
+        
     }
 
     public void setfName(String fName) {
@@ -111,9 +117,7 @@ public class User {
           if(noMatch())  {
         try {
             
-            FileWriter fileWriter;
-            fileWriter = new FileWriter(accounts, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            
             bufferedWriter.write(this.id +","+this.password+","+
                     this.fName+","+this.lName+","+this.getPhoneNumber()+","+ this.getEmail());
             bufferedWriter.write("\n");
@@ -201,10 +205,30 @@ public class User {
         return true;}
       
       
-        public static User findUser( String userId, int password){
-         
-          return findUser(userId, password) ;
+        public boolean setMatch(String match){
+          String line;
+          String setter[];
+        try {
+            BufferedReader read2 = new BufferedReader(new FileReader(accounts));
+        
+       
+          while((line=read2.readLine()) != null) {
+             
+             setter = line.split(",");
+              for (int i = 0; i < setter.length; i++) {
+                  if(setter[i].equalsIgnoreCase(match.trim())) {
+                 bufferedWriter.write(id);
+                 return setter;
+              }
+             
+             
+          }
+       }} catch (FileNotFoundException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;}
       
-
+     
 }

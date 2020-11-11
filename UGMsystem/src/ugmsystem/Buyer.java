@@ -24,16 +24,21 @@ public class Buyer extends User {
     private ArrayList<Commodity> items = new ArrayList<Commodity>();
    
 
-    public Buyer( String id, int password, String fName, String lName, String phoneNumber, String email) {
+    public Buyer( String id, String password, String fName, String lName, String phoneNumber, String email) {
         super(id,password, fName, lName, phoneNumber, email);
       
     }
 
-   public Buyer( int password, String fName, String lName, String phoneNumber, String email) {
+   public Buyer( String password, String fName, String lName, String phoneNumber, String email) {
         super(password, fName, lName, phoneNumber, email);
       
     }
 
+    public Buyer() {
+        super();
+    }
+
+   
     public ArrayList<Commodity> getItems() {
         return items;
     }
@@ -62,7 +67,7 @@ public class Buyer extends User {
             while((line=read3.readLine()) != null) {
                 userAccount = line.split(",");
                 if(userAccount[0].equalsIgnoreCase(userId.trim())) {
-                    return new Buyer ( User.userAccount[0] , Integer.parseInt(User.userAccount[1]),User.userAccount[2],
+                    return new Buyer ( User.userAccount[0] , User.userAccount[1],User.userAccount[2],
                             User.userAccount[3], User.userAccount[4], User.userAccount[5]);
                     
                 }

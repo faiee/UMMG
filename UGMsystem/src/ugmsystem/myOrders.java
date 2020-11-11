@@ -16,6 +16,7 @@ public class myOrders extends javax.swing.JFrame {
     /**
      * Creates new form myOrders
      */
+    static myOrders color = new myOrders();
     public myOrders() {
          setTitle("myOrders");
         initComponents();
@@ -267,8 +268,8 @@ public class myOrders extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new myOrders().setVisible(true);
-                myOrders color = new myOrders();
+                
+                
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }

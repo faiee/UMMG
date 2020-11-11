@@ -26,6 +26,7 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
         setTitle("Main Menu");
         setLocationRelativeTo(null);
+         jLabel4.setText(("<HTML><U>Click Here!</U></HTML>"));
     }
 
     /**
@@ -159,7 +160,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
        
-        guest= new  User();
+        Login.currentUser = new Buyer();
         Search.color.getContentPane().setBackground(Color.WHITE);
         Search.color.setVisible(true);
         this.setVisible(false);
@@ -167,7 +168,8 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseDragged
-        // TODO add your handling code here:
+        
+        jLabel4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_jLabel4MouseDragged
 
     private void jLabel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseMoved

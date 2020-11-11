@@ -16,6 +16,8 @@ public class myAdv extends javax.swing.JFrame {
     /**
      * Creates new form myAdv
      */
+        
+    static myAdv color = new myAdv();
     public myAdv() {
         
           setTitle("My Advertisments");
@@ -210,8 +212,7 @@ public class myAdv extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new myAdv().setVisible(true);
-                myAdv color = new myAdv();
+            
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }

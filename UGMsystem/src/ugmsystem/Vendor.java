@@ -13,14 +13,10 @@ import java.util.*;
  */
 public class Vendor extends User{
     private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
-    private Buyer bID;
-    private String stateLicense;
     private int rate;
 
-    public Vendor(Buyer bID, String stateLicense, String id, int password, String fName, String lName, String phoneNumber) {
-        super( password, fName, lName, phoneNumber);
-        this.bID = bID;
-        this.stateLicense = stateLicense;
+    public Vendor( String id, int password, String fName, String lName, String phoneNumber, String email) {
+        super( id, password, fName, lName, phoneNumber, email);
     }
 
 
@@ -29,13 +25,6 @@ public class Vendor extends User{
         return vendorCommodity;
     }
 
-    public Buyer getbID() {
-        return bID;
-    }
-
-    public String getStateLicense() {
-        return stateLicense;
-    }
 
     public int getRate() {
         return rate;
@@ -46,13 +35,6 @@ public class Vendor extends User{
         this.vendorCommodity = vendorCommodity;
     }
 
-    public void setbID(Buyer bID) {
-        this.bID = bID;
-    }
-
-    public void setStateLicense(String stateLicense) {
-        this.stateLicense = stateLicense;
-    }
 
     public void setRate(int rate) {
         this.rate = rate;
@@ -64,4 +46,6 @@ public class Vendor extends User{
        vendorCommodity.add(item);
     } 
     
+   
+   
 }

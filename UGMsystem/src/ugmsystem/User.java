@@ -9,8 +9,6 @@ package ugmsystem;
  *
  * @author reemalsolami
  */
-import java.lang.Math;
-import java.util.Scanner; 
 import java.io.*; 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,15 +20,30 @@ public class User {
     private String lName;
     private String phoneNumber;
     private String email;
-    private int guestID=0000;
-
+    private int guestID=111;
+  //  static String usersArray [];
+    static String userAccount [];
+    public static File accounts= new File ("account.txt");
+   
     
-    public User(int password, String fName, String lName, String phoneNumber) {
+    public User(int password, String fName, String lName, String phoneNumber, String email) {
         this.id = this.generateID(phoneNumber);
         this.password = password;
         this.fName = fName;
         this.lName = lName;
         this.phoneNumber = phoneNumber;
+        this.email=email;
+       
+    }
+    
+        public User(String id, int password, String fName, String lName, String phoneNumber, String email) {
+        this.id = id;
+        this.password = password;
+        this.fName = fName;
+        this.lName = lName;
+        this.phoneNumber = phoneNumber;
+        this.email=email;
+       
     }
     
         public User() {
@@ -86,69 +99,112 @@ public class User {
         this.email = email;
     }
     
-    public boolean login(String id, int password) {
-             File accounts= new File ("account.txt");
-        try {
-            BufferedReader read = new BufferedReader(new FileReader(accounts));
-            String line;
-            String array []; 
-            while((line=read.readLine()) != null) {
-                array =line.split(",");
-               if(array[0].trim().equalsIgnoreCase(id)) {
-                   if(Integer.parseInt(array[1].trim()) == password){
-                       return true; }
-                }
-            }
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public static boolean login(String id, int password) {
+           int t =isUser(id);
+          if(t != 0){
+           return passwordCorrect(password, t);}
              
          return false;}    
     
     public void register( ) {
-        
-       
-        File accounts= new File ("account.txt");
+         
+          if(noMatch())  {
         try {
             
-           
             FileWriter fileWriter;
             fileWriter = new FileWriter(accounts, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(this.id +","+this.password+","+
-                    this.fName+","+this.lName+","+this.getPhoneNumber());
+                    this.fName+","+this.lName+","+this.getPhoneNumber()+","+ this.getEmail());
             bufferedWriter.write("\n");
             bufferedWriter.close();
-            
+          //  fillUserArray(); 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-       
+          } 
         
     } 
-    public void browse() {
-        
-    }
 
-    public String generateID(String p){
+   private String generateID(String p){
         int count = p.length();
         String trim = p.trim();
-        int r = (int) Math.random();
+        int r = (int) (Math.random()*100)+3332;
         String rID= r+""+trim.charAt(count-4)+trim.charAt(count-3)+
                 trim.charAt(count-2)+trim.charAt(count-1);
          return rID;}
 
-   public String generateGuestID(){
+   private String generateGuestID(){
+      
+       String gID=  guestID +""+((int) (Math.random()*100)+2232);
        
-       guestID++;
-       
-       return guestID+"" ;
+       return gID;
     }
+   
+   public static int isUser(String testId){
+           String line;
+        try {
+            
+          BufferedReader read3 = new BufferedReader(new FileReader(accounts));
+       
+          while((line=read3.readLine()) != null) {
+              userAccount = line.split(",");
+             if(userAccount[0].equalsIgnoreCase(testId.trim())) {
+                 return Integer.parseInt(userAccount[1]);
+             
+          }
+       } read3.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+ 
+       
+    return -1;}
+   
+      private static boolean passwordCorrect(int testPassword, int t){
+     
+        if(t == testPassword){
+                       return true; }
+   
+        return false;}
+      
+      public boolean isGuest(){
+        if(this.id.charAt(0)=='1' && this.id.charAt(1)=='1' && this.id.charAt(2)=='1')
+          return true;
+      return false;}
+      
+      //checks if there  is an account with similiar data
+      public boolean noMatch(){
+          String line;
+        try {
+            BufferedReader read2 = new BufferedReader(new FileReader(accounts));
+        
+       
+          while((line=read2.readLine()) != null) {
+              System.out.println("here");
+              String s [] = line.split(",");
+             if(s[4].equalsIgnoreCase(this.phoneNumber.trim()) || s[5].equalsIgnoreCase(this.email.trim())) {
+                 return false;
+             
+          }
+       }} catch (FileNotFoundException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;}
+      
+      
+        public static User findUser( String userId, int password){
+         
+          return findUser(userId, password) ;
+        }
+      
 
 }

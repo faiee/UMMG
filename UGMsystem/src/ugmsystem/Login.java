@@ -5,12 +5,19 @@
  */
 package ugmsystem;
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.*;
 /**
  *
  * @author Jae
  */
 public class Login extends javax.swing.JFrame {
 
+    static Buyer currentUser;
+    static User guest;
+    static Vendor vendor;
+    Search s= new Search();
+    
     /**
      * Creates new form Login
      */
@@ -47,6 +54,11 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setForeground(new java.awt.Color(102, 102, 102));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +82,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText("User Login");
 
         jLabel8.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        jLabel8.setText("Username");
+        jLabel8.setText("User Id");
 
         jLabel9.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jLabel9.setText("Password");
@@ -193,7 +205,30 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        // TODO add your handling code here:
+     if(jTextField1.getText().trim().matches("\\d+") && jTextField2.getText().matches("\\d+")){
+   
+     
+      String userId = jTextField1.getText().trim();
+      int password = Integer.parseInt((jTextField2.getText().trim()));
+      if( User.login(userId,password)){
+        currentUser = Buyer.findUser(userId,password);
+        vendor = new Vendor(currentUser.getId(),currentUser.getPassword(), currentUser.getfName(),
+                currentUser.getlName(),currentUser.getPhoneNumber(),currentUser.getEmail());
+        s.setVisible(true);
+        this.setVisible(false);
+      }
+      else{
+         if(User.isUser(userId)== -1){
+         JOptionPane.showMessageDialog(this, "Account Doesn't exit!!"
+                 + " Please Try Again");}
+         else{JOptionPane.showMessageDialog(this, "Password is Incorrect! Please Try Again");}
+      }
+     }
+     else{
+      JOptionPane.showMessageDialog(this, "Please Fill All Fields Correctly");
+     
+     }
+        
     }//GEN-LAST:event_LoginActionPerformed
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
@@ -207,6 +242,10 @@ public class Login extends javax.swing.JFrame {
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,7 +282,12 @@ public class Login extends javax.swing.JFrame {
                 color.setVisible(true);
             }
         });
+        
+       
+        
     }
+    
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back1;
@@ -252,16 +296,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

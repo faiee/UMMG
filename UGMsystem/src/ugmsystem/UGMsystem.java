@@ -7,7 +7,7 @@ package ugmsystem;
 
 /**
  *
- * @author fayaldosa
+ * @author reemalsolami
  */
 public class UGMsystem {
 
@@ -17,14 +17,24 @@ public class UGMsystem {
     public static void main(String[] args) {
       
        
-       User r = new User(12, "Sara", "Ahmed", "0542907964");
+       User r = new User(12, "Sara", "Ahmed", "0542907964","ggg@gmail.com");
        r.register();
-       User u = new User(11, "Reem", "Alsolami", "0555555555");
+       User u = new User(11, "Reem", "Alsolami", "0555555555","hg@gmail.com");
         u.register();
         
         System.out.println(u.login(u.getId(),99999)); 
         
+        User  m = new User();
+        System.out.println(m.getId());
         
+        User  s = new User();
+        System.out.println(s.getId());
+        
+        User  a = new User();
+        System.out.println(s.getId());
+    
+    
+    
     }
     
 }

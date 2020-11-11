@@ -6,16 +6,22 @@
 package ugmsystem;
 
 import java.awt.Color;
+import java.awt.Cursor;
 
 /**
  *
  * @author fayaldosa
  */
+
 public class MainMenu extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainMenue
+     * Creates new form MainMenu
      */
+   
+    static MainMenu color  = new MainMenu();
+    static User guest;
+    
     public MainMenu() {
         initComponents();
         setTitle("Main Menu");
@@ -31,37 +37,34 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Login = new javax.swing.JButton();
-        Register = new javax.swing.JButton();
-        Home = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
+        RegisterButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        Login.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
-        Login.setText("Login");
-        Login.setPreferredSize(new java.awt.Dimension(120, 35));
-        Login.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
+        loginButton.setText("Login");
+        loginButton.setPreferredSize(new java.awt.Dimension(120, 35));
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
 
-        Register.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
-        Register.setText("Register");
-        Register.setPreferredSize(new java.awt.Dimension(120, 35));
-        Register.addActionListener(new java.awt.event.ActionListener() {
+        RegisterButton.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
+        RegisterButton.setText("Register");
+        RegisterButton.setPreferredSize(new java.awt.Dimension(120, 35));
+        RegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterActionPerformed(evt);
+                RegisterButtonActionPerformed(evt);
             }
         });
-
-        Home.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
-        Home.setText("Home");
-        Home.setPreferredSize(new java.awt.Dimension(120, 35));
 
         jLabel3.setFont(new java.awt.Font("Gadugi", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(222, 89, 0));
@@ -73,58 +76,105 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture13.jpg"))); // NOI18N
 
+        jLabel2.setText("Or Start Browsing Our Store:");
+
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 2, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel4.setText("Click Here!");
+        jLabel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel4MouseMoved(evt);
+            }
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel4MouseDragged(evt);
+            }
+        });
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel3))
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(61, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(53, 53, 53))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4))
+                .addGap(87, 87, 87))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        
+        Login.color.getContentPane().setBackground(Color.WHITE);
+        Login.color.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
+
+        Register.color.getContentPane().setBackground(Color.WHITE);
+        Register.color.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_RegisterButtonActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+       
+        guest= new  User();
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
+       
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseDragged
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterActionPerformed
+    }//GEN-LAST:event_jLabel4MouseDragged
+
+    private void jLabel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseMoved
+        // TODO add your handling code here:
+         jLabel4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+     
+    }//GEN-LAST:event_jLabel4MouseMoved
 
     /**
      * @param args the command line arguments
@@ -157,19 +207,19 @@ public class MainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MainMenu color = new MainMenu();
-                color.getContentPane().setBackground(Color.WHITE);
+               color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Home;
-    private javax.swing.JButton Login;
-    private javax.swing.JButton Register;
+    private javax.swing.JButton RegisterButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
 }

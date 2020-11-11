@@ -16,6 +16,8 @@ public class Search extends javax.swing.JFrame {
     /**
      * Creates new form Search
      */
+    
+    static Search color = new Search();
     public Search() {
         setTitle("Home");
         initComponents();
@@ -449,7 +451,7 @@ public class Search extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Search color = new Search();
+               
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }

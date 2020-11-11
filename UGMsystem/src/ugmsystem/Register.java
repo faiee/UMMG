@@ -14,6 +14,8 @@ public class Register extends javax.swing.JFrame {
     /**
      * Creates new form Register
      */
+    
+    static  Register color = new Register();
     public Register() {
         setTitle("Create Account");
         initComponents();
@@ -325,7 +327,7 @@ public class Register extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Register color = new Register();
+               
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }

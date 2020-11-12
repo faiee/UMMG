@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< Updated upstream
         <group>
             <file>file:/Users/fayaldosa/Documents/UMMG/UGMsystem/src/ugmsystem/User.java</file>
             <file>file:/Users/fayaldosa/Documents/UMMG/UGMsystem/src/ugmsystem/myAdv.java</file>
@@ -9,5 +10,8 @@
             <file>file:/Users/fayaldosa/Documents/UMMG/UGMsystem/src/ugmsystem/Buyer.java</file>
             <file>file:/Users/fayaldosa/Documents/UMMG/UGMsystem/src/ugmsystem/Vendor.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> Stashed changes
     </open-files>
 </project-private>

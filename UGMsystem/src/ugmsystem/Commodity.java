@@ -5,146 +5,186 @@
  */
 package ugmsystem;
 
+import java.io.*;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author fayaldosa
  */
 public class Commodity {
-   
-    private  static int ID, Price, Quantity;
-    private  static String Name, Description, YearOfPurchase;
-    private static boolean State;
 
-    public Commodity(int ID, int Price, int Quantity, String Name, String Description, 
+    private String ID, Price, Quantity, Name, Description, YearOfPurchase;
+    private boolean State;
+    public static File Commodities = new File("Commodities.txt");
+    public  User user;
+
+    public Commodity(String ID, String Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
-    
-    this.ID= ID;
-    this.Price= Price;
-    this.Quantity=Quantity;
-    this.Name= Name;
-    this.Description=Description;
-    this.YearOfPurchase=YearOfPurchase;
-    this.State=State;
-    
+
+        this.ID = this.generateID(user.getPhoneNumber());
+        this.Price = Price;
+        this.Quantity = Quantity;
+        this.Name = Name;
+        this.Description = Description;
+        this.YearOfPurchase = YearOfPurchase;
+        this.State = State;
+
+
     }
 
-    
-    
-    public static int getID() {
+    public String getID() {
         return ID;
     }
 
-    public static void setID(int ID) {
-        Commodity.ID = ID;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
-    public static int getPrice() {
+    public String getPrice() {
         return Price;
     }
 
-    public static void setPrice(int Price) {
-        Commodity.Price = Price;
+    public void setPrice(String Price) {
+        this.Price = Price;
     }
 
-    public static int getQuantity() {
+    public String getQuantity() {
         return Quantity;
     }
 
-    public static void setQuantity(int Quantity) {
-        Commodity.Quantity = Quantity;
+    public void setQuantity(String Quantity) {
+        this.Quantity = Quantity;
     }
 
-    public static String getName() {
+    public String getName() {
         return Name;
     }
 
-    public static void setName(String Name) {
-        Commodity.Name = Name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public static String getDescription() {
+    public String getDescription() {
         return Description;
     }
 
-    public static void setDescription(String Description) {
-        Commodity.Description = Description;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
-    public static String getYearOfPurchase() {
+    public String getYearOfPurchase() {
         return YearOfPurchase;
     }
 
-    public static void setYearOfPurchase(String YearOfPurchase) {
-        Commodity.YearOfPurchase = YearOfPurchase;
+    public void setYearOfPurchase(String YearOfPurchase) {
+        this.YearOfPurchase = YearOfPurchase;
     }
 
-    public static boolean isState() {
+    public boolean isState() {
         return State;
     }
 
-    public static void setState(boolean State) {
-        Commodity.State = State;
+    public void setState(boolean State) {
+        this.State = State;
     }
-    
-    public void createCommodity(){
-        
+
+    public static File getCommodities() {
+        return Commodities;
     }
-    
-    public void addCommodity(){
-        
+
+    public static void setCommodities(File Commodities) {
+        Commodity.Commodities = Commodities;
     }
-    
-    public void editCommodity(){
-        
+
+    public User getUser() {
+        return user;
     }
-    
-    public void deleteCommodity(){
-        
+
+    public void setUser(User user) {
+        this.user = user;
+    }    
+
+    public void createCommodity() {
+        if (user.isGuest() == false) {
+            try {
+                BufferedWriter Tw = new BufferedWriter(new FileWriter(Commodities));
+                String filePic = FileChooser.pickAFile();
+                Tw.write(this.ID+","+this.Name+","+Section.getName()+","+filePic+","+this.Description);
+                Tw.write("\n");
+                Tw.flush();
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
     }
-    
-    public void purchaseCommodity(){
-        
+
+    public void addCommodity() {
+
     }
-    
-    public boolean isAvailable(){
-        
-        
+
+    public void editCommodity() {
+
+    }
+
+    public void deleteCommodity() {
+
+    }
+
+    public void purchaseCommodity() {
+
+    }
+
+    public boolean isAvailable() {
+
         return false;
     }
-    
-    public void advertisee(){
-        
-        
+
+    public void advertisee() {
+
     }
-    
-    public void updateCommodityDatabase(){
-        
-        
+
+    public void updateCommodityDatabase() {
+
     }
-    
-    public void addToOrder(){
-        
-        
+
+    public void addToOrder() {
+
     }
-    
-    public void endPurchase(){
-        
+
+    public void endPurchase() {
+
     }
-    
-    public void checkout(){
-        
-        
+
+    public void checkout() {
+
     }
-    
-    public ChatUser ContactVendor(ChatUser Msg){
-        
-        return null;
-    }
-    
-    public ChatUser ContactBuyer( ChatUser Msg){
-        
+
+    public ChatUser ContactVendor(ChatUser Msg) {
+
         return null;
     }
 
+    public ChatUser ContactBuyer(ChatUser Msg) {
+
+        return null;
+    }
+
+    private String generateID(String p) {
+        int count = p.length();
+        String trim = p.trim();
+        int r = (int) (Math.random() * 100) + 3332;
+        String rID = r + "" + trim.charAt(count - 4) + trim.charAt(count - 3)
+                + trim.charAt(count - 2) + trim.charAt(count - 1);
+        return rID;
+    }
 
 }

@@ -17,15 +17,14 @@ import javax.swing.JFileChooser;
  */
 public class Commodity {
 
-    private String ID, Price, Quantity, Name, Description, YearOfPurchase;
+    private String ID, Price, Quantity, Name, Description, YearOfPurchase, filePic, sec;
     private boolean State;
     public static File Commodities = new File("Commodities.txt");
-    public  User user;
 
     public Commodity(String ID, String Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
 
-        this.ID = this.generateID(user.getPhoneNumber());
+        this.ID = Login.vendor.getId();
         this.Price = Price;
         this.Quantity = Quantity;
         this.Name = Name;
@@ -33,7 +32,14 @@ public class Commodity {
         this.YearOfPurchase = YearOfPurchase;
         this.State = State;
 
+    }
 
+    public Commodity(String ID, String Name, String Description, String filePic, String sec) {
+        this.ID = ID;
+        this.Name = Name;
+        this.Description = Description;
+        this.filePic = filePic;
+        this.sec = sec;
     }
 
     public String getID() {
@@ -100,31 +106,22 @@ public class Commodity {
         Commodity.Commodities = Commodities;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }    
-
     public void createCommodity() {
-        if (user.isGuest() == false) {
-            try {
-                BufferedWriter Tw = new BufferedWriter(new FileWriter(Commodities));
-                String filePic = FileChooser.pickAFile();
-                Tw.write(this.ID+","+this.Name+","+Section.getName()+","+filePic+","+this.Description);
-                Tw.write("\n");
-                Tw.flush();
-
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
+        // if (user.isGuest() == false) {
+        try {
+            BufferedWriter Tw = new BufferedWriter(new FileWriter(Commodities));
+            Tw.write(this.ID + "," + this.Name + "," + sec + "," + filePic + "," + this.Description);
+            Tw.write("\n");          
+            Login.vendor.getVendorCommodity().addAll(Arrays.asList(this));
+            
+            Tw.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        //}
     }
 
     public void addCommodity() {
@@ -176,15 +173,6 @@ public class Commodity {
     public ChatUser ContactBuyer(ChatUser Msg) {
 
         return null;
-    }
-
-    private String generateID(String p) {
-        int count = p.length();
-        String trim = p.trim();
-        int r = (int) (Math.random() * 100) + 3332;
-        String rID = r + "" + trim.charAt(count - 4) + trim.charAt(count - 3)
-                + trim.charAt(count - 2) + trim.charAt(count - 1);
-        return rID;
     }
 
 }

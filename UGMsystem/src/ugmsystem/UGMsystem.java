@@ -23,14 +23,14 @@ public class UGMsystem {
      */
     public static void main(String[] args) throws IOException {
         
-      /* BufferedReader read2 = new BufferedReader(new FileReader(accounts));
+      BufferedReader read2 = new BufferedReader(new FileReader(accounts));
        FileWriter fileWriter = new FileWriter(accounts, false);
       BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); 
       
       String line ;
       while((line=read2.readLine())!=null){
           bufferedWriter.write(" "); 
-      } */
+      } 
           
 
     

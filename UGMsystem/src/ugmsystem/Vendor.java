@@ -5,6 +5,7 @@
  */
 package ugmsystem;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -15,7 +16,7 @@ public class Vendor extends User{
     private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private int rate;
 
-    public Vendor( String id, String password, String fName, String lName, String phoneNumber, String email) {
+    public Vendor( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super( id, password, fName, lName, phoneNumber, email);
     }
 

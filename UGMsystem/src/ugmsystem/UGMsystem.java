@@ -5,6 +5,13 @@
  */
 package ugmsystem;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import static ugmsystem.User.accounts;
+
 /**
  *
  * @author reemalsolami
@@ -14,25 +21,18 @@ public class UGMsystem {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        
+      /* BufferedReader read2 = new BufferedReader(new FileReader(accounts));
+       FileWriter fileWriter = new FileWriter(accounts, false);
+      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); 
       
-       
-     //  User r = new User(12, "Sara", "Ahmed", "0542907964","ggg@gmail.com");
-     //  r.register();
-    //   User u = new User(11, "Reem", "Alsolami", "0555555555","hg@gmail.com");
-    //    u.register();
-        
-      //  System.out.println(u.login(u.getId(),99999)); 
-        
-        User  m = new User();
-        System.out.println(m.getId());
-        
-        User  s = new User();
-        System.out.println(s.getId());
-        
-        User  a = new User();
-        System.out.println(s.getId());
-    
+      String line ;
+      while((line=read2.readLine())!=null){
+          bufferedWriter.write(" "); 
+      } */
+          
+
     
     
     }

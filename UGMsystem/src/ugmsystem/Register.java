@@ -5,6 +5,9 @@
  */
 package ugmsystem;
 import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -345,7 +348,7 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        
+              try {
                if((!jTextField1.getText().equals("")) && (!jTextField3.getText().equals("")) 
                 && (!jTextField5.getText().equals("")) && (!jTextField8.getText().equals("")) 
                        && (!jTextField6.getText().equals("")) && (!jTextField7.getText().equals(""))){
@@ -362,11 +365,18 @@ public class Register extends javax.swing.JFrame {
                                       if(jTextField7.getText().length()==10 && jTextField7.getText().matches("\\d+")){
                                         if(jCheckBox1.isSelected()){
                                             
-                                                Login.currentUser= new Buyer(jTextField5.getText().trim(), 
-                                                      jTextField1.getText().trim(), jTextField3.getText().trim(),
-                                                      jTextField7.getText().trim(), jTextField6.getText().trim() );
-                                              
-                                              Login.currentUser.register();
+                                            
+                                                Login.currentUser= new Buyer(jTextField5.getText().trim(),
+                                                        jTextField1.getText().trim(), jTextField3.getText().trim(),
+                                                        jTextField7.getText().trim(), jTextField6.getText().trim() );
+                                                
+                                                Login.currentUser.register();
+                                                if(Login.currentUser != null){
+                                                   MyAccount.color.getContentPane().setBackground(Color.WHITE);
+                                                   MyAccount.color.setVisible(true);
+                                                   this.setVisible(false);
+                                                   JOptionPane.showMessageDialog(this, "Sucessfully Registered!");
+                                                }
                                               
                                               }else{JOptionPane.showMessageDialog(this, "You have not Agreed to terms and Conditions!");}
                                             } else{JOptionPane.showMessageDialog(this, "Please Enter a Correct Phone Number!");}
@@ -379,7 +389,10 @@ public class Register extends javax.swing.JFrame {
                 
                                  }else{JOptionPane.showMessageDialog(this, "Password denied! It should contain an Uppercase Letter,Numbers, and regular Letters");}
                      
-               }else{JOptionPane.showMessageDialog(this, "Please Fill All Fields Correctly");}
+                      }else{JOptionPane.showMessageDialog(this, "Please Fill All Fields Correctly");}
+         
+              } catch (IOException ex) {
+                    Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);   }
         
     }//GEN-LAST:event_registerButtonActionPerformed
 

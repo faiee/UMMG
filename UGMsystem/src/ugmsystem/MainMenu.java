@@ -7,6 +7,9 @@ package ugmsystem;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -160,11 +163,16 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
        
-        Login.currentUser = new Buyer();
+        try {
+            Login.currentUser = new Buyer();
+        
         Search.color.getContentPane().setBackground(Color.WHITE);
         Search.color.setVisible(true);
         this.setVisible(false);
-       
+        
+       } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseDragged

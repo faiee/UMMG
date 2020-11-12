@@ -6,6 +6,9 @@
 package ugmsystem;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 /**
@@ -281,18 +284,22 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-     if(jTextField1.getText().trim().matches("\\d+") && jTextField2.getText().matches("\\d+")){
+     
+     try {   
+      if(jTextField1.getText().trim().matches("\\d+") && jTextField2.getText().matches("\\d+")){
    
      
       String userId = jTextField1.getText().trim();
       int password = Integer.parseInt((jTextField2.getText().trim()));
       if( User.login(userId,password)){
-        currentUser = Buyer.findUser(userId,password);
-        vendor = new Vendor(currentUser.getId(),currentUser.getPassword(), currentUser.getfName(),
-                currentUser.getlName(),currentUser.getPhoneNumber(),currentUser.getEmail());
-        MyAccount.color.getContentPane().setBackground(Color.WHITE);
-        MyAccount.color.setVisible(true);
-        this.setVisible(false);
+          
+              currentUser = Buyer.findUser(userId,password);
+              vendor = new Vendor(currentUser.getId(),currentUser.getPassword(), currentUser.getfName(),
+                      currentUser.getlName(),currentUser.getPhoneNumber(),currentUser.getEmail());
+              MyAccount.color.getContentPane().setBackground(Color.WHITE);
+              MyAccount.color.setVisible(true);
+              this.setVisible(false);
+          
       }
       else{
          if(User.isUser(userId)== -1){
@@ -304,7 +311,9 @@ public class Login extends javax.swing.JFrame {
      else{
       JOptionPane.showMessageDialog(this, "Please Fill All Fields Correctly");
      
-     }
+     }} catch (IOException ex) {
+              Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+          }
         
     }//GEN-LAST:event_LoginActionPerformed
 

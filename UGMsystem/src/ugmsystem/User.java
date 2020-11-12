@@ -23,12 +23,11 @@ public class User {
     private int guestID=111;
     static String userAccount [];
     public static File accounts= new File ("account.txt");
-    private FileWriter fileWriter;
-    private BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+ 
    
     
     public User(String password, String fName, String lName, String phoneNumber, String email) throws IOException {
-        this.fileWriter = new FileWriter(accounts, true);
+        
         this.id = this.generateID(phoneNumber);
         this.password = password;
         this.fName = fName;
@@ -38,8 +37,8 @@ public class User {
        
     }
     
-        public User(String id, String password, String fName, String lName, String phoneNumber, String email) {
-        this.fileWriter = new FileWriter(accounts, true);
+        public User(String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
+        
         this.id = id;
         this.password = password;
         this.fName = fName;
@@ -49,8 +48,8 @@ public class User {
        
     }
     
-        public User() {
-        this.fileWriter = new FileWriter(accounts, true);
+        public User() throws IOException {
+        
         this.id = this.generateGuestID();
        
     }
@@ -84,24 +83,29 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
         setMatch(password);
+        this.password = password;
+        
         
     }
 
     public void setfName(String fName) {
+        setMatch(fName);
         this.fName = fName;
     }
 
     public void setlName(String lName) {
+        setMatch(lName);
         this.lName = lName;
     }
 
     public void setPhoneNumber(String phoneNumber) {
+        setMatch(phoneNumber);
         this.phoneNumber = phoneNumber;
     }
 
     public void setEmail(String email) {
+        setMatch(email);
         this.email = email;
     }
     
@@ -117,12 +121,13 @@ public class User {
           if(noMatch())  {
         try {
             
-            
+            FileWriter fileWriter = new FileWriter(accounts, true);;
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(this.id +","+this.password+","+
                     this.fName+","+this.lName+","+this.getPhoneNumber()+","+ this.getEmail());
             bufferedWriter.write("\n");
-            bufferedWriter.close();
-          //  fillUserArray(); 
+            bufferedWriter.flush();
+          
         } catch (FileNotFoundException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -205,30 +210,60 @@ public class User {
         return true;}
       
       
-        public boolean setMatch(String match){
+        public void setMatch(String match){
           String line;
-          String setter[];
+          String [] setter;
         try {
             BufferedReader read2 = new BufferedReader(new FileReader(accounts));
-        
-       
+ 
+      
           while((line=read2.readLine()) != null) {
-             
-             setter = line.split(",");
-              for (int i = 0; i < setter.length; i++) {
-                  if(setter[i].equalsIgnoreCase(match.trim())) {
-                 bufferedWriter.write(id);
-                 return setter;
-              }
-             
+              
+              if(line.contains(match.trim())) {
+                 setter=line.split(",");
+                if(match.trim().equals(this.password)){
+                    setter[1]=match;
+                }
+                else if(match.trim().equals(this.fName)){
+                    setter[2]=match;
+                }
+                else if(match.trim().equals(this.lName)){
+                    setter[3]=match;
+                }
+                else if(match.trim().equals(this.phoneNumber)){
+                    setter[4]=match;
+                }
+                else {
+                    setter[5]=match;
+                }
+                
+                 FileWriter fileWriter = new FileWriter(accounts, false);
+                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                
+                 bufferedWriter.write(setter[0]+","+setter[1]+","+
+                         setter[2]+","+setter[3]+","+setter[4]+","+setter[5]);
+                 
+                 bufferedWriter.close();
+              
              
           }
-       }} catch (FileNotFoundException ex) {
+              else{
+                   FileWriter fileWriter = new FileWriter(accounts, true);
+                   BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                   bufferedWriter.write(line);
+                   bufferedWriter.write("\n");
+                   bufferedWriter.close();
+                   
+                   
+                   
+            }
+          }
+        } catch (FileNotFoundException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+       } catch (IOException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;}
+      }
+    }
       
      
 }

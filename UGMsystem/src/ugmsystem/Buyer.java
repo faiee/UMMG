@@ -5,7 +5,7 @@
  */
 package ugmsystem;
 
-import java.io.BufferedReader;
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,17 +24,17 @@ public class Buyer extends User {
     private ArrayList<Commodity> items = new ArrayList<Commodity>();
    
 
-    public Buyer( String id, String password, String fName, String lName, String phoneNumber, String email) {
+    public Buyer( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super(id,password, fName, lName, phoneNumber, email);
       
     }
 
-   public Buyer( String password, String fName, String lName, String phoneNumber, String email) {
+   public Buyer( String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super(password, fName, lName, phoneNumber, email);
       
     }
 
-    public Buyer() {
+    public Buyer() throws IOException {
         super();
     }
 

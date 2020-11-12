@@ -31,7 +31,9 @@ public class MyAccount extends javax.swing.JFrame {
         jLabel5.setText(Login.currentUser.getId());
         jTextField3.setText(Login.currentUser.getfName()+" "+ Login.currentUser.getlName());
         jTextField4.setText(Login.currentUser.getPhoneNumber());
-       
+        jTextField5.setText(Login.currentUser.getPassword());
+        jTextField7.setText(Login.currentUser.getPassword());
+        jTextField6.setText(Login.currentUser.getEmail());
         
     }
 
@@ -319,8 +321,11 @@ public class MyAccount extends javax.swing.JFrame {
                          
                       if(jTextField6.getText().contains("@") && jTextField6.getText().contains(".com")){
                     
-                     Login.currentUser.setPassword(jTextField5.getText().trim());
-                     //Login.currentUser.setPassword(Integer.parseInt(jTextField5.getText().trim()));
+                 /*    Login.currentUser.setPassword(jTextField5.getText().trim());
+                     Login.currentUser.setfName(screen[0].trim());
+                     Login.currentUser.setlName(screen[1].trim());
+                     Login.currentUser.setPhoneNumber(jTextField4.getText().trim());
+                     Login.currentUser.setEmail(jTextField6.getText().trim()); */
                     }
                     else{JOptionPane.showMessageDialog(this, "Please Enter a Correct Email!");}
                 }

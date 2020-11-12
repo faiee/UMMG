@@ -85,29 +85,29 @@ public class User {
     }
 
     public void setPassword(String password) {
-        updatePassword(password);
+       // updatePassword(password);
         this.password = password;
         
         
     }
 
     public void setfName(String fName) {
-        updateFName(fName);
+      //  updateFName(fName);
         this.fName = fName;
     }
 
     public void setlName(String lName) {
-        updateLName(lName);
+      //  updateLName(lName);
         this.lName = lName;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        updatePhonenumber(phoneNumber);
+       // updatePhonenumber(phoneNumber);
         this.phoneNumber = phoneNumber;
     }
 
     public void setEmail(String email) {
-        updateEmail(email);
+       // updateEmail(email);
         this.email = email;
     }
     
@@ -228,7 +228,7 @@ public class User {
       
       
       
-        public void updatePassword(String match){
+    /*    public void updatePassword(String match){
         
           String [] setter;
            try {
@@ -237,7 +237,7 @@ public class User {
                  setter= userInfo.get(i).toString().split("[\\[,\\]]");
                 
                 if(setter[2].trim().equals(this.password)){
-                    System.out.println("line 239 "+setter[2].trim().equals(this.password));
+                   
                     setter[2]=match;
                   }
                 
@@ -385,10 +385,11 @@ public class User {
        } catch (IOException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
       }
-    
       
      
-}
+} */
+
+
 }
       
      

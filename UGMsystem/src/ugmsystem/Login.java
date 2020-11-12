@@ -286,7 +286,7 @@ public class Login extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
      
      try {   
-      if(jTextField1.getText().trim().matches("\\d+") && jTextField2.getText().matches("\\d+")){
+      if(jTextField1.getText().trim().matches("\\d+") && jTextField2.getText().matches("^(?=.*[A-Z])(?=.*[0-9])[A-Z0-9]+$")){
    
      
       String userId = jTextField1.getText().trim();

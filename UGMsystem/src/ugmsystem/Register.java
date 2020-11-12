@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static ugmsystem.Login.vendor;
 /**
  *
  * @author Jae
@@ -369,7 +370,9 @@ public class Register extends javax.swing.JFrame {
                                                 Login.currentUser= new Buyer(jTextField5.getText().trim(),
                                                         jTextField1.getText().trim(), jTextField3.getText().trim(),
                                                         jTextField7.getText().trim(), jTextField6.getText().trim() );
-                                                
+                                                vendor = new Vendor(Login.currentUser.getId(),Login.currentUser.getPassword(), Login.currentUser.getfName(),
+                                                        Login.currentUser.getlName(),Login.currentUser.getPhoneNumber(),Login.currentUser.getEmail());
+                                              
                                                 Login.currentUser.register();
                                                 if(Login.currentUser != null){
                                                    MyAccount.color.getContentPane().setBackground(Color.WHITE);

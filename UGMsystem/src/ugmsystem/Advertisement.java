@@ -257,8 +257,8 @@ public class Advertisement extends javax.swing.JFrame {
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-        pNum.setText(Login.vendor.getId());
-        //pNum.setText("100");
+        //pNum.setText(Login.vendor.getId());
+        pNum.setText("100");//عشان نجرب الانترفيس
         sec = String.valueOf(secType.getSelectedItem());
         String path = FileChooser.getMediaPath(file);
         commodities= new Commodity(pNum.getText(),Pname.getText(),detail.getText(),path,sec,Integer.valueOf(Pprice.getText()));

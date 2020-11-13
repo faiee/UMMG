@@ -21,7 +21,7 @@ public class Commodity {
     private int Price;
     private boolean State;
     public static File Commodities = new File("Commodities.txt");
-    //private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
+    private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
 
     public Commodity(String ID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
@@ -115,8 +115,8 @@ public class Commodity {
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
-            Login.vendor.getVendorCommodity().add(this);
-            //vendorCommodity.add(this);
+            //Login.vendor.getVendorCommodity().add(this);
+            vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
             Write.flush();

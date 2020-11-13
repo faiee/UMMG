@@ -17,11 +17,13 @@ import javax.swing.JFileChooser;
  */
 public class Commodity {
 
-    private String ID, Price, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private int Price;
     private boolean State;
     public static File Commodities = new File("Commodities.txt");
+    //private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
 
-    public Commodity(String ID, String Price, String Quantity, String Name, String Description,
+    public Commodity(String ID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
 
         this.ID = Login.vendor.getId();
@@ -34,9 +36,10 @@ public class Commodity {
 
     }
 
-    public Commodity(String ID, String Name, String Description, String filePic, String sec) {
-        this.ID = ID;
+    public Commodity(String ID, String Name, String Description, String filePic, String sec, int Price) {
+        this.ID = Login.vendor.getId(); //ID;
         this.Name = Name;
+        this.Price = Price;
         this.Description = Description;
         this.filePic = filePic;
         this.sec = sec;
@@ -50,11 +53,11 @@ public class Commodity {
         this.ID = ID;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return Price;
     }
 
-    public void setPrice(String Price) {
+    public void setPrice(int Price) {
         this.Price = Price;
     }
 
@@ -109,12 +112,14 @@ public class Commodity {
     public void createCommodity() {
         // if (user.isGuest() == false) {
         try {
-            BufferedWriter Tw = new BufferedWriter(new FileWriter(Commodities));
-            Tw.write(this.ID + "," + this.Name + "," + sec + "," + filePic + "," + this.Description);
-            Tw.write("\n");          
-            Login.vendor.getVendorCommodity().addAll(Arrays.asList(this));
-            
-            Tw.flush();
+            FileWriter fileWriter = new FileWriter(Commodities, true);
+            BufferedWriter Write = new BufferedWriter(fileWriter);
+            Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
+            Login.vendor.getVendorCommodity().add(this);
+            //vendorCommodity.add(this);
+            //Write.write(vendorCommodity.toString());
+            //System.out.println(vendorCommodity.toString());
+            Write.flush();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -122,6 +127,11 @@ public class Commodity {
         }
 
         //}
+    }
+
+    @Override
+    public String toString() {
+        return ID + "," + Name + "," + Price + "," + sec + "," + filePic + "," + Description + "\n";
     }
 
     public void addCommodity() {

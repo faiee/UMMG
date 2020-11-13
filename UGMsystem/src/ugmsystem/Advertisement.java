@@ -262,8 +262,7 @@ public class Advertisement extends javax.swing.JFrame {
         sec = String.valueOf(secType.getSelectedItem());
         String path = FileChooser.getMediaPath(file);
         commodities= new Commodity(pNum.getText(),Pname.getText(),detail.getText(),path,sec,Integer.valueOf(Pprice.getText()));
-        commodities.createCommodity();
-        
+        commodities.createCommodity();       
     }//GEN-LAST:event_AddActionPerformed
 
     private void SelPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelPicActionPerformed

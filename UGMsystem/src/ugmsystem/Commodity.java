@@ -21,7 +21,26 @@ public class Commodity {
     private int Price;
     private boolean State;
     public static File Commodities = new File("Commodities.txt");
-    private ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
+    private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
+    private static String [] Ads=new String[300];
+
+    public static String[] getAds() {
+        return Ads;
+    }
+
+    public static void setAds(String[] Ads) {
+        Commodity.Ads = Ads;
+    }
+
+    public static ArrayList<Commodity> getVendorCommodity() {
+        return vendorCommodity;
+    }
+
+    public static void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
+        Commodity.vendorCommodity = vendorCommodity;
+    }
+    
+   
 
     public Commodity(String ID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
@@ -36,8 +55,12 @@ public class Commodity {
 
     }
 
+    
+    public Commodity() {
+    
+    }
     public Commodity(String ID, String Name, String Description, String filePic, String sec, int Price) {
-        this.ID = Login.vendor.getId(); //ID;
+        this.ID =  ID;   //Login.vendor.getId();
         this.Name = Name;
         this.Price = Price;
         this.Description = Description;
@@ -184,5 +207,33 @@ public class Commodity {
 
         return null;
     }
+    
+    public void ReadFile(){
+        
+        String line;
+         try {
+             
+        
+           BufferedReader read = new BufferedReader(new FileReader(Commodities));   
+            while((line=read.readLine()) != null) {
+                
+               String SplitWords[]= line.split(" ,");  
+               Ads=SplitWords.clone();
+            }
+           
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+        
+        
+        
+        
+    }
+    
+   
+    
+    
 
 }

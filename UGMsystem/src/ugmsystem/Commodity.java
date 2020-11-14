@@ -5,10 +5,14 @@
  */
 package ugmsystem;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 
 /**
@@ -142,6 +146,12 @@ public class Commodity {
             vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
+            BufferedImage image;
+         //  image =ImageIO.read(filePic);
+                 
+         //  ImageIO.write(image, "jpg", new File (filePic));
+            
+            
             Write.flush();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);

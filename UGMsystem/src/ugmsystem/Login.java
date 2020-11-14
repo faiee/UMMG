@@ -163,6 +163,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/smallHome.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture1logout.png"))); // NOI18N
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -290,19 +295,20 @@ public class Login extends javax.swing.JFrame {
    
      
       String userId = jTextField1.getText().trim();
-      int password = Integer.parseInt((jTextField2.getText().trim()));
+      String password = jTextField2.getText().trim();
       if( User.login(userId,password)){
           
-              currentUser = Buyer.findUser(userId,password);
+              currentUser = Buyer.findUser(userId);
               vendor = new Vendor(currentUser.getId(),currentUser.getPassword(), currentUser.getfName(),
                       currentUser.getlName(),currentUser.getPhoneNumber(),currentUser.getEmail());
+              
               MyAccount.color.getContentPane().setBackground(Color.WHITE);
               MyAccount.color.setVisible(true);
               this.setVisible(false);
           
       }
       else{
-         if(User.isUser(userId)== -1){
+         if(User.isUser(userId).equals("-1")){
          JOptionPane.showMessageDialog(this, "Account Doesn't exit!!"
                  + " Please Try Again");}
          else{JOptionPane.showMessageDialog(this, "Password is Incorrect! Please Try Again");}
@@ -387,6 +393,21 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        
+          try {
+        currentUser = new Buyer();
+        
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
+        
+       } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -432,17 +453,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back1;
     private javax.swing.JButton Login;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
@@ -454,8 +467,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPasswordField jTextField2;

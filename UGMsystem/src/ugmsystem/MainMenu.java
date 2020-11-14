@@ -164,7 +164,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
        
         try {
-            Login.currentUser = new Buyer();
+        Login.currentUser = new Buyer();
         
         Search.color.getContentPane().setBackground(Color.WHITE);
         Search.color.setVisible(true);

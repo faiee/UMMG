@@ -162,6 +162,11 @@ public class MyAccount extends javax.swing.JFrame {
         });
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/smallHome.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture1logout.png"))); // NOI18N
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -321,11 +326,22 @@ public class MyAccount extends javax.swing.JFrame {
                          
                       if(jTextField6.getText().contains("@") && jTextField6.getText().contains(".com")){
                     
-                 /*    Login.currentUser.setPassword(jTextField5.getText().trim());
+                     Login.currentUser.setPassword(jTextField5.getText().trim());
                      Login.currentUser.setfName(screen[0].trim());
                      Login.currentUser.setlName(screen[1].trim());
                      Login.currentUser.setPhoneNumber(jTextField4.getText().trim());
-                     Login.currentUser.setEmail(jTextField6.getText().trim()); */
+                     Login.currentUser.setEmail(jTextField6.getText().trim()); 
+                     
+                     
+                     JOptionPane.showMessageDialog(this, "Information Update Success!");
+                     
+                     
+                     jLabel5.setText(Login.currentUser.getId());
+                     jTextField3.setText(Login.currentUser.getfName()+" "+ Login.currentUser.getlName());
+                     jTextField4.setText(Login.currentUser.getPhoneNumber());
+                     jTextField5.setText(Login.currentUser.getPassword());
+                     jTextField7.setText(Login.currentUser.getPassword());
+                     jTextField6.setText(Login.currentUser.getEmail());
                     }
                     else{JOptionPane.showMessageDialog(this, "Please Enter a Correct Email!");}
                 }
@@ -374,6 +390,10 @@ public class MyAccount extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments

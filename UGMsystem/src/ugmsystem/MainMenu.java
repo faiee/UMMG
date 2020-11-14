@@ -155,7 +155,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
 
-        Register.color.getContentPane().setBackground(Color.WHITE);
+//        Register.color.getContentPane().setBackground(Color.WHITE);
         Register.color.setVisible(true);
         this.setVisible(false);
         

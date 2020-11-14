@@ -14,6 +14,8 @@ public class ChatUser extends javax.swing.JFrame {
     /**
      * Creates new form BuyerChat
      */
+    
+    static ChatUser color = new ChatUser();
     public ChatUser() {
         initComponents();
         setTitle("Chat");
@@ -247,7 +249,7 @@ public class ChatUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ChatUser color = new ChatUser();
+                
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }

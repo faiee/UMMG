@@ -340,17 +340,22 @@ public class Sections extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
-     Commodity c = new Commodity();
-    
+        Commodity c = new Commodity();
+        Commodity c2 = new Commodity();
+        Commodity c3 = new Commodity();
+        Commodity c4 = new Commodity();
+        
                c= BooksSectionAds.get(0);
-           
+           c2= BooksSectionAds.get(1);
+           c3= BooksSectionAds.get(2);
          
  String itemText = (String)jComboBox1.getSelectedItem( );
  
   if (itemText.equals("Books")){
       
       jLabel4.setText(c.getName());
-      
+       jLabel5.setText(c2.getName());
+        jLabel6.setText(c3.getName());
 
          try {
              
@@ -410,9 +415,12 @@ public class Sections extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Sections().setVisible(true);
-         
+         Commodity c= new Commodity();
        
-              
+                for (int i = 0; i < BooksSectionAds.size(); i++) {
+                    c=BooksSectionAds.get(i);
+                    System.out.println(c.getName());
+                }
                 
             }
         });

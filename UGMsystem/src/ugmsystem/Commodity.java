@@ -23,6 +23,7 @@ public class Commodity {
 
     private static String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
     private static int Price;
+    private static String Price2;
     private static boolean State;
     public static File Commodities = new File("Commodities.txt");
     private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
@@ -63,7 +64,22 @@ public class Commodity {
         this.filePic = filePic;
         this.sec = sec;
     }
+    public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price) {
+        this.ID =  ID;   //Login.vendor.getId();
+        this.Name = Name;
+        this.Price2 = Price;
+        this.Description = Description;
+        this.filePic = filePic;
+        this.sec = sec;
+    }
 
+    public static String getPrice2() {
+        return Price2;
+    }
+
+    public static void setPrice2(String Price2) {
+        Commodity.Price2 = Price2;
+    }
    
 
     public String getYearOfPurchase() {

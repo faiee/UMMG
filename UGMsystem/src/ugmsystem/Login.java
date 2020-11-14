@@ -163,6 +163,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/smallHome.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture1logout.png"))); // NOI18N
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -290,19 +295,20 @@ public class Login extends javax.swing.JFrame {
    
      
       String userId = jTextField1.getText().trim();
-      int password = Integer.parseInt((jTextField2.getText().trim()));
+      String password = jTextField2.getText().trim();
       if( User.login(userId,password)){
           
-              currentUser = Buyer.findUser(userId,password);
+              currentUser = Buyer.findUser(userId);
               vendor = new Vendor(currentUser.getId(),currentUser.getPassword(), currentUser.getfName(),
                       currentUser.getlName(),currentUser.getPhoneNumber(),currentUser.getEmail());
+              
               MyAccount.color.getContentPane().setBackground(Color.WHITE);
               MyAccount.color.setVisible(true);
               this.setVisible(false);
           
       }
       else{
-         if(User.isUser(userId)== -1){
+         if(User.isUser(userId).equals("-1")){
          JOptionPane.showMessageDialog(this, "Account Doesn't exit!!"
                  + " Please Try Again");}
          else{JOptionPane.showMessageDialog(this, "Password is Incorrect! Please Try Again");}
@@ -386,6 +392,21 @@ public class Login extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        
+          try {
+        currentUser = new Buyer();
+        
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
+        
+       } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments

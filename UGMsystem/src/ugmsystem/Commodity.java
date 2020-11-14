@@ -21,20 +21,12 @@ import javax.swing.JFileChooser;
  */
 public class Commodity {
 
-    private String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
-    private int Price;
-    private boolean State;
+    private static String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private static int Price;
+    private static boolean State;
     public static File Commodities = new File("Commodities.txt");
     private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
-    private static String [] Ads=new String[300];
 
-    public static String[] getAds() {
-        return Ads;
-    }
-
-    public static void setAds(String[] Ads) {
-        Commodity.Ads = Ads;
-    }
 
     public static ArrayList<Commodity> getVendorCommodity() {
         return vendorCommodity;
@@ -72,45 +64,7 @@ public class Commodity {
         this.sec = sec;
     }
 
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
-    public int getPrice() {
-        return Price;
-    }
-
-    public void setPrice(int Price) {
-        this.Price = Price;
-    }
-
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(String Quantity) {
-        this.Quantity = Quantity;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String Description) {
-        this.Description = Description;
-    }
+   
 
     public String getYearOfPurchase() {
         return YearOfPurchase;
@@ -120,13 +74,71 @@ public class Commodity {
         this.YearOfPurchase = YearOfPurchase;
     }
 
-    public boolean isState() {
+    public static String getID() {
+        return ID;
+    }
+
+    public static void setID(String ID) {
+        Commodity.ID = ID;
+    }
+
+    public static String getQuantity() {
+        return Quantity;
+    }
+
+    public static void setQuantity(String Quantity) {
+        Commodity.Quantity = Quantity;
+    }
+
+    public static String getName() {
+        return Name;
+    }
+
+    public static void setName(String Name) {
+        Commodity.Name = Name;
+    }
+
+    public static String getDescription() {
+        return Description;
+    }
+
+    public static void setDescription(String Description) {
+        Commodity.Description = Description;
+    }
+
+    public static String getFilePic() {
+        return filePic;
+    }
+
+    public static void setFilePic(String filePic) {
+        Commodity.filePic = filePic;
+    }
+
+    public static String getSec() {
+        return sec;
+    }
+
+    public static void setSec(String sec) {
+        Commodity.sec = sec;
+    }
+
+    public static int getPrice() {
+        return Price;
+    }
+
+    public static void setPrice(int Price) {
+        Commodity.Price = Price;
+    }
+
+    public static boolean isState() {
         return State;
     }
 
-    public void setState(boolean State) {
-        this.State = State;
+    public static void setState(boolean State) {
+        Commodity.State = State;
     }
+
+ 
 
     public static File getCommodities() {
         return Commodities;
@@ -147,10 +159,7 @@ public class Commodity {
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
             BufferedImage image;
-         //  image =ImageIO.read(filePic);
-                 
-         //  ImageIO.write(image, "jpg", new File (filePic));
-            
+        
             
             Write.flush();
         } catch (FileNotFoundException ex) {
@@ -218,6 +227,7 @@ public class Commodity {
         return null;
     }
     
+    /*
     public void ReadFile(){
         
         String line;
@@ -238,11 +248,11 @@ public class Commodity {
         }  
         
         
-        
+      
         
     }
     
-   
+   */
     
     
 

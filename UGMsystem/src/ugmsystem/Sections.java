@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -23,7 +24,14 @@ import static ugmsystem.Commodity.Commodities;
  * @author fayaldosa
  */
 public class Sections extends javax.swing.JFrame {
- static      String SplitWords[];
+    private static ArrayList<String> Read = new ArrayList<String>();
+
+    private static String[] ReadNameOfTitle = new String[200];
+    private static String[] ReadNameOfSection = new String[200];
+    private static ArrayList<Commodity> BooksSectionAds = new ArrayList<Commodity>();
+    private static ArrayList<String> ClothesSectionAds = new ArrayList<String>();
+    private static ArrayList<String> FurnSectionAds = new ArrayList<String>();
+ 
     /**
      * Creates new form Books
      */
@@ -31,30 +39,51 @@ public class Sections extends javax.swing.JFrame {
         initComponents();
         setTitle("Book Section");
         setLocationRelativeTo(null);
-        String line;
-
-                String[] Ads = new String[1000];
+  
+           
+            String line;
+          
                 try {
 
                     BufferedReader read = new BufferedReader(new FileReader(Commodities));
                     while ((line = read.readLine()) != null) {
 
-                        SplitWords = line.split(",");
+                   String [] SplitWords= line.split(",");
+                        for (int i = 0; i < SplitWords.length; i++) {
+                            
+                            if(line.contains("Books")){
+                       
+                             BooksSectionAds.add(new Commodity(SplitWords[i],SplitWords[i],SplitWords[i],SplitWords[i],SplitWords[i],parseInt(SplitWords[i])));
+                            }
+                            Read.add(SplitWords[i].trim());
+                            
+                            if(line.contains("Clothes")){
+                          ClothesSectionAds.add(SplitWords[i].trim());
+                            } 
+                            
+                            if(line.contains("Furniture")){
+                          FurnSectionAds.add(SplitWords[i].trim());
+                            } 
+                             
+                            
+                            
+                        }
 
                     }
-
+                 read.close();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
                     Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
+
+     
+                
         
-    jLabel4.setText(SplitWords[1]);
-    String FileName=SplitWords[4];
-   File file = new File(SplitWords[4]);
-    ImageIcon icon = new ImageIcon (SplitWords[4]);
-        System.out.println(SplitWords[4]);
-    jLabel1.setIcon(icon);
+               
+
+        
         
         
     }
@@ -314,7 +343,30 @@ public class Sections extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+
+      /*
+         for (int i = 1, j = 0; i < BooksSectionAds.size(); i = i + 6, j++) {
+                    ReadNameOfTitle[j] = BooksSectionAds.get(i);
+
+                }
+        
+        */
+ String itemText = (String)jComboBox1.getSelectedItem( );
+ 
+  if (itemText.equals("Books")){
+      
+      jLabel4.setText(ReadNameOfTitle[0]);
+      
+      
+      
+      
+  }
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
@@ -349,27 +401,13 @@ public class Sections extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Sections().setVisible(true);
-           
-                String line;
-
-                String[] Ads = new String[1000];
-                try {
-
-                    BufferedReader read = new BufferedReader(new FileReader(Commodities));
-                    while ((line = read.readLine()) != null) {
-
-                        SplitWords = line.split(",");
-
-                    }
-
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+         
+        Commodity c = new Commodity();
+         for (int  j = 0; j < BooksSectionAds.size(); j++) {
+               c= BooksSectionAds.get(j);
+             System.out.println(c.getName());
                 }
         
-     
-                
               
                 
             }

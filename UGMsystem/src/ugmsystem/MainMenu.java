@@ -42,12 +42,12 @@ public class MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         loginButton = new javax.swing.JButton();
-        RegisterButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        RegisterButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -58,15 +58,6 @@ public class MainMenu extends javax.swing.JFrame {
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
-            }
-        });
-
-        RegisterButton.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
-        RegisterButton.setText("Register");
-        RegisterButton.setPreferredSize(new java.awt.Dimension(120, 35));
-        RegisterButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterButtonActionPerformed(evt);
             }
         });
 
@@ -96,6 +87,15 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
+            }
+        });
+
+        RegisterButton.setFont(new java.awt.Font("Gadugi", 0, 20)); // NOI18N
+        RegisterButton.setText("Register");
+        RegisterButton.setPreferredSize(new java.awt.Dimension(120, 35));
+        RegisterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterButtonActionPerformed(evt);
             }
         });
 
@@ -134,9 +134,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(RegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4))
@@ -152,14 +152,6 @@ public class MainMenu extends javax.swing.JFrame {
         Login.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_loginButtonActionPerformed
-
-    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-
-//        Register.color.getContentPane().setBackground(Color.WHITE);
-        Register.color.setVisible(true);
-        this.setVisible(false);
-        
-    }//GEN-LAST:event_RegisterButtonActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
        
@@ -185,6 +177,13 @@ public class MainMenu extends javax.swing.JFrame {
          jLabel4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
      
     }//GEN-LAST:event_jLabel4MouseMoved
+
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
+        
+        Register.color.getContentPane().setBackground(Color.WHITE);
+        Register.color.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_RegisterButtonActionPerformed
 
     /**
      * @param args the command line arguments

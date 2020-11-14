@@ -26,16 +26,16 @@ public class Commodity {
     private static String Price2;
     private static boolean State;
     public static File Commodities = new File("Commodities.txt");
-    private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
+    //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
 
-
+/*
     public static ArrayList<Commodity> getVendorCommodity() {
         return vendorCommodity;
     }
 
     public static void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
         Commodity.vendorCommodity = vendorCommodity;
-    }
+    }*/
     
    
 
@@ -57,21 +57,21 @@ public class Commodity {
     
     }
     public Commodity(String ID, String Name, String Description, String filePic, String sec, int Price) {
-        this.ID =  ID;   //Login.vendor.getId();
+        this.ID =  Login.vendor.getId(); //ID;   
         this.Name = Name;
         this.Price = Price;
         this.Description = Description;
         this.filePic = filePic;
         this.sec = sec;
     }
-    public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price) {
+    /*public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price) {
         this.ID =  ID;   //Login.vendor.getId();
         this.Name = Name;
         this.Price2 = Price;
         this.Description = Description;
         this.filePic = filePic;
         this.sec = sec;
-    }
+    }*/
 
     public static String getPrice2() {
         return Price2;
@@ -170,8 +170,8 @@ public class Commodity {
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
-            //Login.vendor.getVendorCommodity().add(this);
-            vendorCommodity.add(this);//عشان نجرب 
+            Vendor.getVendorCommodity().add(this);
+            //vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
             BufferedImage image;

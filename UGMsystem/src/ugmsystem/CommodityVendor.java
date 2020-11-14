@@ -55,6 +55,11 @@ public class CommodityVendor extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jButton4.setText("Edit");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
@@ -226,6 +231,10 @@ public class CommodityVendor extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

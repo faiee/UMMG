@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import static ugmsystem.Login.*;
 
 /**
  *
@@ -21,31 +22,21 @@ import javax.swing.JFileChooser;
  */
 public class Commodity {
 
-    private String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
-    private int Price;
-    private boolean State;
+    private static String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private static int Price;
+    private static String Price2;
+    private static boolean State;
     public static File Commodities = new File("Commodities.txt");
-    private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
-    private static String [] Ads=new String[300];
+    //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
 
-    public static String[] getAds() {
-        return Ads;
-    }
-
-    public static void setAds(String[] Ads) {
-        Commodity.Ads = Ads;
-    }
-
+    /*
     public static ArrayList<Commodity> getVendorCommodity() {
         return vendorCommodity;
     }
 
     public static void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
         Commodity.vendorCommodity = vendorCommodity;
-    }
-    
-   
-
+    }*/
     public Commodity(String ID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
 
@@ -59,12 +50,12 @@ public class Commodity {
 
     }
 
-    
     public Commodity() {
-    
+
     }
+
     public Commodity(String ID, String Name, String Description, String filePic, String sec, int Price) {
-        this.ID =  ID;   //Login.vendor.getId();
+        this.ID = Login.vendor.getId(); //ID;   
         this.Name = Name;
         this.Price = Price;
         this.Description = Description;
@@ -72,44 +63,20 @@ public class Commodity {
         this.sec = sec;
     }
 
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
-    public int getPrice() {
-        return Price;
-    }
-
-    public void setPrice(int Price) {
-        this.Price = Price;
-    }
-
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(String Quantity) {
-        this.Quantity = Quantity;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String Name) {
+    /*public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price) {
+        this.ID =  ID;   //Login.vendor.getId();
         this.Name = Name;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String Description) {
+        this.Price2 = Price;
         this.Description = Description;
+        this.filePic = filePic;
+        this.sec = sec;
+    }*/
+    public static String getPrice2() {
+        return Price2;
+    }
+
+    public static void setPrice2(String Price2) {
+        Commodity.Price2 = Price2;
     }
 
     public String getYearOfPurchase() {
@@ -120,12 +87,68 @@ public class Commodity {
         this.YearOfPurchase = YearOfPurchase;
     }
 
-    public boolean isState() {
+    public static String getID() {
+        return ID;
+    }
+
+    public static void setID(String ID) {
+        Commodity.ID = ID;
+    }
+
+    public static String getQuantity() {
+        return Quantity;
+    }
+
+    public static void setQuantity(String Quantity) {
+        Commodity.Quantity = Quantity;
+    }
+
+    public static String getName() {
+        return Name;
+    }
+
+    public static void setName(String Name) {
+        Commodity.Name = Name;
+    }
+
+    public static String getDescription() {
+        return Description;
+    }
+
+    public static void setDescription(String Description) {
+        Commodity.Description = Description;
+    }
+
+    public static String getFilePic() {
+        return filePic;
+    }
+
+    public static void setFilePic(String filePic) {
+        Commodity.filePic = filePic;
+    }
+
+    public static String getSec() {
+        return sec;
+    }
+
+    public static void setSec(String sec) {
+        Commodity.sec = sec;
+    }
+
+    public static int getPrice() {
+        return Price;
+    }
+
+    public static void setPrice(int Price) {
+        Commodity.Price = Price;
+    }
+
+    public static boolean isState() {
         return State;
     }
 
-    public void setState(boolean State) {
-        this.State = State;
+    public static void setState(boolean State) {
+        Commodity.State = State;
     }
 
     public static File getCommodities() {
@@ -137,21 +160,19 @@ public class Commodity {
     }
 
     public void createCommodity() {
-        // if (user.isGuest() == false) {
+
         try {
+            Login.currentUser.login(Login.currentUser.getId(),Login.currentUser.getPassword());
+            Login.currentUser.isGuest();
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
-            //Login.vendor.getVendorCommodity().add(this);
-            vendorCommodity.add(this);//عشان نجرب 
+            Vendor.getVendorCommodity().add(this);
+            //vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
             BufferedImage image;
-         //  image =ImageIO.read(filePic);
-                 
-         //  ImageIO.write(image, "jpg", new File (filePic));
-            
-            
+
             Write.flush();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
@@ -159,7 +180,6 @@ public class Commodity {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        //}
     }
 
     @Override
@@ -205,7 +225,7 @@ public class Commodity {
     }
 
     public void checkout() {
-
+        
     }
 
     public ChatUser ContactVendor(ChatUser Msg) {
@@ -217,7 +237,8 @@ public class Commodity {
 
         return null;
     }
-    
+
+    /*
     public void ReadFile(){
         
         String line;
@@ -238,12 +259,9 @@ public class Commodity {
         }  
         
         
-        
+      
         
     }
     
-   
-    
-    
-
+     */
 }

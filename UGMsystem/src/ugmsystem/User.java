@@ -84,32 +84,32 @@ public class User {
         this.id = id;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) throws IOException {
           
         this.password = password;
         Update(password);
         
     }
 
-    public void setfName(String fName) {
+    public void setfName(String fName) throws IOException {
       
         this.fName = fName;
         Update(fName);
     }
 
-    public void setlName(String lName) {
+    public void setlName(String lName) throws IOException {
      
         this.lName = lName;
         Update(lName);
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) throws IOException {
        
         this.phoneNumber = phoneNumber;
         Update(phoneNumber);
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws IOException {
        
         this.email = email;
         Update(email);
@@ -133,9 +133,9 @@ public class User {
     //Register Method: checks that no user account of same info exists 
     //then creates a new account for user and registers user's information in accounts file
     
-    public void register( ) {
+    public void register( ) throws IOException {
 
-         
+         fillArrayFromFile();
           if(noMatch())  {
               
         try {
@@ -237,9 +237,9 @@ public class User {
         return true;}
       
       
-    public void Update(String newUpdate){
+    public void Update(String newUpdate) throws IOException{
           String line;
-          
+          fillArrayFromFile();
          
         try {
         
@@ -251,14 +251,19 @@ public class User {
           }
                    FileWriter fileWriter = new FileWriter(accounts, false);
                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                   bufferedWriter.write("");
+                   bufferedWriter.close();
+                   
+                   FileWriter fileWriter2 = new FileWriter(accounts, true);
+                   BufferedWriter bufferedWriter2 = new BufferedWriter(fileWriter2);
                    
                    for (int i = 0; i < userInfo.size(); i++) {
                    
-                   bufferedWriter.write(userInfo.get(i).toString());
-                   bufferedWriter.write("\n");
-                   bufferedWriter.close();
+                   bufferedWriter2.write(userInfo.get(i).toString());
+                   bufferedWriter2.write("\n");
+                  
                     }
-                 
+                  bufferedWriter2.close();
                    
                    
         } catch (FileNotFoundException ex) {
@@ -276,8 +281,8 @@ public class User {
       }
       
       
-      //Methos that is called by login to read all user accounts from file into array
-      static private void fillArrayFromFile() throws FileNotFoundException, IOException{
+      //Method that is called by login to read all user accounts from file into array
+      static void fillArrayFromFile() throws FileNotFoundException, IOException{
           String line;
           
           BufferedReader read2 = new BufferedReader(new FileReader(accounts));
@@ -285,8 +290,9 @@ public class User {
           while((line=read2.readLine()) != null) {
             
             String s [] = line.split(",");
+            if(isUser(s[0]).equals("-1")){
             userInfo.add(new User(s[0].trim(), s[1].trim(), s[2].trim(), s[3].trim(), s[4].trim(), s[5].trim()));
-      
+            }
             }
           read2.close();
       }

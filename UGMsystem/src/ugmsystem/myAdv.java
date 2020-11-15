@@ -23,6 +23,14 @@ public class myAdv extends javax.swing.JFrame {
           setTitle("My Advertisments");
           initComponents();
           setLocationRelativeTo(null);
+          
+       //   if ( )
+          
+          
+          
+          
+          
+          
     }
 
     /**

@@ -198,7 +198,6 @@ public class Commodity {
                 bufferedWriter2.write("\n");
             }
             bufferedWriter2.close();
-            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import static ugmsystem.Login.*;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Commodity {
     public static File Commodities = new File("Commodities.txt");
     //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
 
-/*
+    /*
     public static ArrayList<Commodity> getVendorCommodity() {
         return vendorCommodity;
     }
@@ -36,9 +37,6 @@ public class Commodity {
     public static void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
         Commodity.vendorCommodity = vendorCommodity;
     }*/
-    
-   
-
     public Commodity(String ID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
 
@@ -52,18 +50,19 @@ public class Commodity {
 
     }
 
-    
     public Commodity() {
-    
+
     }
+
     public Commodity(String ID, String Name, String Description, String filePic, String sec, int Price) {
-        this.ID =  Login.vendor.getId(); //ID;   
+        this.ID = Login.vendor.getId(); //ID;   
         this.Name = Name;
         this.Price = Price;
         this.Description = Description;
         this.filePic = filePic;
         this.sec = sec;
     }
+
     /*public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price) {
         this.ID =  ID;   //Login.vendor.getId();
         this.Name = Name;
@@ -72,7 +71,6 @@ public class Commodity {
         this.filePic = filePic;
         this.sec = sec;
     }*/
-
     public static String getPrice2() {
         return Price2;
     }
@@ -80,7 +78,6 @@ public class Commodity {
     public static void setPrice2(String Price2) {
         Commodity.Price2 = Price2;
     }
-   
 
     public String getYearOfPurchase() {
         return YearOfPurchase;
@@ -154,8 +151,6 @@ public class Commodity {
         Commodity.State = State;
     }
 
- 
-
     public static File getCommodities() {
         return Commodities;
     }
@@ -165,8 +160,10 @@ public class Commodity {
     }
 
     public void createCommodity() {
-        // if (user.isGuest() == false) {
+
         try {
+            Login.currentUser.login(Login.currentUser.getId(),Login.currentUser.getPassword());
+            Login.currentUser.isGuest();
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
@@ -175,8 +172,7 @@ public class Commodity {
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
             BufferedImage image;
-        
-            
+
             Write.flush();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
@@ -184,7 +180,6 @@ public class Commodity {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        //}
     }
 
     @Override
@@ -230,7 +225,7 @@ public class Commodity {
     }
 
     public void checkout() {
-
+        
     }
 
     public ChatUser ContactVendor(ChatUser Msg) {
@@ -242,7 +237,7 @@ public class Commodity {
 
         return null;
     }
-    
+
     /*
     public void ReadFile(){
         
@@ -268,8 +263,5 @@ public class Commodity {
         
     }
     
-   */
-    
-    
-
+     */
 }

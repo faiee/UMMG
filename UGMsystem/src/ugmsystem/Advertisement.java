@@ -16,7 +16,8 @@ public class Advertisement extends javax.swing.JFrame {
     static Commodity commodities;
     static String file;
     static String sec;
-  static Advertisement color  = new Advertisement();
+    static Advertisement color = new Advertisement();
+
     /**
      * Creates new form Advertisement
      */
@@ -46,7 +47,7 @@ public class Advertisement extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         detail = new javax.swing.JTextArea();
-        pNum = new javax.swing.JLabel();
+        pID = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         SelPic = new javax.swing.JButton();
         secType = new javax.swing.JComboBox<>();
@@ -100,8 +101,8 @@ public class Advertisement extends javax.swing.JFrame {
         detail.setRows(5);
         jScrollPane1.setViewportView(detail);
 
-        pNum.setText(" ");
-        pNum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        pID.setText(" ");
+        pID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         jLabel3.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(222, 89, 0));
@@ -214,7 +215,7 @@ public class Advertisement extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(Pname, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(secType, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Pprice, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(vID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -241,7 +242,7 @@ public class Advertisement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(pNum, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pID, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -276,10 +277,10 @@ public class Advertisement extends javax.swing.JFrame {
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
         vID.setText(Login.vendor.getId());
-        //pNum.setText("103");//عشان نجرب الانترفيس
+        pID.setText(Commodity.getpID());
         sec = String.valueOf(secType.getSelectedItem());
-        commodities = new Commodity(vID.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
-        commodities.createCommodity();
+        commodities = new Commodity(vID.getText(), pID.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
+        commodities.createCommodity();      
     }//GEN-LAST:event_AddActionPerformed
 
     private void SelPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelPicActionPerformed
@@ -363,7 +364,7 @@ public class Advertisement extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JLabel pNum;
+    private javax.swing.JLabel pID;
     private javax.swing.JComboBox<String> secType;
     private javax.swing.JLabel vID;
     // End of variables declaration//GEN-END:variables

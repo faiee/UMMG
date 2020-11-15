@@ -22,9 +22,8 @@ import static ugmsystem.Login.*;
  */
 public class Commodity {
 
-    private static String ID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private static String vID, pID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
     private static int Price;
-    private static String Price2;
     private static boolean State;
     public static File Commodities = new File("Commodities.txt");
     //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
@@ -37,10 +36,11 @@ public class Commodity {
     public static void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
         Commodity.vendorCommodity = vendorCommodity;
     }*/
-    public Commodity(String ID, int Price, String Quantity, String Name, String Description,
+    public Commodity(String vID, String pID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
 
-        this.ID = Login.vendor.getId();
+        this.vID = Login.vendor.getId();
+        this.pID = generateProductID();
         this.Price = Price;
         this.Quantity = Quantity;
         this.Name = Name;
@@ -54,8 +54,9 @@ public class Commodity {
 
     }
 
-    public Commodity(String ID, String Name, int Price, String filePic, String sec, String Description) {
-        this.ID = Login.vendor.getId(); //ID;   
+    public Commodity(String vID, String pID, String Name, int Price, String filePic, String sec, String Description) {
+        this.vID = Login.vendor.getId();
+        this.pID = generateProductID();
         this.Name = Name;
         this.Price = Price;
         this.Description = Description;
@@ -71,12 +72,20 @@ public class Commodity {
         this.YearOfPurchase = YearOfPurchase;
     }
 
-    public static String getID() {
-        return ID;
+    public static String getvID() {
+        return vID;
     }
 
-    public static void setID(String ID) {
-        Commodity.ID = ID;
+    public static void setvID(String vID) {
+        Commodity.vID = vID;
+    }
+
+    public static String getpID() {
+        return pID;
+    }
+
+    public static void setpID(String pID) {
+        Commodity.pID = pID;
     }
 
     public static String getQuantity() {
@@ -144,12 +153,11 @@ public class Commodity {
     }
 
     public void createCommodity() {
-
         try {
             fillArrayComodityFromFile();
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
-            Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
+            Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
             Vendor.vendorCommodity.add(this);
             //vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
@@ -167,7 +175,7 @@ public class Commodity {
 
     @Override
     public String toString() {
-        return ID + "," + Name + "," + Price + "," + sec + "," + filePic + "," + Description + "\n";
+        return vID + "," + pID + "," + Name + "," + Price + "," + sec + "," + filePic + "," + Description + "\n";
     }
 
     public void addCommodity() {
@@ -211,10 +219,16 @@ public class Commodity {
         BufferedReader read = new BufferedReader(new FileReader(Commodities));
         while ((line = read.readLine()) != null) {
             String s[] = line.split(",");
-            Vendor.vendorCommodity.add(new Commodity(s[0].trim(), s[1].trim(), s[2].trim(), s[3].trim(), s[4].trim(), s[5].trim()));
-            //(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
+            Vendor.vendorCommodity.add(new Commodity(s[0].trim(), s[1].trim(), s[2].trim(), Integer.valueOf(s[3].trim()), s[4].trim(), s[5].trim(), s[6].trim()));
         }
         read.close();
+    }
+
+    private String generateProductID() {
+        String trim = "10";
+        int p = (int) (Math.random() * 100);
+        String pID = trim + p;
+        return pID;
     }
 
     public void deleteCommodity() {

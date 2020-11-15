@@ -63,14 +63,15 @@ public class Commodity {
         this.sec = sec;
     }
 
-    /*public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price) {
+    public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price2) {
         this.ID =  ID;   //Login.vendor.getId();
         this.Name = Name;
-        this.Price2 = Price;
+        this.Price2 = Price2;
         this.Description = Description;
         this.filePic = filePic;
         this.sec = sec;
-    }*/
+        }
+    
     public static String getPrice2() {
         return Price2;
     }
@@ -238,9 +239,9 @@ public class Commodity {
         return null;
     }
 
-    /*
+    
     public void ReadFile(){
-        
+        /*
         String line;
          try {
              
@@ -259,9 +260,9 @@ public class Commodity {
         }  
         
         
-      
+      */
         
     }
     
-     */
+     
 }

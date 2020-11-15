@@ -19,7 +19,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.io.*;
 import static ugmsystem.Commodity.Commodities;
+
 
 
 /**
@@ -27,11 +29,8 @@ import static ugmsystem.Commodity.Commodities;
  * @author fayaldosa
  */
 public class Sections extends javax.swing.JFrame {
-    private static ArrayList<String> Read = new ArrayList<String>();
 
-    private static String[] ReadNameOfTitle = new String[200];
-    private static String[] ReadNameOfSection = new String[200];
-    private static ArrayList<Commodity> BooksSectionAds = new ArrayList<Commodity>();
+    private static ArrayList<String> BooksSectionAds = new ArrayList<String>();
     private static ArrayList<String> ClothesSectionAds = new ArrayList<String>();
     private static ArrayList<String> FurnSectionAds = new ArrayList<String>();
  
@@ -54,27 +53,30 @@ public class Sections extends javax.swing.JFrame {
                    String [] SplitWords= line.split(",");
                         for (int i = 0; i < SplitWords.length; i++) {
                             
+                        
+                            
                             if(line.contains("Books")){
                                
-                                  
-                             BooksSectionAds.add(new Commodity(SplitWords[0],SplitWords[1],SplitWords[2],SplitWords[3],SplitWords[4],SplitWords[5]));
+                             
+                             BooksSectionAds.add(SplitWords[i].trim());
+                           
                                 
                             }
-                            Read.add(SplitWords[i].trim());
+                       
                             
                             if(line.contains("Clothes")){
-                          ClothesSectionAds.add(SplitWords[i].trim());
+                         ClothesSectionAds.add(SplitWords[i].trim());
                             } 
                             
                             if(line.contains("Furniture")){
-                          FurnSectionAds.add(SplitWords[i].trim());
+                        FurnSectionAds.add(SplitWords[i].trim());
                             } 
                              
-                            
+                        }   
                             
                         }
 
-                    }
+                    
                  read.close();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
@@ -124,6 +126,8 @@ public class Sections extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("Advertisement 1");
@@ -224,6 +228,11 @@ public class Sections extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel11.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -258,14 +267,20 @@ public class Sections extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(53, 53, 53)
                         .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -293,16 +308,20 @@ public class Sections extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
                     .addComponent(jButton12))
@@ -342,42 +361,68 @@ public class Sections extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
-        Commodity c = new Commodity();
-        Commodity c2 = new Commodity();
-        Commodity c3 = new Commodity();
-        Commodity c4 = new Commodity();
-        
-           c= BooksSectionAds.get(0);
-           c2= BooksSectionAds.get(1);
-           c3= BooksSectionAds.get(2);
-         
- String itemText = (String)jComboBox1.getSelectedItem( );
- 
-  if (itemText.equals("Books")){
-      
-      jLabel4.setText(c.getName());
-       jLabel5.setText(c2.getName());
-        jLabel6.setText(c3.getName());
+    
+          String itemText = (String) jComboBox1.getSelectedItem();
 
-         try {
-             
-             BufferedImage s= ImageIO.read(Sections.class.getResource("../Pictures/book2.png"));
-             BufferedImage s2= ImageIO.read(Sections.class.getResource("../Pictures/book1.png"));
-             BufferedImage s3= ImageIO.read(Sections.class.getResource("../Pictures/book3.png"));
-             Icon icon = new ImageIcon(s);
-             Icon icon2 = new ImageIcon(s2);
-             Icon icon3 = new ImageIcon(s3);
-            jLabel1.setIcon(icon);
-            jLabel7.setIcon(icon2);
-            jLabel8.setIcon(icon3);
-         } catch (IOException ex) {
-             Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
-         }
-      
-      
-      
-  }
+        if (itemText.equals("Books")) {
+
+            jLabel4.setText(BooksSectionAds.get(1));
+            jLabel5.setText(BooksSectionAds.get(7));
+            jLabel6.setText(BooksSectionAds.get(13));
         
+            if(BooksSectionAds.contains(BooksSectionAds.indexOf(19)) ){  // must be tested
+                 jLabel11.setText(BooksSectionAds.get(19));
+                
+            }
+
+            try {
+
+                BufferedImage s = ImageIO.read(Sections.class.getResource("../Pictures/book2.png"));
+                BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/book1.png"));
+                BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/book3.png"));
+                Icon icon = new ImageIcon(s);
+                Icon icon2 = new ImageIcon(s2);
+                Icon icon3 = new ImageIcon(s3);
+                jLabel1.setIcon(icon);
+                jLabel7.setIcon(icon2);
+                jLabel8.setIcon(icon3);
+                
+                  if(BooksSectionAds.contains(BooksSectionAds.indexOf(22))){  // must be tested
+                      ImageIcon icon4 = new ImageIcon (BooksSectionAds.get(22));
+                 jLabel10.setIcon(icon4);
+                
+            }
+                
+                
+                
+            } catch (IOException ex) {
+                Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        
+            if (itemText.equals("Clothes")) {
+
+            jLabel4.setText(ClothesSectionAds.get(1));
+            jLabel5.setText(ClothesSectionAds.get(7));
+            jLabel6.setText(ClothesSectionAds.get(13));
+
+            try {
+
+                BufferedImage s = ImageIO.read(Sections.class.getResource("../Pictures/d-1.png"));
+                BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/ch.png"));
+                BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/i.png"));
+                Icon icon = new ImageIcon(s);
+                Icon icon2 = new ImageIcon(s2);
+                Icon icon3 = new ImageIcon(s3);
+                jLabel1.setIcon(icon);
+                jLabel7.setIcon(icon2);
+                jLabel8.setIcon(icon3);
+            } catch (IOException ex) {
+                Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
         
         
         
@@ -417,15 +462,12 @@ public class Sections extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Sections().setVisible(true);
-         Commodity c= new Commodity();
-       
-                for (int i = 0; i < BooksSectionAds.size(); i++) {
-                 //   c=BooksSectionAds.get(i);
-                  //  System.out.println(c.getName());
-                }
                 
-                c=BooksSectionAds.get(3);
-                    System.out.println(c.getName());
+        
+                for (int i = 0; i < BooksSectionAds.size(); i++) {
+                    System.out.println(BooksSectionAds.get(i));
+                    
+                }
                 
             }
         });
@@ -442,6 +484,8 @@ public class Sections extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

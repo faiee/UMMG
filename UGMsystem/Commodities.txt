@@ -1,0 +1,4 @@
+33536666,1028,Harry Potter,80,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\book2.png,The first three parts of harry potter with a great price.,Books
+33536666,1070,Harry Potter,80,The first three parts of harry potter with a great price.,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\book2.png,Books
+33536666,1097,red dress,21,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\d-1.png,long red dress,Clothes
+33536666,1023,harry potter,80,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\book1.png,three books,Books

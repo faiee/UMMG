@@ -154,7 +154,7 @@ public class Commodity {
 
     public void createCommodity() {
         try {
-            fillArrayComodityFromFile();
+            //fillArrayComodityFromFile();
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");

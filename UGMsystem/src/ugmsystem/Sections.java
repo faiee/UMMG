@@ -55,8 +55,10 @@ public class Sections extends javax.swing.JFrame {
                         for (int i = 0; i < SplitWords.length; i++) {
                             
                             if(line.contains("Books")){
-                       
+                               
+                                  
                              BooksSectionAds.add(new Commodity(SplitWords[0],SplitWords[1],SplitWords[2],SplitWords[3],SplitWords[4],SplitWords[5]));
+                                
                             }
                             Read.add(SplitWords[i].trim());
                             
@@ -418,9 +420,12 @@ public class Sections extends javax.swing.JFrame {
          Commodity c= new Commodity();
        
                 for (int i = 0; i < BooksSectionAds.size(); i++) {
-                    c=BooksSectionAds.get(i);
-                    System.out.println(c.getName());
+                 //   c=BooksSectionAds.get(i);
+                  //  System.out.println(c.getName());
                 }
+                
+                c=BooksSectionAds.get(3);
+                    System.out.println(c.getName());
                 
             }
         });

@@ -347,7 +347,7 @@ public class Sections extends javax.swing.JFrame {
         Commodity c3 = new Commodity();
         Commodity c4 = new Commodity();
         
-               c= BooksSectionAds.get(0);
+           c= BooksSectionAds.get(0);
            c2= BooksSectionAds.get(1);
            c3= BooksSectionAds.get(2);
          

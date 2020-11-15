@@ -385,13 +385,14 @@ public class Register extends javax.swing.JFrame {
                                                 vendor = new Vendor(Login.currentUser.getId(),Login.currentUser.getPassword(), Login.currentUser.getfName(),
                                                         Login.currentUser.getlName(),Login.currentUser.getPhoneNumber(),Login.currentUser.getEmail());
                                               
-                                                Login.currentUser.register();
+                                                if(Login.currentUser.register() == -1) {JOptionPane.showMessageDialog(this, "Account With Same Inforamtion exits!");}
+                                                else{
                                                 if(Login.currentUser != null){
                                                    MyAccount.color.getContentPane().setBackground(Color.WHITE);
                                                    MyAccount.color.setVisible(true);
                                                    this.setVisible(false);
                                                    JOptionPane.showMessageDialog(this, "Sucessfully Registered!");
-                                                }
+                                                }}
                                               
                                               }else{JOptionPane.showMessageDialog(this, "You have not Agreed to terms and Conditions!");}
                                             } else{JOptionPane.showMessageDialog(this, "Please Enter a Correct Phone Number!");}

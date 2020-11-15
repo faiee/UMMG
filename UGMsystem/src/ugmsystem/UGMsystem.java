@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import static ugmsystem.User.accounts;
+import static ugmsystem.User.fillArrayFromFile;
 
 /**
  *
@@ -26,6 +27,11 @@ public class UGMsystem {
      */
     public static void main(String[] args) throws IOException {
     
+        fillArrayFromFile();
+        System.out.println("here "+User.userInfo.size());
+        for (int i = 0; i < User.userInfo.size(); i++) {
+            System.out.println(" User.userInfo.get(i); "+  User.userInfo.get(i));
+        }
        
     }
     

@@ -1,4 +1,4 @@
 100,Red dress,25,Clothes,nullC:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\d-1.png,Long red dress for age 3
 101,Harry Potter,300,Books,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book2.png,All harry potter novels with a great price.
-102,Crime & punshiment,80,Books,null/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book1.png,One of the greatest novels ever.
-103,Brothers Karamazov,90,Books,null/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book3.png,Brothers Karamazov part 1 plus part 2 with a great price.
+102,Crime & punshiment,80,Books,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book1.png,One of the greatest novels ever.
+103,Brothers Karamazov,90,Books,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book3.png,Brothers Karamazov part 1 plus part 2 with a great price.

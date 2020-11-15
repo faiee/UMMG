@@ -1,4 +1,9 @@
-33536666,1028,Harry Potter,80,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\book2.png,The first three parts of harry potter with a great price.,Books
-33536666,1070,Harry Potter,80,The first three parts of harry potter with a great price.,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\book2.png,Books
-33536666,1097,red dress,21,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\d-1.png,long red dress,Clothes
-33536666,1023,harry potter,80,C:\Users\Jae\Desktop\UMMG\UGMsystem\src\Pictures\book1.png,three books,Books
+33536666,1070,Red Dress,500,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/d-1.png,Used red dress size: s color: red. Brand: prada.,Clothes
+33531166,1061,Harry Potter,150,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book2.png,The first three parts of harry potter novels with a great pricece,Books
+33536666,101,Crime & punshiment,130,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book1.png,The two parts of crime&punshiment for sale.,Books
+33531166,1079,Brother karamazov,180,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book3.png,Brother karamazov novels for sale.,Books
+33536666,1084,Vans shoes,60,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/shoes.png,Vans shoes in a good condation for sale. size:39,Clothes
+33531166,1020,Marvel t-shirt,80,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/m.png,Handmaid marval t-shirt size:M,Clothes
+33536996,1069,white chair,300,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/ch.png,Handmaid white chair with guarantee for 3 years.,Furniture
+33536996,1016,led lamp,70,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/l.png,used led lamp for sale.,Furniture
+33536996,104,grey sofa,400,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/s.png,Grey sofa used for only one week.,Furniture

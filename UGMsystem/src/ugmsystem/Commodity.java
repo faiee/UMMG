@@ -26,6 +26,13 @@ public class Commodity {
     private static int Price;
     private static boolean State;
     public static File Commodities = new File("Commodities.txt");
+    
+      public static ArrayList<String> BooksSectionAds = new ArrayList<String>();
+    public static ArrayList<String> ClothesSectionAds = new ArrayList<String>();
+    public static ArrayList<String> FurnSectionAds = new ArrayList<String>();
+
+     public static ArrayList<String> AdsForVendor = new ArrayList<String>();
+    
     //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
 
     /*
@@ -273,29 +280,152 @@ public class Commodity {
 
         return null;
     }
+    
 
-    public void ReadFile() {
-        /*
+    public static ArrayList<String> getClothesSectionAds() {
+
         String line;
-         try {
-             
-        
-           BufferedReader read = new BufferedReader(new FileReader(Commodities));   
-            while((line=read.readLine()) != null) {
-                
-               String SplitWords[]= line.split(" ,");  
-               Ads=SplitWords.clone();
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Commodities));
+            while ((line = read.readLine()) != null) {
+
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
+
+
+                    if (line.contains("Clothes")) {
+                        ClothesSectionAds.add(SplitWords[i].trim());
+                    }
+
+                    if (line.contains("Furniture")) {
+                        FurnSectionAds.add(SplitWords[i].trim());
+                    }
+
+                }
+
             }
-           
+
+            read.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        }  
-        
-        
-         */
+        }
+
+        return ClothesSectionAds;
 
     }
+    
+      public static ArrayList<String> getBooksSectionAds() {
+     
+            String line;
+          
+                try {
+
+                    BufferedReader read = new BufferedReader(new FileReader(Commodities));
+                    while ((line = read.readLine()) != null) {
+
+                   String [] SplitWords= line.split(",");
+                        for (int i = 0; i < SplitWords.length; i++) {
+                            
+                        
+                            
+                            if(line.contains("Books")){
+                               
+                             
+                             BooksSectionAds.add(SplitWords[i].trim());
+                           
+                                
+                            }
+                       
+                        
+                             
+                        }   
+                            
+                        }
+
+                    
+                 read.close();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+
+     
+                
+        
+               return BooksSectionAds;
+
+        
+        
+        
+
+    }
+    
+     public static ArrayList<String> getFurnSectionAds() {
+
+        String line;
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Commodities));
+            while ((line = read.readLine()) != null) {
+
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
+
+
+                    if (line.contains("Furniture")) {
+                        FurnSectionAds.add(SplitWords[i].trim());
+                    }
+
+                }
+
+            }
+
+            read.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return FurnSectionAds;
+
+    }
+    
+     public static ArrayList<String> getAdsForVendor() {
+
+        String line;
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Commodities));
+            while ((line = read.readLine()) != null) {
+
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
+
+                    AdsForVendor.add(SplitWords[i].trim());
+
+                }
+
+            }
+
+            read.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return AdsForVendor;
+
+    }
+    
 
 }

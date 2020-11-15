@@ -6,13 +6,14 @@
 package ugmsystem;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 /**
  *
  * @author reemalsolami
  */
 public class myAdv extends javax.swing.JFrame {
-
+ public static String [] Title= new String[400];
     /**
      * Creates new form myAdv
      */
@@ -24,9 +25,28 @@ public class myAdv extends javax.swing.JFrame {
           initComponents();
           setLocationRelativeTo(null);
           
-       //   if ( )
+          
+          
+    
+            
+           for (int i = 0; i < Commodity.getAdsForVendor().size(); i++) {
            
-    }
+              if  (Commodity.getAdsForVendor().get(i).contains(Login.vendor.getId())){
+                  
+               Title[i]=Commodity.getAdsForVendor().get(i+1);
+              }
+                
+           }
+            
+            
+         //  jLabel4.setText(Title[1]);
+            
+            
+            
+            
+        }
+           
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -258,6 +278,10 @@ public class myAdv extends javax.swing.JFrame {
             
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
+                
+                System.out.println(Commodity.getAdsForVendor());
+                System.out.println(Title[1]);
+                
             }
         });
     }

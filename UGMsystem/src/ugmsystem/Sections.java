@@ -30,10 +30,7 @@ import static ugmsystem.Commodity.Commodities;
  */
 public class Sections extends javax.swing.JFrame {
 
-    private static ArrayList<String> BooksSectionAds = new ArrayList<String>();
-    private static ArrayList<String> ClothesSectionAds = new ArrayList<String>();
-    private static ArrayList<String> FurnSectionAds = new ArrayList<String>();
- 
+ static Sections color = new Sections();
     /**
      * Creates new form Books
      */
@@ -43,56 +40,6 @@ public class Sections extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     
            
-            String line;
-          
-                try {
-
-                    BufferedReader read = new BufferedReader(new FileReader(Commodities));
-                    while ((line = read.readLine()) != null) {
-
-                   String [] SplitWords= line.split(",");
-                        for (int i = 0; i < SplitWords.length; i++) {
-                            
-                        
-                            
-                            if(line.contains("Books")){
-                               
-                             
-                             BooksSectionAds.add(SplitWords[i].trim());
-                           
-                                
-                            }
-                       
-                            
-                            if(line.contains("Clothes")){
-                         ClothesSectionAds.add(SplitWords[i].trim());
-                            } 
-                            
-                            if(line.contains("Furniture")){
-                        FurnSectionAds.add(SplitWords[i].trim());
-                            } 
-                             
-                        }   
-                            
-                        }
-
-                    
-                 read.close();
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-
-     
-                
-        
-               
-
-        
-        
-        
     }
 
     /**
@@ -110,7 +57,6 @@ public class Sections extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
-        jScrollBar1 = new javax.swing.JScrollBar();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -281,8 +227,7 @@ public class Sections extends javax.swing.JFrame {
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(53, 53, 53)
-                        .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(68, 68, 68)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -300,10 +245,9 @@ public class Sections extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(44, 44, 44)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,15 +256,14 @@ public class Sections extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(33, 33, 33)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
@@ -361,19 +304,20 @@ public class Sections extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
+
     
           String itemText = (String) jComboBox1.getSelectedItem();
 
         if (itemText.equals("Books")) {
 
-            jLabel4.setText(BooksSectionAds.get(1));
-            jLabel5.setText(BooksSectionAds.get(7));
-            jLabel6.setText(BooksSectionAds.get(13));
+            jLabel4.setText(Commodity.getBooksSectionAds().get(2));
+            jLabel5.setText(Commodity.getBooksSectionAds().get(9));
+            jLabel6.setText(Commodity.getBooksSectionAds().get(16));
         
-            if(BooksSectionAds.contains(BooksSectionAds.indexOf(19)) ){  // must be tested
-                 jLabel11.setText(BooksSectionAds.get(19));
+           if(Commodity.getBooksSectionAds().contains(Commodity.getBooksSectionAds().indexOf(23)) ){  // must be tested
+                jLabel11.setText(Commodity.getBooksSectionAds().get(23));
                 
-            }
+           }
 
             try {
 
@@ -387,8 +331,8 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                  if(BooksSectionAds.contains(BooksSectionAds.indexOf(22))){  // must be tested
-                      ImageIcon icon4 = new ImageIcon (BooksSectionAds.get(22));
+                  if(Commodity.getBooksSectionAds().contains(Commodity.getBooksSectionAds().indexOf(25))){  // must be tested
+                      ImageIcon icon4 = new ImageIcon (Commodity.getBooksSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
             }
@@ -401,29 +345,83 @@ public class Sections extends javax.swing.JFrame {
 
         }
         
+        
+        
             if (itemText.equals("Clothes")) {
 
-            jLabel4.setText(ClothesSectionAds.get(1));
-            jLabel5.setText(ClothesSectionAds.get(7));
-            jLabel6.setText(ClothesSectionAds.get(13));
+            jLabel4.setText(Commodity.getClothesSectionAds().get(2));
+            jLabel5.setText(Commodity.getClothesSectionAds().get(9));
+            jLabel6.setText(Commodity.getClothesSectionAds().get(16));
+            
+            
+            if(Commodity.getClothesSectionAds().contains(Commodity.getClothesSectionAds().indexOf(23)) ){  // must be tested
+                 jLabel11.setText(Commodity.getClothesSectionAds().get(23));
+                
+            }
 
             try {
 
                 BufferedImage s = ImageIO.read(Sections.class.getResource("../Pictures/d-1.png"));
-                BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/ch.png"));
-                BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/i.png"));
+                BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/shoes.png"));
+                BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/m.png"));
                 Icon icon = new ImageIcon(s);
                 Icon icon2 = new ImageIcon(s2);
                 Icon icon3 = new ImageIcon(s3);
                 jLabel1.setIcon(icon);
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
+                
+                      if(Commodity.getClothesSectionAds().contains(Commodity.getClothesSectionAds().indexOf(25))){  // must be tested
+                      ImageIcon icon4 = new ImageIcon (Commodity.getClothesSectionAds().get(25));
+                 jLabel10.setIcon(icon4);
+                
+            }
+                
+                
+                
             } catch (IOException ex) {
                 Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
         
+               if (itemText.equals("Furniture")) {
+
+            jLabel4.setText(Commodity.getFurnSectionAds().get(2));
+            jLabel5.setText(Commodity.getFurnSectionAds().get(9));
+            jLabel6.setText(Commodity.getFurnSectionAds().get(16));
+            
+            
+            if(Commodity.getFurnSectionAds().contains(Commodity.getFurnSectionAds().indexOf(23)) ){  // must be tested
+                 jLabel11.setText(Commodity.getFurnSectionAds().get(23));
+                
+            }
+
+            try {
+
+                BufferedImage s = ImageIO.read(Sections.class.getResource("../Pictures/ch.png"));
+                BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/l.png"));
+                BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/s.png"));
+                Icon icon = new ImageIcon(s);
+                Icon icon2 = new ImageIcon(s2);
+                Icon icon3 = new ImageIcon(s3);
+                jLabel1.setIcon(icon);
+                jLabel7.setIcon(icon2);
+                jLabel8.setIcon(icon3);
+                
+                      if(Commodity.getFurnSectionAds().contains(Commodity.getFurnSectionAds().indexOf(25))){  // must be tested
+                      ImageIcon icon4 = new ImageIcon (Commodity.getFurnSectionAds().get(25));
+                 jLabel10.setIcon(icon4);
+                
+            }
+                
+                
+                
+            } catch (IOException ex) {
+                Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
         
         
         
@@ -463,12 +461,7 @@ public class Sections extends javax.swing.JFrame {
             public void run() {
                 new Sections().setVisible(true);
                 
-        
-                for (int i = 0; i < BooksSectionAds.size(); i++) {
-                    System.out.println(BooksSectionAds.get(i));
-                    
-                }
-                
+  
             }
         });
     }
@@ -496,7 +489,6 @@ public class Sections extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

@@ -133,7 +133,7 @@ public class User {
     //Register Method: checks that no user account of same info exists 
     //then creates a new account for user and registers user's information in accounts file
     
-    public void register( ) throws IOException {
+    public int register( ) throws IOException {
 
          fillArrayFromFile();
           if(noMatch())  {
@@ -159,7 +159,8 @@ public class User {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-          } 
+         return 1;
+          } else{ return -1;} 
         
     } 
 

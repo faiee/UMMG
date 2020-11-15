@@ -5,6 +5,7 @@
  */
 package ugmsystem;
 import java.awt.Color;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -324,7 +325,9 @@ public class MyAccount extends javax.swing.JFrame {
                          
                       if(jTextField6.getText().contains("@") && jTextField6.getText().contains(".com")){
                     
-                     Login.currentUser.setPassword(jTextField5.getText().trim());
+                          try {
+                              Login.currentUser.setPassword(jTextField5.getText().trim());
+                         
                      Login.currentUser.setfName(screen[0].trim());
                      Login.currentUser.setlName(screen[1].trim());
                      Login.currentUser.setPhoneNumber(jTextField4.getText().trim());
@@ -333,7 +336,9 @@ public class MyAccount extends javax.swing.JFrame {
                      
                      JOptionPane.showMessageDialog(this, "Information Update Success!");
                      
-                     
+                      } catch (IOException ex) {
+                              Logger.getLogger(MyAccount.class.getName()).log(Level.SEVERE, null, ex);
+                          }
                      jLabel5.setText(Login.currentUser.getId());
                      jTextField3.setText(Login.currentUser.getfName()+" "+ Login.currentUser.getlName());
                      jTextField4.setText(Login.currentUser.getPhoneNumber());

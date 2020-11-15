@@ -16,7 +16,7 @@ public class Advertisement extends javax.swing.JFrame {
     static Commodity commodities;
     static String file;
     static String sec;
-
+  static Advertisement color  = new Advertisement();
     /**
      * Creates new form Advertisement
      */

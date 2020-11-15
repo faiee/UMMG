@@ -63,23 +63,6 @@ public class Commodity {
         this.sec = sec;
     }
 
-    public Commodity(String ID, String Name, String Price2, String filePic, String sec, String Description) {
-        this.ID = ID;   //Login.vendor.getId();
-        this.Name = Name;
-        this.Price2 = Price2;
-        this.Description = Description;
-        this.filePic = filePic;
-        this.sec = sec;
-    }
-
-    public static String getPrice2() {
-        return Price2;
-    }
-
-    public static void setPrice2(String Price2) {
-        Commodity.Price2 = Price2;
-    }
-
     public String getYearOfPurchase() {
         return YearOfPurchase;
     }

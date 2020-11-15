@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ugmsystem;
+
 import java.awt.Color;
 
 /**
@@ -11,6 +12,7 @@ import java.awt.Color;
  * @author Jae
  */
 public class Advertisement extends javax.swing.JFrame {
+
     static Commodity commodities;
     static String file;
     static String sec;
@@ -260,8 +262,8 @@ public class Advertisement extends javax.swing.JFrame {
         pNum.setText(Login.vendor.getId());
         //pNum.setText("103");//عشان نجرب الانترفيس
         sec = String.valueOf(secType.getSelectedItem());
-        commodities= new Commodity(pNum.getText(),Pname.getText(),detail.getText(),file,sec,Integer.valueOf(Pprice.getText()));
-        commodities.createCommodity();       
+        commodities = new Commodity(pNum.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
+        commodities.createCommodity();
     }//GEN-LAST:event_AddActionPerformed
 
     private void SelPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelPicActionPerformed

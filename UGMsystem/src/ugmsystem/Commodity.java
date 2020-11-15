@@ -54,7 +54,7 @@ public class Commodity {
 
     }
 
-    public Commodity(String ID, String Name, String Description, String filePic, String sec, int Price) {
+    public Commodity(String ID, String Name, int Price, String filePic, String sec, String Description) {
         this.ID = Login.vendor.getId(); //ID;   
         this.Name = Name;
         this.Price = Price;
@@ -63,15 +63,15 @@ public class Commodity {
         this.sec = sec;
     }
 
-    public Commodity(String ID, String Name, String Description, String filePic, String sec, String Price2) {
-        this.ID =  ID;   //Login.vendor.getId();
+    public Commodity(String ID, String Name, String Price2, String filePic, String sec, String Description) {
+        this.ID = ID;   //Login.vendor.getId();
         this.Name = Name;
         this.Price2 = Price2;
         this.Description = Description;
         this.filePic = filePic;
         this.sec = sec;
-        }
-    
+    }
+
     public static String getPrice2() {
         return Price2;
     }
@@ -163,12 +163,11 @@ public class Commodity {
     public void createCommodity() {
 
         try {
-            Login.currentUser.login(Login.currentUser.getId(),Login.currentUser.getPassword());
-            Login.currentUser.isGuest();
+            fillArrayComodityFromFile();
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
-            Vendor.getVendorCommodity().add(this);
+            Vendor.vendorCommodity.add(this);
             //vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
             //System.out.println(vendorCommodity.toString());
@@ -192,8 +191,48 @@ public class Commodity {
 
     }
 
-    public void editCommodity() {
+    public void editCommodity(String newUpdate) throws IOException {
+        String line;
+        fillArrayComodityFromFile();
+        try {
+            for (int i = 0; i < Vendor.vendorCommodity.size(); i++) {
+                line = Vendor.vendorCommodity.get(i).toString();
+                if (line.contains(newUpdate.trim())) {
+                    Vendor.vendorCommodity.set(i, this);
+                }
+            }
+            FileWriter fileWriter = new FileWriter(Commodities, false);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("");
+            bufferedWriter.close();
 
+            FileWriter fileWriter2 = new FileWriter(Commodities, true);
+            BufferedWriter bufferedWriter2 = new BufferedWriter(fileWriter2);
+
+            for (int i = 0; i < Vendor.vendorCommodity.size(); i++) {
+
+                bufferedWriter2.write(Vendor.vendorCommodity.get(i).toString());
+                bufferedWriter2.write("\n");
+            }
+            bufferedWriter2.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    static void fillArrayComodityFromFile() throws FileNotFoundException, IOException {
+        String line;
+        BufferedReader read = new BufferedReader(new FileReader(Commodities));
+        while ((line = read.readLine()) != null) {
+            String s[] = line.split(",");
+            Vendor.vendorCommodity.add(new Commodity(s[0].trim(), s[1].trim(), s[2].trim(), s[3].trim(), s[4].trim(), s[5].trim()));
+            //(this.ID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
+        }
+        read.close();
     }
 
     public void deleteCommodity() {
@@ -226,7 +265,7 @@ public class Commodity {
     }
 
     public void checkout() {
-        
+
     }
 
     public ChatUser ContactVendor(ChatUser Msg) {
@@ -239,8 +278,7 @@ public class Commodity {
         return null;
     }
 
-    
-    public void ReadFile(){
+    public void ReadFile() {
         /*
         String line;
          try {
@@ -260,9 +298,8 @@ public class Commodity {
         }  
         
         
-      */
-        
+         */
+
     }
-    
-     
+
 }

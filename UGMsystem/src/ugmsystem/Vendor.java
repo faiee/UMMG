@@ -13,7 +13,7 @@ import java.util.*;
  * @author reemalsolami
  */
 public class Vendor extends User{
-    private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
+    public static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private int rate;
 
     public Vendor( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {

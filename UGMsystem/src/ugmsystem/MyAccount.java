@@ -325,12 +325,16 @@ public class MyAccount extends javax.swing.JFrame {
                          
                       if(jTextField6.getText().contains("@") && jTextField6.getText().contains(".com")){
                     
-                          try {
-                              Login.currentUser.setPassword(jTextField5.getText().trim());
+                   try 
+                   {
+                     Login.currentUser.setPassword(jTextField5.getText().trim());
                          
                      Login.currentUser.setfName(screen[0].trim());
+                     
                      Login.currentUser.setlName(screen[1].trim());
+                     
                      Login.currentUser.setPhoneNumber(jTextField4.getText().trim());
+                     
                      Login.currentUser.setEmail(jTextField6.getText().trim()); 
                      
                      

@@ -160,6 +160,7 @@ public class User {
         }
         
          return 1;
+         
           } else{ return -1;} 
         
     } 
@@ -242,14 +243,15 @@ public class User {
           String line;
           fillArrayFromFile();
          
-        try {
+        try 
+        {
         
           for (int i = 0; i < userInfo.size(); i++)  {
             line= userInfo.get(i).toString();
              if(line.contains(newUpdate.trim())) {
                  userInfo.set(i, this);
              }    
-          }
+          } 
                    FileWriter fileWriter = new FileWriter(accounts, false);
                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
                    bufferedWriter.write("");

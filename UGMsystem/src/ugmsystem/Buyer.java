@@ -51,7 +51,7 @@ public class Buyer extends User {
     
     public static Buyer findUser( String userId) throws IOException{
          
-       
+           fillArrayFromFile();
            String line;
            String [] setter;
        

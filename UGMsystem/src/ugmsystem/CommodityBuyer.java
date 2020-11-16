@@ -127,7 +127,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 try {
 
-                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/ch.png"));
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/d-1.png"));
 
                     Icon icon = new ImageIcon(s);
 
@@ -207,7 +207,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 try {
 
-                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/d-1.png"));
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/ch.png"));
 
                     Icon icon = new ImageIcon(s);
 
@@ -227,7 +227,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 try {
 
-                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/shoes.png"));
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/l.png"));
 
                     Icon icon = new ImageIcon(s2);
 
@@ -248,7 +248,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 try {
 
-                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/m.png"));
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/s.png"));
 
                     Icon icon = new ImageIcon(s2);
 

@@ -77,7 +77,7 @@ public class PaymentInfo extends javax.swing.JFrame {
         jLabel6.setText("CVV Code:");
 
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setText("  Valid Card Number");
+        jTextField1.setText("Valid Card Number");
         jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +86,7 @@ public class PaymentInfo extends javax.swing.JFrame {
         });
 
         jTextField2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField2.setText("  MM");
+        jTextField2.setText("MM");
         jTextField2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +95,7 @@ public class PaymentInfo extends javax.swing.JFrame {
         });
 
         jTextField3.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField3.setText("   YY");
+        jTextField3.setText("YY");
         jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class PaymentInfo extends javax.swing.JFrame {
         });
 
         jTextField4.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField4.setText(" CVV");
+        jTextField4.setText("CVV");
         jTextField4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

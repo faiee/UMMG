@@ -5,11 +5,20 @@
  */
 package ugmsystem;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fayaldosa
  */
 public class CommodityVendor extends javax.swing.JFrame {
+
+    static CommodityVendor color = new CommodityVendor();
+   // public static String[] Names = new String[100];
 
     /**
      * Creates new form Commodity
@@ -31,7 +40,7 @@ public class CommodityVendor extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        saveInfo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -49,7 +58,7 @@ public class CommodityVendor extends javax.swing.JFrame {
         Pprice = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Pdetail = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        pName = new javax.swing.JComboBox<>();
         Pshow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,11 +67,11 @@ public class CommodityVendor extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/logo.jpg"))); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
-        jButton4.setText("Edit");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        saveInfo.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
+        saveInfo.setText("Save");
+        saveInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                saveInfoActionPerformed(evt);
             }
         });
 
@@ -158,10 +167,15 @@ public class CommodityVendor extends javax.swing.JFrame {
         Pdetail.setRows(5);
         jScrollPane1.setViewportView(Pdetail);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose" }));
+        pName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose" }));
 
         Pshow.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         Pshow.setText("Show");
+        Pshow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PshowActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -190,7 +204,7 @@ public class CommodityVendor extends javax.swing.JFrame {
                             .addComponent(Pname)
                             .addComponent(Pprice)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(Pshow))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -200,7 +214,7 @@ public class CommodityVendor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(saveInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane1))
                 .addGap(36, 36, 36))
         );
@@ -218,7 +232,7 @@ public class CommodityVendor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Pshow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1))
+                    .addComponent(pName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -236,7 +250,7 @@ public class CommodityVendor extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(saveInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -270,9 +284,15 @@ public class CommodityVendor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void saveInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        //Login.currentUser.setPhoneNumber(jTextField4.getText().trim());
+        if(Pprice.getText().length()==10 && Pprice.getText().matches("\\d+")){
+        Commodity.setName(Pname.getText());
+        Commodity.setPrice(Integer.valueOf(Pprice.getText()));
+        Commodity.setDescription(Pdetail.getText());
+        }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
+    }//GEN-LAST:event_saveInfoActionPerformed
 
     private void PnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PnameActionPerformed
         // TODO add your handling code here:
@@ -281,6 +301,16 @@ public class CommodityVendor extends javax.swing.JFrame {
     private void PpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PpriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PpriceActionPerformed
+
+    private void PshowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PshowActionPerformed
+            // TODO add your handling code here:
+          //   if (Commodity.getAdsNamesForVendor().equals(Login.vendor.getId())){
+           // Commodity.getAdsNamesForVendor();
+            //Commodity.fillArrayComodityFromFile();
+           //  }
+        
+        
+    }//GEN-LAST:event_PshowActionPerformed
 
     /**
      * @param args the command line arguments
@@ -325,12 +355,10 @@ public class CommodityVendor extends javax.swing.JFrame {
     private javax.swing.JTextField Pprice;
     private javax.swing.JButton Pshow;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -341,5 +369,7 @@ public class CommodityVendor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> pName;
+    private javax.swing.JButton saveInfo;
     // End of variables declaration//GEN-END:variables
 }

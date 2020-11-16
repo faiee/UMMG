@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author reemalsolami
  */
 public class myAdv extends javax.swing.JFrame {
- public static String [] Title= new String[400];
+ //public static String [] Title= new String[400];
     /**
      * Creates new form myAdv
      */
@@ -26,7 +26,7 @@ public class myAdv extends javax.swing.JFrame {
           setLocationRelativeTo(null);
           
           
-          
+          /*
     
             
            for (int i = 0; i < Commodity.getAdsForVendor().size(); i++) {
@@ -38,7 +38,7 @@ public class myAdv extends javax.swing.JFrame {
                 
            }
             
-            
+            */
          //  jLabel4.setText(Title[1]);
             
             
@@ -230,6 +230,9 @@ public class myAdv extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        CommodityVendor.color.getContentPane().setBackground(Color.WHITE);
+        CommodityVendor.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -279,8 +282,8 @@ public class myAdv extends javax.swing.JFrame {
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
                 
-                System.out.println(Commodity.getAdsForVendor());
-                System.out.println(Title[1]);
+               // System.out.println(Commodity.getAdsForVendor());
+               // System.out.println(Title[1]);
                 
             }
         });

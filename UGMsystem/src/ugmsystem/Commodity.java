@@ -26,13 +26,14 @@ public class Commodity {
     private static int Price;
     private static boolean State;
     public static File Commodities = new File("Commodities.txt");
-    
-      public static ArrayList<String> BooksSectionAds = new ArrayList<String>();
+
+    public static ArrayList<String> BooksSectionAds = new ArrayList<String>();
     public static ArrayList<String> ClothesSectionAds = new ArrayList<String>();
     public static ArrayList<String> FurnSectionAds = new ArrayList<String>();
 
-     public static ArrayList<String> AdsForVendor = new ArrayList<String>();
-    
+    public static ArrayList<String> AdsForVendor = new ArrayList<String>();
+    public static String[] AdsNamesForVendor = new String[100];
+
     //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
 
     /*
@@ -221,15 +222,26 @@ public class Commodity {
 
     }
 
-    static void fillArrayComodityFromFile() throws FileNotFoundException, IOException {
-        String line;
-        BufferedReader read = new BufferedReader(new FileReader(Commodities));
-        while ((line = read.readLine()) != null) {
-            String s[] = line.split(",");
-            Vendor.vendorCommodity.add(new Commodity(s[0].trim(), s[1].trim(), s[2].trim(), Integer.valueOf(s[3].trim()), s[4].trim(), s[5].trim(), s[6].trim()));
+    static void fillArrayComodityFromFile()  {
+        /* String[] NAMES = new String[10];
+
+        if (AdsForVendor.contains(Login.vendor.getId())) {
+            for (int i = 0; i < NAMES.length; i++) {
+                NAMES[i] = AdsForVendor.get(2);
+                System.out.println(Arrays.toString(NAMES));
+            }
+        }*/
+        String n = null;
+       
+        if (getAdsForVendor().contains(Login.vendor.getId())) {
+                        n = getAdsForVendor().get(2);
+                        System.out.println(n);
+                    }
+           
         }
-        read.close();
-    }
+
+//OUTPUT JUST RED DRESS 
+  
 
     private String generateProductID() {
         String trim = "10";
@@ -280,7 +292,6 @@ public class Commodity {
 
         return null;
     }
-    
 
     public static ArrayList<String> getClothesSectionAds() {
 
@@ -293,7 +304,6 @@ public class Commodity {
 
                 String[] SplitWords = line.split(",");
                 for (int i = 0; i < SplitWords.length; i++) {
-
 
                     if (line.contains("Clothes")) {
                         ClothesSectionAds.add(SplitWords[i].trim());
@@ -317,56 +327,8 @@ public class Commodity {
         return ClothesSectionAds;
 
     }
-    
-      public static ArrayList<String> getBooksSectionAds() {
-     
-            String line;
-          
-                try {
 
-                    BufferedReader read = new BufferedReader(new FileReader(Commodities));
-                    while ((line = read.readLine()) != null) {
-
-                   String [] SplitWords= line.split(",");
-                        for (int i = 0; i < SplitWords.length; i++) {
-                            
-                        
-                            
-                            if(line.contains("Books")){
-                               
-                             
-                             BooksSectionAds.add(SplitWords[i].trim());
-                           
-                                
-                            }
-                       
-                        
-                             
-                        }   
-                            
-                        }
-
-                    
-                 read.close();
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-
-     
-                
-        
-               return BooksSectionAds;
-
-        
-        
-        
-
-    }
-    
-     public static ArrayList<String> getFurnSectionAds() {
+    public static ArrayList<String> getBooksSectionAds() {
 
         String line;
 
@@ -378,6 +340,38 @@ public class Commodity {
                 String[] SplitWords = line.split(",");
                 for (int i = 0; i < SplitWords.length; i++) {
 
+                    if (line.contains("Books")) {
+
+                        BooksSectionAds.add(SplitWords[i].trim());
+
+                    }
+
+                }
+
+            }
+
+            read.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return BooksSectionAds;
+
+    }
+
+    public static ArrayList<String> getFurnSectionAds() {
+
+        String line;
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Commodities));
+            while ((line = read.readLine()) != null) {
+
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
 
                     if (line.contains("Furniture")) {
                         FurnSectionAds.add(SplitWords[i].trim());
@@ -397,8 +391,8 @@ public class Commodity {
         return FurnSectionAds;
 
     }
-    
-     public static ArrayList<String> getAdsForVendor() {
+
+    public static ArrayList<String> getAdsForVendor() {
 
         String line;
 
@@ -409,7 +403,6 @@ public class Commodity {
 
                 String[] SplitWords = line.split(",");
                 for (int i = 0; i < SplitWords.length; i++) {
-
                     AdsForVendor.add(SplitWords[i].trim());
 
                 }
@@ -426,6 +419,46 @@ public class Commodity {
         return AdsForVendor;
 
     }
-    
+
+    public static String[] getAdsNamesForVendor() {
+
+        String line;
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Commodities));
+            while ((line = read.readLine()) != null) {
+                String n = null;
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
+                    if (getAdsForVendor().get(i).contains(Login.vendor.getId())) {
+                        n = (SplitWords[2].trim());
+                        System.out.println(n);
+                    }
+                }
+            }
+            /*
+            OUTPUT
+            Red Dress
+Harry Potter
+Crime & punshiment
+Brother karamazov
+Vans shoes
+Marvel t-shirt
+white chair
+led lamp
+grey sofa
+             */
+
+            read.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return AdsNamesForVendor;
+
+    }
 
 }

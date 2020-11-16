@@ -32,6 +32,8 @@ public class Commodity {
     public static ArrayList<String> FurnSectionAds = new ArrayList<String>();
 
     public static ArrayList<String> AdsForVendor = new ArrayList<String>();
+    
+     public static ArrayList<String> EachVendorInfo = new ArrayList<String>();
     public static String[] AdsNamesForVendor = new String[100];
 
     //private static ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();//تجربةة
@@ -460,5 +462,42 @@ grey sofa
         return AdsNamesForVendor;
 
     }
+    
+        public static ArrayList<String> GetEachVendorInfo() {
+
+        String line;
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Commodities));
+            while ((line = read.readLine()) != null) {
+
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
+                    
+                    
+                    if( line.contains(Login.vendor.getId())){
+                    
+                    EachVendorInfo.add(SplitWords[i].trim());
+                    }
+                }
+
+            }
+
+            read.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return EachVendorInfo;
+
+    }
+    
+    
+    
+    
+    
 
 }

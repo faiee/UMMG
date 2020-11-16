@@ -6,6 +6,7 @@
 package ugmsystem;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,6 +15,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import static ugmsystem.Commodity.Commodities;
 import static ugmsystem.User.accounts;
 
@@ -22,7 +26,7 @@ import static ugmsystem.User.accounts;
  * @author fayaldosa
  */
 public class CommodityBuyer extends javax.swing.JFrame {
-
+  static CommodityBuyer color = new CommodityBuyer();
     /**
      * Creates new form CommodityBuyer
      */
@@ -31,12 +35,185 @@ public class CommodityBuyer extends javax.swing.JFrame {
         setTitle("Show Commodity");
         setLocationRelativeTo(null);
 
-        /*
-        Commodity newClassObj = new Commodity();
-        ArrayList<Commodity> vendorCommodity = newClassObj.getVendorCommodity();
-     */
-    }
+        if (Sections.check.equals(true)) {
 
+            if (Sections.radio1.equals(true)) {
+                jLabel3.setText(Commodity.getBooksSectionAds().get(2));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(5));
+
+                try {
+
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/book2.png"));
+
+                    Icon icon = new ImageIcon(s);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+            if (Sections.radio2.equals(true)) {
+                jLabel3.setText(Commodity.getBooksSectionAds().get(9));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(12));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/book1.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+            if (Sections.radio3.equals(true)) {
+                jLabel3.setText(Commodity.getBooksSectionAds().get(16));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(19));
+
+                try {
+
+                    BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/book3.png"));
+
+                    Icon icon = new ImageIcon(s3);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            
+           if (Sections.radio4.equals(true)) {
+            
+                      jLabel3.setText(Commodity.getBooksSectionAds().get(23));
+
+               jLabel5.setText("Available");
+               jTextArea1.setText("\n" + "\n"
+                       + Commodity.getBooksSectionAds().get(26));
+
+               ImageIcon icon4 = new ImageIcon(Commodity.getBooksSectionAds().get(25));
+
+               jLabel1.setIcon(icon4);
+
+        }
+        }
+       
+        
+          if (Sections.check2.equals(true)) {
+              
+              
+               if (Sections.radio1.equals(true)) {
+                jLabel3.setText(Commodity.getClothesSectionAds().get(2));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(5));
+
+                try {
+
+                     BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/d-1.png"));
+
+                    Icon icon = new ImageIcon(s);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            if (Sections.radio2.equals(true)) {
+                jLabel3.setText(Commodity.getClothesSectionAds().get(9));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(12));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/shoes.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }  
+            
+                  if (Sections.radio3.equals(true)) {
+                jLabel3.setText(Commodity.getClothesSectionAds().get(16));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(19));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/m.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+                  
+                      if (Sections.radio4.equals(true)) {
+            
+                      jLabel3.setText(Commodity.getClothesSectionAds().get(23));
+
+               jLabel5.setText("Available");
+               jTextArea1.setText("\n" + "\n"
+                       + Commodity.getClothesSectionAds().get(26));
+
+               ImageIcon icon4 = new ImageIcon(Commodity.getClothesSectionAds().get(25));
+
+               jLabel1.setIcon(icon4);
+
+        }
+              
+              
+              
+          }
+        
+        
+        
+        
+        
+           
+    
+
+        
+        
+        
+        }
+        
+       
+    
+           
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,8 +241,9 @@ public class CommodityBuyer extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,7 +332,17 @@ public class CommodityBuyer extends javax.swing.JFrame {
         jButton11.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jButton11.setText("Buy");
 
-        jLabel5.setText("jLabel5");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextArea1.setSelectionStart(10);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,34 +352,44 @@ public class CommodityBuyer extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton6)
-                            .addComponent(jScrollPane2)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
-                                .addGap(60, 60, 60)
-                                .addComponent(jLabel5))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(59, 59, 59)
-                            .addComponent(jLabel6))))
+                            .addComponent(jLabel6))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(38, 38, 38)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(197, 197, 197)
+                                .addComponent(jButton6))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(63, 63, 63)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -210,15 +408,15 @@ public class CommodityBuyer extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel5))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
@@ -235,7 +433,16 @@ public class CommodityBuyer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
-        // TODO add your handling code here:
+       
+        
+             
+            Sections.color.getContentPane().setBackground(Color.WHITE);
+        Sections.color.setVisible(true);
+        this.setVisible(false);
+        
+        
+        
+        
     }//GEN-LAST:event_Back1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -302,13 +509,14 @@ public class CommodityBuyer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,5 @@
 33536666,1070,Red Dress,500,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/d-1.png,Used red dress size: s color: red. Brand: prada.,Clothes
-33531166,1061,Harry Potter,150,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book2.png,The first three parts of harry potter novels with a great pricece,Books
+33531166,1061,Harry Potter,150,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book2.png,The first three parts of harry potter novels with a great price,Books
 33536666,101,Crime & punshiment,130,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book1.png,The two parts of crime&punshiment for sale.,Books
 33531166,1079,Brother karamazov,180,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/book3.png,Brother karamazov novels for sale.,Books
 33536666,1084,Vans shoes,60,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/shoes.png,Vans shoes in a good condation for sale. size:39,Clothes

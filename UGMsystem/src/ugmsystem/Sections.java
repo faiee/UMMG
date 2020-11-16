@@ -5,6 +5,7 @@
  */
 package ugmsystem;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,6 +32,13 @@ import static ugmsystem.Commodity.Commodities;
 public class Sections extends javax.swing.JFrame {
 
  static Sections color = new Sections();
+ public static Boolean check;
+  public static Boolean check2;
+   public static Boolean check3;
+ public static Boolean radio1;
+  public static Boolean radio2;
+   public static Boolean radio3;
+    public static Boolean radio4;
     /**
      * Creates new form Books
      */
@@ -75,6 +83,10 @@ public class Sections extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("Advertisement 1");
@@ -182,6 +194,14 @@ public class Sections extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
 
+        buttonGroup1.add(jRadioButton1);
+
+        buttonGroup1.add(jRadioButton2);
+
+        buttonGroup1.add(jRadioButton3);
+
+        buttonGroup1.add(jRadioButton4);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -214,7 +234,13 @@ public class Sections extends javax.swing.JFrame {
                                 .addComponent(jLabel9)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton2)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,14 +290,28 @@ public class Sections extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(jRadioButton1)
+                                .addGap(27, 27, 27)
+                                .addComponent(jRadioButton2)
+                                .addGap(26, 26, 26)
+                                .addComponent(jRadioButton3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jRadioButton4)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
@@ -312,7 +352,126 @@ public class Sections extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+  String itemText = (String) jComboBox1.getSelectedItem();
+  
+  
+  check=itemText.equals("Books");
+  check2=itemText.equals("Clothes");
+  check3=itemText.equals("Furniture");
+  radio1=jRadioButton1.isSelected();
+  radio2=jRadioButton2.isSelected();
+   radio3=jRadioButton3.isSelected();
+    radio4=jRadioButton4.isSelected();
+  
+  
+           if (itemText.equals("Books")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (jRadioButton2.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (jRadioButton3.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (jRadioButton4.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+
+           
+           if (itemText.equals("Clothes")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (jRadioButton2.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (jRadioButton3.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (jRadioButton4.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+
+              if (itemText.equals("Furniture")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (jRadioButton2.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (jRadioButton3.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (jRadioButton4.isSelected()){
+              
+            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
+        CommodityBuyer.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+
+
+
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -355,7 +514,8 @@ public class Sections extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
+         
         }
         
         
@@ -503,6 +663,10 @@ public class Sections extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

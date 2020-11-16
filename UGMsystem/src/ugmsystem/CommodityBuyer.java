@@ -26,6 +26,7 @@ import static ugmsystem.User.accounts;
  * @author fayaldosa
  */
 public class CommodityBuyer extends javax.swing.JFrame {
+    
   static CommodityBuyer color = new CommodityBuyer();
     /**
      * Creates new form CommodityBuyer
@@ -34,8 +35,280 @@ public class CommodityBuyer extends javax.swing.JFrame {
         initComponents();
         setTitle("Show Commodity");
         setLocationRelativeTo(null);
+        
+        
+        // for search display
+       
+           if (Commodity.getBooksSectionAds().contains(Search.search)){
+             
+               
+               if(Commodity.getBooksSectionAds().get(2).equalsIgnoreCase(Search.search)){
+                   
+                    jLabel3.setText(Commodity.getBooksSectionAds().get(2));
 
-        if (Sections.check.equals(true)) {
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(5));
+
+                try {
+
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/book2.png"));
+
+                    Icon icon = new ImageIcon(s);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                   
+                   
+               }
+               if(Commodity.getBooksSectionAds().get(9).contains(Search.search)){
+                      jLabel3.setText(Commodity.getBooksSectionAds().get(9));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(12));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(Sections.class.getResource("../Pictures/book1.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                }
+                
+                
+                if(Commodity.getBooksSectionAds().get(16).contains(Search.search)){
+                    
+                           jLabel3.setText(Commodity.getBooksSectionAds().get(16));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(19));
+
+                try {
+
+                    BufferedImage s3 = ImageIO.read(Sections.class.getResource("../Pictures/book3.png"));
+
+                    Icon icon = new ImageIcon(s3);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                    
+                    
+                    
+                }
+                
+                  if(Commodity.getBooksSectionAds().get(23).contains(Search.search)){
+                 jLabel3.setText(Commodity.getBooksSectionAds().get(23));
+
+               jLabel5.setText("Available");
+               jTextArea1.setText("\n" + "\n"
+                       + Commodity.getBooksSectionAds().get(26));
+
+               ImageIcon icon4 = new ImageIcon(Commodity.getBooksSectionAds().get(25));
+
+               jLabel1.setIcon(icon4);
+                
+                  }  
+          
+            
+
+        }
+          if (Commodity.getClothesSectionAds().contains(Search.search)){
+            
+               if(Commodity.getClothesSectionAds().get(2).equalsIgnoreCase(Search.search)){
+              jLabel3.setText(Commodity.getClothesSectionAds().get(2));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(5));
+
+                try {
+
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/d-1.png"));
+
+                    Icon icon = new ImageIcon(s);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               }
+               
+               
+             if(Commodity.getClothesSectionAds().get(9).equalsIgnoreCase(Search.search)){
+                 
+                 
+                  jLabel3.setText(Commodity.getClothesSectionAds().get(9));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(12));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/shoes.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+   
+             } 
+               if(Commodity.getClothesSectionAds().get(16).equalsIgnoreCase(Search.search)){
+                   
+                   
+                    jLabel3.setText(Commodity.getClothesSectionAds().get(16));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(19));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/m.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                  
+               }
+                if(Commodity.getClothesSectionAds().get(23).equalsIgnoreCase(Search.search)){
+                    
+                     jLabel3.setText(Commodity.getClothesSectionAds().get(23));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(26));
+
+                ImageIcon icon4 = new ImageIcon(Commodity.getClothesSectionAds().get(25));
+
+                jLabel1.setIcon(icon4);
+                    
+                    
+                }
+            
+        }
+        
+          
+            if (Commodity.getFurnSectionAds().contains(Search.search)){
+            
+                
+                 if(Commodity.getFurnSectionAds().get(2).equalsIgnoreCase(Search.search)){
+                
+                 jLabel3.setText(Commodity.getFurnSectionAds().get(2));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(5));
+
+                try {
+
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/ch.png"));
+
+                    Icon icon = new ImageIcon(s);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                 }
+                
+                  if(Commodity.getFurnSectionAds().get(9).equalsIgnoreCase(Search.search)){
+                      jLabel3.setText(Commodity.getFurnSectionAds().get(9));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(12));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/l.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                  }
+                
+                if(Commodity.getFurnSectionAds().get(16).equalsIgnoreCase(Search.search)){
+                    
+                    jLabel3.setText(Commodity.getFurnSectionAds().get(16));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(19));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/s.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                } 
+                    
+                    
+                }
+                   if(Commodity.getFurnSectionAds().get(23).equalsIgnoreCase(Search.search)){
+                       
+                       
+                jLabel3.setText(Commodity.getFurnSectionAds().get(23));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(26));
+
+                ImageIcon icon4 = new ImageIcon(Commodity.getFurnSectionAds().get(25));
+
+                jLabel1.setIcon(icon4);
+                       
+                   }
+                
+      
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        /*
+  
+        
+        //Sections selected & their ads
+
+        if (Sections.check.equals(true) ) {
 
             if (Sections.radio1.equals(true)) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(2));
@@ -275,16 +548,8 @@ public class CommodityBuyer extends javax.swing.JFrame {
             }
 
         }
-
-        
-        
-        
-           
-    
-
-        
-        
-        
+ 
+        */
         }
         
        

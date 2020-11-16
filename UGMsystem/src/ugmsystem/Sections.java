@@ -39,6 +39,7 @@ public class Sections extends javax.swing.JFrame {
   public static Boolean radio2;
    public static Boolean radio3;
     public static Boolean radio4;
+      public static Boolean SelectSection;
     /**
      * Creates new form Books
      */
@@ -354,7 +355,7 @@ public class Sections extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
   String itemText = (String) jComboBox1.getSelectedItem();
   
-  
+
   check=itemText.equals("Books");
   check2=itemText.equals("Clothes");
   check3=itemText.equals("Furniture");

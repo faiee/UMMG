@@ -26,14 +26,14 @@ public class myAdv extends javax.swing.JFrame {
           setLocationRelativeTo(null);
           
           
- 
+ if(Commodity.GetEachVendorInfo().equals(true)){
     
      
               jLabel4.setText(Commodity.GetEachVendorInfo().get(2));
                 jLabel6.setText(Commodity.GetEachVendorInfo().get(9));
                  jLabel8.setText(Commodity.GetEachVendorInfo().get(16));
          
-        }
+        }}
            
     
 
@@ -315,7 +315,8 @@ public class myAdv extends javax.swing.JFrame {
                 color.setVisible(true);
                 
               
-            
+               
+                
                 
             }
         });

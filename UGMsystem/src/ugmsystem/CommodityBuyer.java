@@ -36,7 +36,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
         setTitle("Show Commodity");
         setLocationRelativeTo(null);
         
-        
+      
         // for search display
        
            if (Commodity.getBooksSectionAds().contains(Search.search)){
@@ -303,7 +303,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
         
         
         
-        /*
+        
   
         
         //Sections selected & their ads
@@ -549,7 +549,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
         }
  
-        */
+        
         }
         
        

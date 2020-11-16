@@ -359,7 +359,7 @@ public class Sections extends javax.swing.JFrame {
   check=itemText.equals("Books");
   check2=itemText.equals("Clothes");
   check3=itemText.equals("Furniture");
-  radio1=jRadioButton1.isSelected();
+        radio1 = jRadioButton1.isSelected();
   radio2=jRadioButton2.isSelected();
    radio3=jRadioButton3.isSelected();
     radio4=jRadioButton4.isSelected();

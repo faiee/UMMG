@@ -171,7 +171,7 @@ public class Commodity {
             Vendor.vendorCommodity.add(this);
             //vendorCommodity.add(this);//عشان نجرب 
             //Write.write(vendorCommodity.toString());
-            //System.out.println(vendorCommodity.toString());
+            //System.out.println(Vendor.vendorCommodity.toString());
             BufferedImage image;
 
             Write.flush();

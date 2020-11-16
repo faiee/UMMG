@@ -168,6 +168,11 @@ public class CommodityVendor extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Pdetail);
 
         pName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose" }));
+        pName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pNameActionPerformed(evt);
+            }
+        });
 
         Pshow.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         Pshow.setText("Show");
@@ -308,9 +313,17 @@ public class CommodityVendor extends javax.swing.JFrame {
            // Commodity.getAdsNamesForVendor();
             //Commodity.fillArrayComodityFromFile();
            //  }
+           for(int i=0;i<Vendor.vendorCommodity.size();i++){
+           System.out.println(Vendor.vendorCommodity.toString());
+           }
         
         
     }//GEN-LAST:event_PshowActionPerformed
+
+    private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_pNameActionPerformed
 
     /**
      * @param args the command line arguments

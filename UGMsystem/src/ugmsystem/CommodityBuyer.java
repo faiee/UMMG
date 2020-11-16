@@ -116,10 +116,9 @@ public class CommodityBuyer extends javax.swing.JFrame {
         }
        
         
-          if (Sections.check2.equals(true)) {
-              
-              
-               if (Sections.radio1.equals(true)) {
+        if (Sections.check2.equals(true)) {
+
+            if (Sections.radio1.equals(true)) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(2));
 
                 jLabel5.setText("Available");
@@ -128,7 +127,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 try {
 
-                     BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/d-1.png"));
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/ch.png"));
 
                     Icon icon = new ImageIcon(s);
 
@@ -158,9 +157,9 @@ public class CommodityBuyer extends javax.swing.JFrame {
                     Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-            }  
-            
-                  if (Sections.radio3.equals(true)) {
+            }
+
+            if (Sections.radio3.equals(true)) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(16));
 
                 jLabel5.setText("Available");
@@ -180,26 +179,103 @@ public class CommodityBuyer extends javax.swing.JFrame {
                 }
 
             }
-                  
-                      if (Sections.radio4.equals(true)) {
-            
-                      jLabel3.setText(Commodity.getClothesSectionAds().get(23));
 
-               jLabel5.setText("Available");
-               jTextArea1.setText("\n" + "\n"
-                       + Commodity.getClothesSectionAds().get(26));
+            if (Sections.radio4.equals(true)) {
 
-               ImageIcon icon4 = new ImageIcon(Commodity.getClothesSectionAds().get(25));
+                jLabel3.setText(Commodity.getClothesSectionAds().get(23));
 
-               jLabel1.setIcon(icon4);
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getClothesSectionAds().get(26));
+
+                ImageIcon icon4 = new ImageIcon(Commodity.getClothesSectionAds().get(25));
+
+                jLabel1.setIcon(icon4);
+
+            }
 
         }
-              
-              
-              
-          }
-        
-        
+
+        if (Sections.check3.equals(true)) {
+
+            if (Sections.radio1.equals(true)) {
+                jLabel3.setText(Commodity.getFurnSectionAds().get(2));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(5));
+
+                try {
+
+                    BufferedImage s = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/d-1.png"));
+
+                    Icon icon = new ImageIcon(s);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            if (Sections.radio2.equals(true)) {
+                jLabel3.setText(Commodity.getFurnSectionAds().get(9));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(12));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/shoes.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+            if (Sections.radio3.equals(true)) {
+                jLabel3.setText(Commodity.getFurnSectionAds().get(16));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(19));
+
+                try {
+
+                    BufferedImage s2 = ImageIO.read(CommodityBuyer.class.getResource("../Pictures/m.png"));
+
+                    Icon icon = new ImageIcon(s2);
+
+                    jLabel1.setIcon(icon);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(CommodityBuyer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+            if (Sections.radio4.equals(true)) {
+
+                jLabel3.setText(Commodity.getFurnSectionAds().get(23));
+
+                jLabel5.setText("Available");
+                jTextArea1.setText("\n" + "\n"
+                        + Commodity.getFurnSectionAds().get(26));
+
+                ImageIcon icon4 = new ImageIcon(Commodity.getFurnSectionAds().get(25));
+
+                jLabel1.setIcon(icon4);
+
+            }
+
+        }
+
         
         
         

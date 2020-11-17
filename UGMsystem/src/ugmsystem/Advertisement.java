@@ -17,6 +17,7 @@ public class Advertisement extends javax.swing.JFrame {
     static String file;
     static String sec;
     static Advertisement color = new Advertisement();
+    
 
     /**
      * Creates new form Advertisement
@@ -277,10 +278,11 @@ public class Advertisement extends javax.swing.JFrame {
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
         vID.setText(Login.vendor.getId());
-        pID.setText(Commodity.getpID());
-        sec = String.valueOf(secType.getSelectedItem());
         commodities = new Commodity(vID.getText(), pID.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
         commodities.createCommodity();      
+        pID.setText(commodities.getpID());
+        sec = String.valueOf(secType.getSelectedItem());
+        
     }//GEN-LAST:event_AddActionPerformed
 
     private void SelPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelPicActionPerformed

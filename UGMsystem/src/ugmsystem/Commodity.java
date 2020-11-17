@@ -23,9 +23,9 @@ import static ugmsystem.Vendor.vendorCommodity;
  */
 public class Commodity {
     
-    private static String vID, pID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
-    private static int Price;
-    private static boolean State;
+    private  String vID, pID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private  int Price;
+    private  boolean State;
     public static File Commodities = new File("Commodities.txt"); 
     public static ArrayList<String> BooksSectionAds = new ArrayList<String>();
     public static ArrayList<String> ClothesSectionAds = new ArrayList<String>();
@@ -67,94 +67,94 @@ public class Commodity {
     
     public void setYearOfPurchase(String YearOfPurchase) throws IOException {
         this.YearOfPurchase = YearOfPurchase;
-         editCommodity(YearOfPurchase);
+         editCommodity();
         
     }
     
-    public static String getvID() {
+    public String getvID() {
         return vID;
     }
     
     public void setvID(String vID) throws IOException {
-        Commodity.vID = vID;
-        editCommodity(vID);
+        vID = vID;
+        editCommodity();
     }
     
-    public static String getpID() {
+    public String getpID() {
         return pID;
     }
     
     public void setpID(String pID) throws IOException {
-        Commodity.pID = pID;
-        editCommodity(pID);
+        pID = pID;
+        editCommodity();
     }
     
-    public static String getQuantity() {
+    public String getQuantity() {
         return Quantity;
     }
     
     public void setQuantity(String Quantity) throws IOException {
-        Commodity.Quantity = Quantity;
-        editCommodity(Quantity);
+        Quantity = Quantity;
+        editCommodity();
     }
     
-    public static String getName() {
+    public String getName() {
         return Name;
     }
     
     public void setName(String Name) throws IOException {
-        Commodity.Name = Name;
-        editCommodity(Name);
+        Name = Name;
+        editCommodity();
     }
     
-    public static String getDescription() {
+    public String getDescription() {
         return Description;
     }
     
     public void setDescription(String Description) throws IOException {
-        Commodity.Description = Description;
-        editCommodity(Description);
+        Description = Description;
+        editCommodity();
     }
     
-    public static String getFilePic() {
+    public String getFilePic() {
         return filePic;
     }
     
     public void setFilePic(String filePic) throws IOException {
-        Commodity.filePic = filePic;
-        editCommodity(filePic);
+        filePic = filePic;
+        editCommodity();
     }
     
-    public static String getSec() {
+    public  String getSec() {
         return sec;
         
     }
     
     public void setSec(String sec) throws IOException {
-        Commodity.sec = sec;
-         editCommodity(sec);
+        sec = sec;
+         editCommodity();
     }
     
-    public static int getPrice() {
+    public int getPrice() {
         return Price;
         
     }
     
     public void setPrice(int Price) throws IOException {
-        Commodity.Price = Price;
-        editCommodity(String.valueOf(Price));
+        Price = Price;
+        editCommodity();
     }
     
-    public static boolean isState() {
+    public boolean isState() {
         return State;
     }
     
     public void setState(boolean State) {
-        Commodity.State = State;
+        State = State;
        
     }
     
-    public static File getCommodities() {
+    public  File getCommodities() {
         return Commodities;
     }
     
@@ -186,16 +186,17 @@ public class Commodity {
         
     }
     
-    public static void editCommodity(String newUpdate) throws IOException {
+    public void editCommodity() throws IOException {
         String line;
-        fillArrayComodityFromFile();
-         Commodity c = new Commodity(vID, pID, Name, Price, filePic, sec, Description);
+     //   fillArrayComodityFromFile();
+         //Commodity c = new Commodity(vID, pID, Name, Price, filePic, sec, Description);
         try {
             for (int i = 0; i <vendorCommodity.size(); i++) {
                 line = vendorCommodity.get(i).toString();
-                if (line.contains(newUpdate.trim())) {
+                
+               if (line.contains(pID)) {
                     System.out.println(vendorCommodity.get(i));
-                   vendorCommodity.set(i, c);
+                   vendorCommodity.set(i, this);
                    System.out.println(vendorCommodity.get(i));
                 }
             }

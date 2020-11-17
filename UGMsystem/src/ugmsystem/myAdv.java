@@ -31,14 +31,15 @@ public class myAdv extends javax.swing.JFrame {
           setLocationRelativeTo(null);
           
           
- if(Commodity.GetEachVendorInfo().equals(true)){
+ if(!(Commodity.EachVendorInfo.isEmpty())){
     
-     
-              jLabel4.setText(Commodity.GetEachVendorInfo().get(2));
-                jLabel6.setText(Commodity.GetEachVendorInfo().get(9));
-                 jLabel8.setText(Commodity.GetEachVendorInfo().get(16));
+               
+                jLabel4.setText(Commodity.EachVendorInfo.get(2));
+                jLabel6.setText(Commodity.EachVendorInfo.get(9));
+                jLabel8.setText(Commodity.EachVendorInfo.get(16));
          
-        }}
+       } 
+}
            
     
 

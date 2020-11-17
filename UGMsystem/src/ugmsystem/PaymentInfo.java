@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static ugmsystem.Login.vendor;
 
 /**
  *
@@ -615,7 +616,7 @@ public class PaymentInfo extends javax.swing.JFrame {
             if ((jTextField2.getText().length() == 2) && (Integer.valueOf(jTextField2.getText()) <= 12)) {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
                     if (jTextField4.getText().length() == 3) {
-
+                  //       Order o = new Order(Login.vendor.getId());
                         new SuccessOrder().setVisible(true);
 
                     } else {

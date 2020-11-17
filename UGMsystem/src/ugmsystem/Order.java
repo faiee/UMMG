@@ -34,15 +34,7 @@ public class Order {
         this.TotalPayment = TotalPayment;
     }
 
-    public Order(String Name, String oID, String vID, String Description, int price, String CommodityType, String CommodityNo) {
-        this.Name = Commodity.getName();
-        this.oID = generateOrderID();
-        this.vID = Commodity.getvID();
-        this.Description = Commodity.getDescription();
-        this.price = Commodity.getPrice();
-        this.CommodityType = Commodity.getSec();
-        this.CommodityNo = Commodity.getpID();
-    }
+
 
     //Get and set
 

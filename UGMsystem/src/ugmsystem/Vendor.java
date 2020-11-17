@@ -5,6 +5,7 @@
  */
 package ugmsystem;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -19,6 +20,7 @@ public class Vendor extends User{
      */
     static public ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private int rate;
+    private String id;
 
     /**
      *
@@ -32,6 +34,7 @@ public class Vendor extends User{
      */
     public Vendor( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super( id, password, fName, lName, phoneNumber, email);
+        id=id;
     }
 
     /**
@@ -74,6 +77,26 @@ public class Vendor extends User{
         
        vendorCommodity.add(item);
     } 
+
+    public static File getAccounts() {
+        return accounts;
+    }
+
+    public static ArrayList<User> getUserInfo() {
+        return userInfo;
+    }
+
+    public static void setAccounts(File accounts) {
+        User.accounts = accounts;
+    }
+
+    public static void setUserInfo(ArrayList<User> userInfo) {
+        User.userInfo = userInfo;
+    }
+
+    public String getId() {
+        return id;
+    }
     
    
    

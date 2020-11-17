@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import static ugmsystem.Login.currentUser;
 
 /**
  *
@@ -288,7 +290,13 @@ public class myAdv extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-
+   if(currentUser.isGuest()){
+         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        }
+         
+        
+       else{
+        
         try {
             Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
@@ -299,6 +307,7 @@ public class myAdv extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
         }
+          }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -310,16 +319,47 @@ public class myAdv extends javax.swing.JFrame {
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         
-        Login.currentUser=null;
-        MainMenu.color.getContentPane().setBackground(Color.WHITE);
-        MainMenu.color.setVisible(true);
-        this.setVisible(false);
+      
+        if(currentUser.isGuest()){
+         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        }
+         
+        
+       else{
+        try {
+            Login.currentUser = Buyer.findUser(Login.vendor.getId());
+
+            MyAccount.color.getContentPane().setBackground(Color.WHITE);
+            MyAccount.color.setVisible(true);
+            this.setVisible(false);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-          ChatUser.color.getContentPane().setBackground(Color.WHITE);
+         
+         if(currentUser.isGuest()){
+         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        }
+         
+        
+       else{
+        try {
+            Login.currentUser = Buyer.findUser(Login.vendor.getId());
+
+           
+        
+        ChatUser.color.getContentPane().setBackground(Color.WHITE);
         ChatUser.color.setVisible(true);
         this.setVisible(false);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }  
     }//GEN-LAST:event_jButton28ActionPerformed
 
     /**

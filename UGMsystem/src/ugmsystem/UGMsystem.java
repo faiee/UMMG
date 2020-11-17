@@ -27,8 +27,7 @@ public class UGMsystem {
      */
     public static void main(String[] args)
     {
-    Commodity c = new Commodity( "1", "2", "dress", 30, "filepic", "clothes", "red");
-    c.createCommodity();
+   
     
        
        

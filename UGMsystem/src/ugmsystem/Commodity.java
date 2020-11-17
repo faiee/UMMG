@@ -180,12 +180,13 @@ public class Commodity {
     public static void editCommodity(String newUpdate) throws IOException {
         String line;
         //fillArrayComodityFromFile();
+         Commodity c = new Commodity(vID, pID, Name, Price, filePic, sec, Description);
         try {
             for (int i = 0; i < Vendor.vendorCommodity.size(); i++) {
                 line = Vendor.vendorCommodity.get(i).toString();
                 if (line.contains(newUpdate.trim())) {
                    
-                   Vendor.vendorCommodity.set(i, this);
+                   Vendor.vendorCommodity.set(i, c);
                 }
             }
             FileWriter fileWriter = new FileWriter(Commodities, false);

@@ -23,6 +23,9 @@ public class Register extends javax.swing.JFrame {
     
     static Register color = new Register();
     
+    /**
+     *
+     */
     public Register() {
         setTitle("Create Account");
         initComponents();

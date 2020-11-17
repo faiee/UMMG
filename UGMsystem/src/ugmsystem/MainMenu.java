@@ -25,6 +25,9 @@ public class MainMenu extends javax.swing.JFrame {
     static MainMenu color  = new MainMenu();
     static User guest;
     
+    /**
+     *
+     */
     public MainMenu() {
         initComponents();
         setTitle("Main Menu");

@@ -25,6 +25,9 @@ public class MyAccount extends javax.swing.JFrame {
      */
     static MyAccount color = new MyAccount();
   
+    /**
+     *
+     */
     public MyAccount() {
         initComponents();
         setTitle("My Account");

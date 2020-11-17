@@ -745,19 +745,7 @@ public class Sections extends javax.swing.JFrame {
             }
 
            }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+             
         
         
     }//GEN-LAST:event_jButton12ActionPerformed

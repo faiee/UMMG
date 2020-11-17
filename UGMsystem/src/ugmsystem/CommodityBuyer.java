@@ -21,6 +21,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static ugmsystem.Commodity.Commodities;
 import static ugmsystem.Login.currentUser;
+import static ugmsystem.Search.search;
+import static ugmsystem.Sections.check;
+import static ugmsystem.Sections.check2;
+import static ugmsystem.Sections.check3;
+import static ugmsystem.Sections.radio1;
+import static ugmsystem.Sections.radio2;
+import static ugmsystem.Sections.radio3;
+import static ugmsystem.Sections.radio4;
 import static ugmsystem.User.accounts;
 
 /**
@@ -810,29 +818,141 @@ public class CommodityBuyer extends javax.swing.JFrame {
     }//GEN-LAST:event_Back1ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-
+               
+     
         if(currentUser.isGuest()){
          JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
         }
          
         
-       else{
-        
-        try {
+      else{
+            try {
             Login.currentUser = Buyer.findUser(Login.vendor.getId());
-
-            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
         
         } catch (IOException ex) {
             Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
         }
-          }
-  
+ 
+         // if he came from the search bar 
+        
+        if (Commodity.getAdsForVendor().contains(search)){
+        
+        PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+        
+        }  
             
+  
+  // Radio buttons info
+           if (Sections.check==Sections.T) {
 
+      if (Sections.radio1==Sections.T){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (Sections.radio2==Sections.T){
+              
+           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (Sections.radio3==Sections.T){
+              
+           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (Sections.radio4==Sections.T){
+              
+          PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
 
+           }
+
+           
+           if (check2.equals("Clothes")) {
+
+      if (Sections.radio1==Sections.T){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (Sections.radio2==Sections.T){
+              
+           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (Sections.radio3==Sections.T){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (Sections.radio4==Sections.T){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+
+              if (check3.equals("Furniture")) {
+
+      if (Sections.radio1==Sections.T){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (Sections.radio2==Sections.T){
+              
+             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+            }
+         
+           if (Sections.radio3==Sections.T){
+              
+             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (Sections.radio4==Sections.T){
+              
+             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+        
+        
+        }
+      
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

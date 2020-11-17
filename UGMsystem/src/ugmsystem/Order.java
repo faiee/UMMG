@@ -20,7 +20,7 @@ public class Order {
     private Commodity PurchaseCom;
     private String CommodityType;//section
     private String CommodityNo;//Product id
-    private double TotalPayment;
+    public static double TotalPayment;
     
 
     public Order(String ID, String Name, String Date, String SaleLicense, Commodity PurchaseCom, String CommodityType, String CommodityNo, double TotalPayment) {
@@ -116,7 +116,7 @@ public class Order {
   
     }
     
-    public double calculatePay(int p) {
+    public static double calculatePay(int p) {
         double tax=0.0;
         tax = (p * 0.15);
         TotalPayment= p+tax;

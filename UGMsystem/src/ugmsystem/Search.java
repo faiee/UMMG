@@ -568,7 +568,7 @@ public static Boolean SearchCheck;
  
           search= jTextField1.getText();
           
-          SearchCheck=!search.isEmpty();
+         
         String s=Commodity.getBooksSectionAds().get(2);
        
         if (Commodity.getAdsForVendor().contains(search)){

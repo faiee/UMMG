@@ -253,7 +253,7 @@ public class Commodity {
     public static boolean isAvailable() {
         
         
-        return true;
+        return false ;
     }
     
     public void advertisee() {

@@ -218,10 +218,10 @@ public class CommodityBuyer extends javax.swing.JFrame {
                  if(Commodity.getFurnSectionAds().get(2).equalsIgnoreCase(Search.search)){
                 
                  jLabel3.setText(Commodity.getFurnSectionAds().get(2));
-                if(Commodity.isAvailable()==true){
+               
                    jLabel5.setText("Available"); 
-                }
-                
+              
+            
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(5));
 
@@ -304,12 +304,16 @@ public class CommodityBuyer extends javax.swing.JFrame {
         
         //Sections selected & their ads
 
-        if (Sections.check.equals(true) ) {
+        if (Sections.check==Sections.T ) {
 
-            if (Sections.radio1.equals(true)) {
+            if (Sections.radio1==Sections.T) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(2));
-
-                jLabel5.setText("Available");
+                if (Commodity.isAvailable() == true) {
+                    jLabel5.setText("Available");
+                }
+                if (Commodity.isAvailable() == false) {
+                    jLabel5.setText("Not Available");
+                }
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(5));
 
@@ -327,7 +331,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
 
-            if (Sections.radio2.equals(true)) {
+            if (Sections.radio2==Sections.T) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(9));
 
                 jLabel5.setText("Available");
@@ -348,7 +352,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
 
-            if (Sections.radio3.equals(true)) {
+            if (Sections.radio3==Sections.T) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(16));
 
                 jLabel5.setText("Available");
@@ -369,7 +373,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
             
-           if (Sections.radio4.equals(true)) {
+           if (Sections.radio4==Sections.T) {
             
                       jLabel3.setText(Commodity.getBooksSectionAds().get(23));
 
@@ -385,9 +389,9 @@ public class CommodityBuyer extends javax.swing.JFrame {
         }
        
         
-        if (Sections.check2.equals(true)) {
+        if (Sections.check2==Sections.T) {
 
-            if (Sections.radio1.equals(true)) {
+            if (Sections.radio1==Sections.T) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(2));
 
                 jLabel5.setText("Available");
@@ -407,7 +411,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                 }
 
             }
-            if (Sections.radio2.equals(true)) {
+            if (Sections.radio2==Sections.T) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(9));
 
                 jLabel5.setText("Available");
@@ -428,7 +432,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
 
-            if (Sections.radio3.equals(true)) {
+            if (Sections.radio3==Sections.T) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(16));
 
                 jLabel5.setText("Available");
@@ -449,7 +453,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
 
-            if (Sections.radio4.equals(true)) {
+            if (Sections.radio4==Sections.T) {
 
                 jLabel3.setText(Commodity.getClothesSectionAds().get(23));
 
@@ -465,9 +469,9 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
         }
 
-        if (Sections.check3.equals(true)) {
+        if (Sections.check3==Sections.T) {
 
-            if (Sections.radio1.equals(true)) {
+            if (Sections.radio1==Sections.T) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(2));
 
                 jLabel5.setText("Available");
@@ -487,7 +491,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                 }
 
             }
-            if (Sections.radio2.equals(true)) {
+            if (Sections.radio2==Sections.T) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(9));
 
                 jLabel5.setText("Available");
@@ -508,7 +512,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
 
-            if (Sections.radio3.equals(true)) {
+            if (Sections.radio3==Sections.T) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(16));
 
                 jLabel5.setText("Available");
@@ -529,7 +533,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             }
 
-            if (Sections.radio4.equals(true)) {
+            if (Sections.radio4==Sections.T) {
 
                 jLabel3.setText(Commodity.getFurnSectionAds().get(23));
 
@@ -545,7 +549,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
         }
  
-        
+       
         }
         
        

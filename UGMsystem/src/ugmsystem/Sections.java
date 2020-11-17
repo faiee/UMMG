@@ -40,6 +40,7 @@ public class Sections extends javax.swing.JFrame {
    public static Boolean radio3;
     public static Boolean radio4;
       public static Boolean SelectSection;
+      public static Boolean T=true;
     /**
      * Creates new form Books
      */

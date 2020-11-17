@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 public class Search extends javax.swing.JFrame {
 public static String search;
 public static Boolean SearchCheck;
+
     /**
      * Creates new form Search
      */

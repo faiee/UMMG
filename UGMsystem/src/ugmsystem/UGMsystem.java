@@ -25,13 +25,12 @@ public class UGMsystem {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)
+    {
+    Commodity c = new Commodity( "1", "2", "dress", 30, "filepic", "clothes", "red");
+    c.createCommodity();
     
-        fillArrayFromFile();
-        System.out.println("here "+User.userInfo.size());
-        for (int i = 0; i < User.userInfo.size(); i++) {
-            System.out.println(" User.userInfo.get(i); "+  User.userInfo.get(i));
-        }
+       
        
     }
     

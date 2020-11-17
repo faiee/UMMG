@@ -5,7 +5,7 @@
  */
 package ugmsystem;
 
-import java.awt.Image;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import static ugmsystem.Login.*;
+import static ugmsystem.Vendor.vendorCommodity;
 
 /**
  *
@@ -64,39 +65,44 @@ public class Commodity {
         return YearOfPurchase;
     }
     
-    public void setYearOfPurchase(String YearOfPurchase) {
+    public void setYearOfPurchase(String YearOfPurchase) throws IOException {
         this.YearOfPurchase = YearOfPurchase;
+         editCommodity(YearOfPurchase);
+        
     }
     
     public static String getvID() {
         return vID;
     }
     
-    public static void setvID(String vID) {
+    public void setvID(String vID) throws IOException {
         Commodity.vID = vID;
+        editCommodity(vID);
     }
     
     public static String getpID() {
         return pID;
     }
     
-    public static void setpID(String pID) {
+    public void setpID(String pID) throws IOException {
         Commodity.pID = pID;
+        editCommodity(pID);
     }
     
     public static String getQuantity() {
         return Quantity;
     }
     
-    public static void setQuantity(String Quantity) {
+    public void setQuantity(String Quantity) throws IOException {
         Commodity.Quantity = Quantity;
+        editCommodity(Quantity);
     }
     
     public static String getName() {
         return Name;
     }
     
-    public static void setName(String Name) throws IOException {
+    public void setName(String Name) throws IOException {
         Commodity.Name = Name;
         editCommodity(Name);
     }
@@ -105,7 +111,7 @@ public class Commodity {
         return Description;
     }
     
-    public static void setDescription(String Description) throws IOException {
+    public void setDescription(String Description) throws IOException {
         Commodity.Description = Description;
         editCommodity(Description);
     }
@@ -114,23 +120,27 @@ public class Commodity {
         return filePic;
     }
     
-    public static void setFilePic(String filePic) {
+    public void setFilePic(String filePic) throws IOException {
         Commodity.filePic = filePic;
+        editCommodity(filePic);
     }
     
     public static String getSec() {
         return sec;
+        
     }
     
-    public static void setSec(String sec) {
+    public void setSec(String sec) throws IOException {
         Commodity.sec = sec;
+         editCommodity(sec);
     }
     
     public static int getPrice() {
         return Price;
+        
     }
     
-    public static void setPrice(int Price) throws IOException {
+    public void setPrice(int Price) throws IOException {
         Commodity.Price = Price;
         editCommodity(String.valueOf(Price));
     }
@@ -139,15 +149,16 @@ public class Commodity {
         return State;
     }
     
-    public static void setState(boolean State) {
+    public void setState(boolean State) {
         Commodity.State = State;
+       
     }
     
     public static File getCommodities() {
         return Commodities;
     }
     
-    public static void setCommodities(File Commodities) {
+    public void setCommodities(File Commodities) {
         Commodity.Commodities = Commodities;
     }
     
@@ -177,14 +188,15 @@ public class Commodity {
     
     public static void editCommodity(String newUpdate) throws IOException {
         String line;
-        //fillArrayComodityFromFile();
+        fillArrayComodityFromFile();
          Commodity c = new Commodity(vID, pID, Name, Price, filePic, sec, Description);
         try {
-            for (int i = 0; i < Vendor.vendorCommodity.size(); i++) {
-                line = Vendor.vendorCommodity.get(i).toString();
+            for (int i = 0; i <vendorCommodity.size(); i++) {
+                line = vendorCommodity.get(i).toString();
                 if (line.contains(newUpdate.trim())) {
-                   
-                   Vendor.vendorCommodity.set(i, c);
+                    System.out.println(vendorCommodity.get(i));
+                   vendorCommodity.set(i, c);
+                   System.out.println(vendorCommodity.get(i));
                 }
             }
             FileWriter fileWriter = new FileWriter(Commodities, false);
@@ -217,7 +229,7 @@ public class Commodity {
             while ((line = read.readLine()) != null) {
                 String SplitWords[] = line.split(",");
                 // for (int i = 0; i < SplitWords.length; i++) {
-                Vendor.vendorCommodity.add(new Commodity(SplitWords[0].trim(), SplitWords[1].trim(), SplitWords[2].trim(),
+                vendorCommodity.add(new Commodity(SplitWords[0].trim(), SplitWords[1].trim(), SplitWords[2].trim(),
                         Integer.valueOf(SplitWords[3].trim()), SplitWords[4].trim(), SplitWords[5].trim(), SplitWords[6].trim()));
 
                 // }
@@ -441,6 +453,24 @@ public class Commodity {
         return EachVendorInfo;
         
     }
+    
+       public static Commodity findCommodity( String userId) throws IOException{
+         
+           fillArrayComodityFromFile();
+           String line;
+           String [] setter;
+       
+          for (int i = 0; i < vendorCommodity.size(); i++)  {
+              line= vendorCommodity.get(i).toString();
+             if(line.contains(userId.trim())) {
+                 setter = line.split(",");
+                 return new Commodity( setter[0] , setter[1],setter[2],
+                            Integer.parseInt(setter[3].trim()), setter[4], setter[5], setter[6]);
+             }    
+          }
+        
+    
+    return null; }
     
     
 }

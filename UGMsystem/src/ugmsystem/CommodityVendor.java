@@ -19,6 +19,7 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     static CommodityVendor color = new CommodityVendor();
     DefaultComboBoxModel dml;
+     static Commodity c;
     // public static String[] Names = new String[100];
 
     /**
@@ -307,9 +308,11 @@ public class CommodityVendor extends javax.swing.JFrame {
             Commodity.setDescription(Pdetail.getText());
             }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
              */
-            Commodity.setName(Pname.getText().trim());
-            Commodity.setPrice(Integer.valueOf(Pprice.getText().trim()));
-            Commodity.setDescription(Pdetail.getText().trim());
+           
+            c = Commodity.findCommodity((String)pName.getSelectedItem());
+            c.setName(Pname.getText().trim());
+            c.setPrice(Integer.valueOf(Pprice.getText().trim()));
+            c.setDescription(Pdetail.getText().trim());
 
         } catch (IOException ex) {
             Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);

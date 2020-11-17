@@ -491,7 +491,18 @@ public static Boolean SearchCheck;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
+               
+     try {
+         Login.currentUser = Buyer.findUser(Login.vendor.getId());
+         
+        
+              MyAccount.color.getContentPane().setBackground(Color.WHITE);
+              MyAccount.color.setVisible(true);
+              this.setVisible(false);
+         
+     } catch (IOException ex) {
+         Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+     }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -501,11 +512,16 @@ public static Boolean SearchCheck;
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
+       Login.currentUser=null;
+        MainMenu.color.getContentPane().setBackground(Color.WHITE);
+        MainMenu.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        // TODO add your handling code here:
+        ChatUser.color.getContentPane().setBackground(Color.WHITE);
+        ChatUser.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed

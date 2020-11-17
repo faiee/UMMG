@@ -26,6 +26,9 @@ public class Advertisement extends javax.swing.JFrame {
         initComponents();
         setTitle("Create Advertisement");
         setLocationRelativeTo(null);
+        
+        
+        
     }
 
     /**

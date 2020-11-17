@@ -621,7 +621,138 @@ public class Sections extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+
+         String itemText = (String) jComboBox1.getSelectedItem();
+  
+
+  check=itemText.equals("Books");
+  check2=itemText.equals("Clothes");
+  check3=itemText.equals("Furniture");
+        radio1 = jRadioButton1.isSelected();
+  radio2=jRadioButton2.isSelected();
+   radio3=jRadioButton3.isSelected();
+    radio4=jRadioButton4.isSelected();
+  
+  
+           if (itemText.equals("Books")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (jRadioButton2.isSelected()){
+              
+           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (jRadioButton3.isSelected()){
+              
+           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (jRadioButton4.isSelected()){
+              
+          PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+
+           
+           if (itemText.equals("Clothes")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (jRadioButton2.isSelected()){
+              
+           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+         
+           if (jRadioButton3.isSelected()){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (jRadioButton4.isSelected()){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+
+              if (itemText.equals("Furniture")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+      
+         if (jRadioButton2.isSelected()){
+              
+             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+            }
+         
+           if (jRadioButton3.isSelected()){
+              
+             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+             if (jRadioButton4.isSelected()){
+              
+             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+                
+            }
+
+           }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed

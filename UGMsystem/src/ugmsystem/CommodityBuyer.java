@@ -591,6 +591,11 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jButton5.setText("Chat");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jButton6.setText("Add ");
@@ -804,7 +809,14 @@ public class CommodityBuyer extends javax.swing.JFrame {
     }//GEN-LAST:event_Back1ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+
+       
+  
+            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
+        PaymentInfo.color.setVisible(true);
+        this.setVisible(false);
+
+
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -857,6 +869,16 @@ public class CommodityBuyer extends javax.swing.JFrame {
         ChatUser.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton40ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+          ChatUser.color.getContentPane().setBackground(Color.WHITE);
+        ChatUser.color.setVisible(true);
+        this.setVisible(false);
+        
+        
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

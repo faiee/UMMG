@@ -12,7 +12,8 @@ import javax.swing.JOptionPane;
  * @author reemalsolami
  */
 public class PaymentInfo extends javax.swing.JFrame {
-
+    
+ static PaymentInfo color = new PaymentInfo();
     /**
      * Creates new form PaymentInfo
      */
@@ -20,7 +21,7 @@ public class PaymentInfo extends javax.swing.JFrame {
         initComponents();
         setTitle("Payment Info");
         setLocationRelativeTo(null);
-        
+       
     }
     
     public void showPay(){

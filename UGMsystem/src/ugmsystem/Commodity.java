@@ -32,8 +32,6 @@ public class Commodity {
     public static ArrayList<String> AdsForVendor = new ArrayList<String>();    
     public static ArrayList<String> EachVendorInfo = new ArrayList<String>();
 
-    public static ArrayList<String> com = new ArrayList<String>();
-
     public Commodity(String vID, String pID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
         
@@ -444,32 +442,5 @@ public class Commodity {
         
     }
     
-    public static ArrayList<String> getCom() {
-        
-        String line;
-        
-        try {
-            
-            BufferedReader read = new BufferedReader(new FileReader(Commodities));
-            while ((line = read.readLine()) != null) {
-                
-                String[] SplitWords = line.split(",");
-                for (int i = 0; i < SplitWords.length; i++) {
-                    com.add(SplitWords[i].trim());
-                    
-                }
-                
-            }
-            
-            read.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return com;
-        
-    }
     
 }

@@ -161,6 +161,11 @@ public class Sections extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
 
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -794,6 +799,10 @@ public class Sections extends javax.swing.JFrame {
         ChatUser.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments

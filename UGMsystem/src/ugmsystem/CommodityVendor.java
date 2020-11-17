@@ -306,9 +306,6 @@ public class CommodityVendor extends javax.swing.JFrame {
             Commodity.setPrice(Integer.valueOf(Pprice.getText()));
             Commodity.setDescription(Pdetail.getText());
             }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
-            Pname.setText();
-            Pprice.setText();
-            Pdetail.setText();
              */
             Commodity.setName(Pname.getText().trim());
             Commodity.setPrice(Integer.valueOf(Pprice.getText().trim()));

@@ -28,21 +28,17 @@ public class PaymentInfo extends javax.swing.JFrame {
         initComponents();
         setTitle("Payment Info");
         setLocationRelativeTo(null);
-       
+        showPay();
     }
     
     public void showPay(){
-        //Order(String Name, String oID, String vID, String Description, int price, String CommodityType, String CommodityNo)
-      //  orderInfo.setText(""+ Commodity.AdsForVendor.get(2));
-        
-        
-        /*
         
          if (Sections.check==Sections.T ) {
 
             if (Sections.radio1==Sections.T) {
              
-                orderInfo.setText("\n" +"PUT SOMTHING !!!!"+ "\n");
+                orderInfo.setText("\n" + "\n"
+                        + Commodity.getBooksSectionAds().get(2));
                      
 
             }
@@ -145,23 +141,6 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
 
         }
-        */
-         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
     }
 

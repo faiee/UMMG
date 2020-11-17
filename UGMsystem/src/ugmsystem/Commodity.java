@@ -250,9 +250,10 @@ public class Commodity {
         
     }
     
-    public boolean isAvailable() {
+    public static boolean isAvailable() {
         
-        return false;
+        
+        return false ;
     }
     
     public void advertisee() {

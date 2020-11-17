@@ -71,7 +71,7 @@ public class Advertisement extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/logo.jpg"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        jLabel4.setText("Product #");
+        jLabel4.setText("Product ID");
 
         Pname.setForeground(new java.awt.Color(102, 102, 102));
         Pname.addActionListener(new java.awt.event.ActionListener() {

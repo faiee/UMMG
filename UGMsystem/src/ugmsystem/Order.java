@@ -13,17 +13,18 @@ import java.util.*;
  */
 public class Order {
 
-    private int ID;
-    private String Name;
+    private String Name,oID,vID,Description;
+    private int price;
     private String Date;
     private String SaleLicense;
     private Commodity PurchaseCom;
-    private String CommodityType;
-    private int CommodityNo;
+    private String CommodityType;//section
+    private String CommodityNo;//Product id
     private double TotalPayment;
+    
 
-    public Order(int ID, String Name, String Date, String SaleLicense, Commodity PurchaseCom, String CommodityType, int CommodityNo, double TotalPayment) {
-        this.ID = ID;
+    public Order(String ID, String Name, String Date, String SaleLicense, Commodity PurchaseCom, String CommodityType, String CommodityNo, double TotalPayment) {
+        this.oID = oID;
         this.Name = Name;
         this.Date = Date;
         this.SaleLicense = SaleLicense;
@@ -33,13 +34,24 @@ public class Order {
         this.TotalPayment = TotalPayment;
     }
 
-    //Get and set
-    public int getID() {
-        return ID;
+    public Order(String Name, String oID, String vID, String Description, int price, String CommodityType, String CommodityNo) {
+        this.Name = Commodity.getName();
+        this.oID = generateOrderID();
+        this.vID = Commodity.getvID();
+        this.Description = Commodity.getDescription();
+        this.price = Commodity.getPrice();
+        this.CommodityType = Commodity.getSec();
+        this.CommodityNo = Commodity.getpID();
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    //Get and set
+
+    public String getoID() {
+        return oID;
+    }
+
+    public void setoID(String oID) {
+        this.oID = oID;
     }
 
     public String getName() {
@@ -82,11 +94,11 @@ public class Order {
         this.CommodityType = CommodityType;
     }
 
-    public int getCommodityNo() {
+    public String getCommodityNo() {
         return CommodityNo;
     }
 
-    public void setCommodityNo(int CommodityNo) {
+    public void setCommodityNo(String CommodityNo) {
         this.CommodityNo = CommodityNo;
     }
 
@@ -100,7 +112,24 @@ public class Order {
 
     //Method
     public void createOrder() {
-
+        double t = calculateTax(price);
+        TotalPayment= price + t;
+        
+  
+    }
+    
+    public double calculateTax(int p) {
+        double tax=0.0;
+        tax = (price * 0.15);
+        return tax;
+    }
+    
+    
+    private String generateOrderID() {
+        String trim = "00";
+        int p = (int) (Math.random() * 100);
+        String pID = trim + p;
+        return pID;
     }
 
     public boolean isAccepted() {

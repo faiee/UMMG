@@ -18,7 +18,8 @@ import javax.swing.JOptionPane;
 public class CommodityVendor extends javax.swing.JFrame {
 
     static CommodityVendor color = new CommodityVendor();
-   // public static String[] Names = new String[100];
+    DefaultComboBoxModel dml;
+    // public static String[] Names = new String[100];
 
     /**
      * Creates new form Commodity
@@ -167,7 +168,14 @@ public class CommodityVendor extends javax.swing.JFrame {
         Pdetail.setRows(5);
         jScrollPane1.setViewportView(Pdetail);
 
-        pName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose" }));
+        pName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pNameMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pNameMouseEntered(evt);
+            }
+        });
         pName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pNameActionPerformed(evt);
@@ -238,7 +246,7 @@ public class CommodityVendor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Pshow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(Pname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -249,7 +257,7 @@ public class CommodityVendor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -290,13 +298,26 @@ public class CommodityVendor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void saveInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoActionPerformed
-        // TODO add your handling code here:
-        //Login.currentUser.setPhoneNumber(jTextField4.getText().trim());
-        if(Pprice.getText().length()==10 && Pprice.getText().matches("\\d+")){
-        Commodity.setName(Pname.getText());
-        Commodity.setPrice(Integer.valueOf(Pprice.getText()));
-        Commodity.setDescription(Pdetail.getText());
-        }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
+        try {
+            // TODO add your handling code here:
+            /*
+            if(Pprice.getText().length()==10 && Pprice.getText().matches("\\d+")){
+            Commodity.setName(Pname.getText().trim());
+            Commodity.setPrice(Integer.valueOf(Pprice.getText()));
+            Commodity.setDescription(Pdetail.getText());
+            }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
+            Pname.setText();
+            Pprice.setText();
+            Pdetail.setText();
+             */
+            Commodity.setName(Pname.getText().trim());
+            Commodity.setPrice(Integer.valueOf(Pprice.getText().trim()));
+            Commodity.setDescription(Pdetail.getText().trim());
+
+        } catch (IOException ex) {
+            Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_saveInfoActionPerformed
 
     private void PnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PnameActionPerformed
@@ -308,22 +329,42 @@ public class CommodityVendor extends javax.swing.JFrame {
     }//GEN-LAST:event_PpriceActionPerformed
 
     private void PshowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PshowActionPerformed
-            // TODO add your handling code here:
-          //   if (Commodity.getAdsNamesForVendor().equals(Login.vendor.getId())){
-           // Commodity.getAdsNamesForVendor();
-            //Commodity.fillArrayComodityFromFile();
-           //  }
-           for(int i=0;i<Vendor.vendorCommodity.size();i++){
-           System.out.println(Vendor.vendorCommodity.toString());
-           }
-        
-        
+        // TODO add your handling code here:
+        Commodity.fillArrayComodityFromFile();
     }//GEN-LAST:event_PshowActionPerformed
 
     private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
         // TODO add your handling code here:
-        
+        String SelectedItem = (String) pName.getSelectedItem();
+        if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(2))) {
+            Pname.setText(Commodity.GetEachVendorInfo().get(2));
+            Pprice.setText(Commodity.GetEachVendorInfo().get(3));
+            Pdetail.setText(Commodity.GetEachVendorInfo().get(5));
+        } else if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(9))) {
+            Pname.setText(Commodity.GetEachVendorInfo().get(9));
+            Pprice.setText(Commodity.GetEachVendorInfo().get(10));
+            Pdetail.setText(Commodity.GetEachVendorInfo().get(12));
+        } else {
+            Pname.setText(Commodity.GetEachVendorInfo().get(16));
+            Pprice.setText(Commodity.GetEachVendorInfo().get(17));
+            Pdetail.setText(Commodity.GetEachVendorInfo().get(19));
+        }
+
     }//GEN-LAST:event_pNameActionPerformed
+
+    private void pNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pNameMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pNameMouseClicked
+
+    private void pNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pNameMouseEntered
+        // TODO add your handling code here:
+        dml = new DefaultComboBoxModel();
+        dml.addElement("Choose");
+        dml.addElement(Commodity.GetEachVendorInfo().get(2));
+        dml.addElement(Commodity.GetEachVendorInfo().get(9));
+        dml.addElement(Commodity.GetEachVendorInfo().get(16));
+        pName.setModel(dml);
+    }//GEN-LAST:event_pNameMouseEntered
 
     /**
      * @param args the command line arguments

@@ -112,16 +112,15 @@ public class Order {
 
     //Method
     public void createOrder() {
-        double t = calculateTax(price);
-        TotalPayment= price + t;
         
   
     }
     
-    public double calculateTax(int p) {
+    public double calculatePay(int p) {
         double tax=0.0;
-        tax = (price * 0.15);
-        return tax;
+        tax = (p * 0.15);
+        TotalPayment= p+tax;
+        return TotalPayment;
     }
     
     

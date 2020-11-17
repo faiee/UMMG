@@ -317,8 +317,8 @@ public class myAdv extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-          ChatUser.color.getContentPane().setBackground(Color.WHITE);
-        ChatUser.color.setVisible(true);
+          MyChats.color.getContentPane().setBackground(Color.WHITE);
+        MyChats.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton28ActionPerformed
 

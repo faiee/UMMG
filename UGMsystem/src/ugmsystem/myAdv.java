@@ -35,13 +35,13 @@ public class myAdv extends javax.swing.JFrame {
 
 
                 if(!Commodity.GetEachVendorInfo().isEmpty()){
-            if(!Commodity.GetEachVendorInfo().get(2).isEmpty())   jLabel4.setText(Commodity.GetEachVendorInfo().get(2));
+            if(!Commodity.GetEachVendorInfo().get(2).isEmpty())   jLabel4.setText("*"+Commodity.GetEachVendorInfo().get(2));
              if(!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
-                 jLabel6.setText(Commodity.GetEachVendorInfo().get(9));
+                 jLabel6.setText("*"+Commodity.GetEachVendorInfo().get(9));
              }
            if(!Commodity.GetEachVendorInfo().get(16).isEmpty() &&  !Commodity.GetEachVendorInfo().get(16).equals(Commodity.GetEachVendorInfo().get(2))) {
                
-               jLabel8.setText(Commodity.GetEachVendorInfo().get(16));
+               jLabel8.setText("*"+Commodity.GetEachVendorInfo().get(16));
            }
            
     }
@@ -324,9 +324,10 @@ public class myAdv extends javax.swing.JFrame {
             try {
                 Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-                MyAccount.color.getContentPane().setBackground(Color.WHITE);
-                MyAccount.color.setVisible(true);
-                this.setVisible(false);
+                Login.currentUser=null;
+        MainMenu.color.getContentPane().setBackground(Color.WHITE);
+        MainMenu.color.setVisible(true);
+        this.setVisible(false);
 
             } catch (IOException ex) {
                 Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);

@@ -50,8 +50,8 @@ public class Sections extends javax.swing.JFrame {
         initComponents();
         setTitle("Book Section");
         setLocationRelativeTo(null);
-    
-        
+
+       
     }
 
     /**
@@ -886,7 +886,7 @@ public class Sections extends javax.swing.JFrame {
                 
                 
               
-                
+              
                 
                 
                 

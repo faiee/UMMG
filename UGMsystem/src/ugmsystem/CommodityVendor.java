@@ -89,6 +89,11 @@ public class CommodityVendor extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         jButton6.setText("Mark Sold");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(222, 89, 0));
@@ -342,6 +347,12 @@ public class CommodityVendor extends javax.swing.JFrame {
             pName.setModel(dml);
         }
     }//GEN-LAST:event_pNameMouseEntered
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Commodity.deleteCommodity();
+        JOptionPane.showMessageDialog(this, "Commodity Successfuly Deleted!");
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

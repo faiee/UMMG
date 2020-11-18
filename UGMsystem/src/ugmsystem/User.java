@@ -6,7 +6,7 @@
 package ugmsystem;
 
 /**
- *
+ *These are the imports needed by this class to operate
  * @author reemalsolami
  */
 import java.io.*; 
@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *This class is the parent of Buyer and Vendor class it contains all methods used by both of these classes
  * @author reemalsolami
  */
 public class User {
@@ -28,22 +28,22 @@ public class User {
     private int guestID=111;
 
     /**
-     *
+     * Static file object that saves all registered user accounts.
      */
     public static File accounts= new File ("account.txt");
 
     /**
-     *
+     *Static ArrayList that reads up to date user information from file.
      */
     static protected ArrayList<User> userInfo = new ArrayList <User>();
  
     /**
-     *
-     * @param password
-     * @param fName
-     * @param lName
-     * @param phoneNumber
-     * @param email
+     *Constructor used to make objects for newly registered users who have no id and calls generateID() method
+     * @param password String
+     * @param fName String
+     * @param lName String
+     * @param phoneNumber String
+     * @param email String
      * @throws IOException
      */
     public User(String password, String fName, String lName, String phoneNumber, String email) throws IOException {
@@ -58,13 +58,13 @@ public class User {
     }
     
     /**
-     *
-     * @param id
-     * @param password
-     * @param fName
-     * @param lName
-     * @param phoneNumber
-     * @param email
+     *Constructors used to make object of users who are already registered and are trying to login
+     * @param id String
+     * @param password String
+     * @param fName String
+     * @param lName String
+     * @param phoneNumber String
+     * @param email String
      * @throws IOException
      */
     public User(String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
@@ -79,7 +79,7 @@ public class User {
     }
     
     /**
-     *
+     *Constructors used to make guest user object and calls generateGuestID() method
      * @throws IOException
      */
     public User() throws IOException {
@@ -89,16 +89,16 @@ public class User {
     }
 
     /**
-     *
-     * @return
+     *Accessors/get method returns user id
+     * @return String
      */
     public String getId() {
         return id;
     }
 
     /**
-     *
-     * @return
+     *Accessors/get method returns user password
+     * @return String
      */
     public String getPassword() {
         return password;
@@ -106,48 +106,48 @@ public class User {
     }
 
     /**
-     *
-     * @return
+     *Accessors/get method returns user first name
+     * @return String
      */
     public String getfName() {
         return fName;
     }
 
     /**
-     *
-     * @return
+     * Accessors/get method returns user last name
+     * @return String
      */
     public String getlName() {
         return lName;
     }
 
     /**
-     *
-     * @return
+     * Accessors/get method returns user phone number
+     * @return String
      */
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     /**
-     *
-     * @return
+     *Accessors/get method returns user email
+     * @return String
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     *
-     * @param id
+     *Mutator/set method sets user id
+     * @param id String
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     *
-     * @param password
+     *Mutator/set method sets user password
+     * @param password String
      * @throws IOException
      */
     public void setPassword(String password) throws IOException {
@@ -158,8 +158,8 @@ public class User {
     }
 
     /**
-     *
-     * @param fName
+     *Mutator/set method sets user first name
+     * @param fName String
      * @throws IOException
      */
     public void setfName(String fName) throws IOException {
@@ -169,8 +169,8 @@ public class User {
     }
 
     /**
-     *
-     * @param lName
+     *Mutator/set method sets user last name
+     * @param lName String
      * @throws IOException
      */
     public void setlName(String lName) throws IOException {
@@ -180,8 +180,8 @@ public class User {
     }
 
     /**
-     *
-     * @param phoneNumber
+     *Mutator/set method sets user phoneNumber
+     * @param phoneNumber String
      * @throws IOException
      */
     public void setPhoneNumber(String phoneNumber) throws IOException {
@@ -191,8 +191,8 @@ public class User {
     }
 
     /**
-     *
-     * @param email
+     *Mutator/set method sets user email
+     * @param email String
      * @throws IOException
      */
     public void setEmail(String email) throws IOException {
@@ -201,35 +201,30 @@ public class User {
         Update(email);
     }
     
-    
-   //Login Method: checks if user account exits and is compatible with password
 
     /**
-     *
-     * @param id
-     * @param password
-     * @return
+     *Login Method: checks if user account exits and is compatible with password
+     * @param id String
+     * @param password String
+     * @return boolean
      * @throws IOException
      */
     
     public static boolean login(String id, String password) throws IOException {
         
           fillArrayFromFile();
-          //ArrayList<String> VendorInfo = Commodity.GetEachVendorInfo();  
           String t = isUser(id);
                    
           if(!(t.equals("-1"))){
            return passwordCorrect(password, t);}
              
          return false;}    
+ 
     
-    
-    //Register Method: checks that no user account of same info exists 
-    //then creates a new account for user and registers user's information in accounts file
-
     /**
-     *
-     * @return
+     *Register Method: checks that no user account of same info exists 
+     * then creates a new account for user and registers user's information in accounts file
+     * @return integer
      * @throws IOException
      */
     
@@ -265,7 +260,13 @@ public class User {
         
     } 
 
-    //Generates an id for registered users
+
+    /**
+     *Generates an id for registered users
+     * Called in constructor
+     * @param p String
+     * @return String
+     */
    private String generateID(String p){
         int count = p.length();
         String trim = p.trim();
@@ -274,7 +275,12 @@ public class User {
                 trim.charAt(count-2)+trim.charAt(count-1);
          return rID;}
 
-   //Generates an id for guest users
+   
+    /**
+     *Generates an id for guest users
+     * Called in empty constructor
+     * @return String
+     */
    private String generateGuestID(){
       
        String gID=  guestID +""+((int) (Math.random()*100)+2232);
@@ -283,12 +289,11 @@ public class User {
     }
    
    
-   //Used by login() method above to check if user try to login is actually regiestered
 
     /**
-     *
-     * @param testId
-     * @return
+     *Used by login() method above to check if user try to login is actually registered
+     * @param testId String
+     * @return String
      */
    public static String isUser(String testId){
            String line;
@@ -306,7 +311,14 @@ public class User {
        
     return "-1";}
    
-      //checks if user trying to register entered correct password
+      
+
+    /**
+     *Checks if user trying to register entered correct password
+     * @param testPassword String
+     * @param t String
+     * @return boolean
+     */
       private static boolean passwordCorrect(String testPassword, String t){
      
         if(t.equals(testPassword)){
@@ -314,24 +326,21 @@ public class User {
    
         return false;}
       
-      //checks if current user using the system is a guest or a registered user
 
     /**
-     *
-     * @return
+     *Checks if current user using the system is a guest or a registered user
+     * @return boolean
      */
       public boolean isGuest(){
         if(this.id.charAt(0)=='1' && this.id.charAt(1)=='1' && this.id.charAt(2)=='1')
           return true;
       return false;}
       
-      
-      //Used by register() method
-      //checks if there  is an account with similiar data
 
     /**
-     *
-     * @return
+     *Used by register() method
+     * Checks if there  is an account with similar data
+     * @return boolean
      */
       public boolean noMatch(){
           String line;
@@ -355,8 +364,8 @@ public class User {
         return true;}
       
     /**
-     *
-     * @param newUpdate
+     * Method that receives update of user account information and updates file and ArrayList userInfo
+     * @param newUpdate String
      * @throws IOException
      */
     public void Update(String newUpdate) throws IOException{
@@ -396,16 +405,24 @@ public class User {
       } 
     }
 
-      
+       /**
+     * Override Method toString that converts user object to string
+     * @return  String
+     * 
+     */
     @Override
       public String toString(){
        return this.id +","+this.password+","+ this.fName+","+this.lName+","+this.getPhoneNumber()+","+ this.getEmail();
       
       }
-      
-      
-      //Method that is called by login to read all user accounts from file into array
-      static void fillArrayFromFile() throws FileNotFoundException, IOException{
+   
+
+    /**
+     *Method that is called by login to read all user accounts from file into ArrayList userInfo
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+      public static void fillArrayFromFile() throws FileNotFoundException, IOException{
           String line;
           
           BufferedReader read2 = new BufferedReader(new FileReader(accounts));

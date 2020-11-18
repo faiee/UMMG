@@ -6,14 +6,12 @@
 package ugmsystem;
 import java.awt.Color;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
-import javax.swing.text.MaskFormatter;
+
 /**
- *
+ *This class is used to create user account interface, display user information, and let user edit account information.
  * @author reemalsolami
  */
 
@@ -21,12 +19,12 @@ import javax.swing.text.MaskFormatter;
 public class MyAccount extends javax.swing.JFrame {
 
     /**
-     * Creates new form MyAccount
+     * Creates new form MyAccount.
      */
     static MyAccount color = new MyAccount();
   
     /**
-     *
+     *Constructor that constructs  interface, it's title, position, and sets fields with account info.
      */
     public MyAccount() {
         initComponents();

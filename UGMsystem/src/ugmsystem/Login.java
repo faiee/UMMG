@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.*;
+
 /**
- *
+ *This class is login interface class it contains the link between classes and login process
  * @author Jae
  */
 public class Login extends javax.swing.JFrame {
@@ -23,7 +23,7 @@ public class Login extends javax.swing.JFrame {
 
     
     /**
-     * Creates new form Login
+     * Creates new form Login.
      */
     public Login() {
         initComponents();

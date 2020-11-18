@@ -6,49 +6,57 @@
 package ugmsystem;
 
 import java.io.*;
-import java.util.*;
-import java.util.logging.*;
 import static ugmsystem.User.userInfo;
 
 /**
- *
+ *This is a class that is used to create Buyer object when user logins in,registers in the system, enters as guest
  * @author reemalsolami
  */
 public class Buyer extends User {
     
-    private ArrayList<Commodity> items = new ArrayList<Commodity>();
-   
-
+    /**
+     *This constructor is  used to create buyer objects from class buyer when user logs in
+     * @param id String
+     * @param password String
+     * @param fName String
+     * @param lName String
+     * @param phoneNumber String
+     * @param email String
+     * @throws IOException
+     */
     public Buyer( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super(id,password, fName, lName, phoneNumber, email);
       
     }
 
-   public Buyer( String password, String fName, String lName, String phoneNumber, String email) throws IOException {
+    /**
+     *This constructor is  used to create buyer objects from class buyer when user registers
+     * @param password String
+     * @param fName String
+     * @param lName String
+     * @param phoneNumber String
+     * @param email String
+     * @throws IOException
+     */
+    public Buyer( String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super(password, fName, lName, phoneNumber, email);
       
     }
 
+    /**
+     *This constructor is  used to create buyer objects from class buyer when user is a guest
+     * @throws IOException
+     */
     public Buyer() throws IOException {
         super();
     }
-
-   
-    public ArrayList<Commodity> getItems() {
-        return items;
-    }
-
-    
-    public void setItems(ArrayList<Commodity> items) {
-        this.items = items;
-    }
-
-    
-    public void rateVendor(Vendor vID, int rate) {
-        vID.setRate(rate);
-    }
  
-    
+    /**
+     *This method is called to find user account in accounts file when trying to login
+     * @param userId String
+     * @return Buyer
+     * @throws IOException
+     */
     public static Buyer findUser( String userId) throws IOException{
          
            fillArrayFromFile();

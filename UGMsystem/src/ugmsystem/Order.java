@@ -5,7 +5,16 @@
  */
 package ugmsystem;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,41 +22,63 @@ import java.util.*;
  */
 public class Order {
 
-    private String Name,oID,vID,Description;
+    private String Name, ID, VenID, Description;
     private int price;
     private String Date;
     private String SaleLicense;
     private Commodity PurchaseCom;
     private String CommodityType;//section
     private String CommodityNo;//Product id
-    public static double TotalPayment;
-    
+    public static double TotalPayment, Tax;
+    public static Order o;
+    public static File Orders = new File("Orders.txt");
+    public static ArrayList<String> EachOrderInfo = new ArrayList<String>();
 
-    public Order(String ID, String Name, String Date, String SaleLicense, Commodity PurchaseCom, String CommodityType, String CommodityNo, double TotalPayment) {
-        this.oID = oID;
+    public Order(String ID, String VenID, String Name, String CommodityType, int price, double Tax, double TotalPayment) {
+        this.ID = ID;
+        this.VenID=VenID;
         this.Name = Name;
-        this.Date = Date;
-        this.SaleLicense = SaleLicense;
-        this.PurchaseCom = PurchaseCom;
         this.CommodityType = CommodityType;
-        this.CommodityNo = CommodityNo;
-        this.TotalPayment = TotalPayment;
+        this.price = price;
+        this.Tax = calculateTax(price);
+        this.TotalPayment = calculatePay(price);
     }
 
+    public Order() {
 
+    }
 
     //Get and set
-
     public String getoID() {
-        return oID;
+        return ID;
     }
 
-    public void setoID(String oID) {
-        this.oID = oID;
+    public String getVenID() {
+        return VenID;
+    }
+
+    public void setoID(String ID) {
+        this.ID = ID;
     }
 
     public String getName() {
         return Name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public double getTax() {
+        return Tax;
+    }
+
+    public void setTax(double Tax) {
+        Order.Tax = Tax;
     }
 
     public void setName(String Name) {
@@ -104,19 +135,62 @@ public class Order {
 
     //Method
     public void createOrder() {
-        
-  
+        try {
+            FileWriter fileWriter = new FileWriter(Orders, true);
+            BufferedWriter Write = new BufferedWriter(fileWriter);
+            Write.write(this.ID + "," + this.VenID + "," + this.Name + "," + this.CommodityType + "," + this.price + "," + this.Tax + "," + this.TotalPayment);
+            Write.write("\n");
+            Write.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
+    public static ArrayList<String> GetEachOrderInfo() {
+
+        String line;
+
+        try {
+
+            BufferedReader read = new BufferedReader(new FileReader(Orders));
+            while ((line = read.readLine()) != null) {
+
+                String[] SplitWords = line.split(",");
+                for (int i = 0; i < SplitWords.length; i++) {
+
+                    if (line.contains(Login.vendor.getId())) {
+                        EachOrderInfo.add(SplitWords[i]);
+                    }
+                }
+            }
+            read.close();
+            return EachOrderInfo;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return EachOrderInfo;
+
+    }
+
     public static double calculatePay(int p) {
-        double tax=0.0;
+        double tax = 0.0;
         tax = (p * 0.15);
-        TotalPayment= p+tax;
+        TotalPayment = p + tax;
         return TotalPayment;
     }
-    
-    
-    private String generateOrderID() {
+
+    public static double calculateTax(int p) {
+        double tax = 0.0;
+        tax = (p * 0.15);
+        return tax;
+    }
+
+    public static String generateOrderID() {
         String trim = "00";
         int p = (int) (Math.random() * 100);
         String pID = trim + p;

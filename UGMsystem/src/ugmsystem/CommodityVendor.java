@@ -356,6 +356,7 @@ public class CommodityVendor extends javax.swing.JFrame {
         // TODO add your handling code here:
         /*Commodity.deleteCommodity();
         JOptionPane.showMessageDialog(this, "Commodity Successfuly Deleted!");*/
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed

@@ -8,6 +8,7 @@ package ugmsystem;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -16,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 import static ugmsystem.Login.vendor;
+import static ugmsystem.Order.o;
 
 /**
  *
@@ -23,7 +25,10 @@ import static ugmsystem.Login.vendor;
  */
 public class PaymentInfo extends javax.swing.JFrame {
 
+    // public static ArrayList<String> orderBOOK = Commodity.getBooksSectionAds();
     static PaymentInfo color = new PaymentInfo();
+    static Order orders;
+    //static Order o;
 
     /**
      * Creates new form PaymentInfo
@@ -32,7 +37,7 @@ public class PaymentInfo extends javax.swing.JFrame {
         initComponents();
         setTitle("Payment Info");
         setLocationRelativeTo(null);
-
+        // ArrayList<String> orderBOOK = Commodity.getBooksSectionAds();
         // if he came from search bar
         // for search display
         if (Commodity.getBooksSectionAds().contains(Search.search)) {
@@ -44,7 +49,10 @@ public class PaymentInfo extends javax.swing.JFrame {
 
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-
+                //(String ID, String Name, String CommodityType, int price, double Tax, double TotalPayment)
+                // orders = new Order(orders.generateOrderID(),Login.vendor.getId() ,Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                System.out.println(orders);
             }
             if (Commodity.getBooksSectionAds().get(9).contains(Search.search)) {
 
@@ -582,15 +590,19 @@ public class PaymentInfo extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-
+/*
         if (jTextField1.getText().trim().length() == 16) {
             if ((jTextField2.getText().length() == 2) && (Integer.valueOf(jTextField2.getText()) <= 12)) {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
-                    if (jTextField4.getText().length() == 3) {
-                        //       Order o = new Order(Login.vendor.getId());
-                        new SuccessOrder().setVisible(true);
-                         JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
+                    if (jTextField4.getText().length() == 3) {     */
+//int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));        
+//orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
+        orders.createOrder();
+        new SuccessOrder().setVisible(true);
+        JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
+        
+        /* 
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");
                     }
@@ -602,7 +614,7 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
         } else {
             JOptionPane.showMessageDialog(this, "Card number denied! It should be 16 digits long");
-        }
+        }*/
 
 
     }//GEN-LAST:event_jButton2ActionPerformed

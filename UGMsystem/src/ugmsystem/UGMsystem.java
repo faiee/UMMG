@@ -5,19 +5,9 @@
  */
 package ugmsystem;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import static ugmsystem.User.accounts;
-import static ugmsystem.User.fillArrayFromFile;
 
 /**
- *
+ *This is the main class of our project it was used to test out classes  and methods before linking them with interfaces
  * @author reemalsolami
  */
 public class UGMsystem {

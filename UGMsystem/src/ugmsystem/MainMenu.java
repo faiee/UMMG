@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *This is a the Main Menu form of the application where user can login,register,or continue as guest
  * @author fayaldosa
  */
 
@@ -20,13 +20,15 @@ public class MainMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form MainMenu
+     * static form objects are made
+     * static User Object is  created
      */
    
     static MainMenu color  = new MainMenu();
     static User guest;
     
     /**
-     *
+     *This is the  constructor of the MainMenu class
      */
     public MainMenu() {
         initComponents();
@@ -176,7 +178,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseDragged
 
     private void jLabel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseMoved
-        // TODO add your handling code here:
+       
          jLabel4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
      
     }//GEN-LAST:event_jLabel4MouseMoved

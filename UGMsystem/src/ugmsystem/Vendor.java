@@ -5,93 +5,44 @@
  */
 package ugmsystem;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.util.*;
 
 /**
- *
+ *This class is used to create Vendor objects that sell commodities.
  * @author reemalsolami
  */
 public class Vendor extends User{
 
     /**
-     *
+     *static ArrayList attribute used to store commodities sold by vendor.
      */
     static public ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
-    private int rate;
 
     /**
-     *
-     * @param id
-     * @param password
-     * @param fName
-     * @param lName
-     * @param phoneNumber
-     * @param email
+     *Constructor used to create Vendor objects from this class.
+     * @param id String
+     * @param password String
+     * @param fName String
+     * @param lName String
+     * @param phoneNumber String
+     * @param email String
      * @throws IOException
      */
     public Vendor( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super( id, password, fName, lName, phoneNumber, email);
-        id=id;
+       
     }
-
+   
     /**
-     *
-     * @return
-     */
-    public static ArrayList<Commodity> getVendorCommodity() {
-        return vendorCommodity;
-    }
-
-    /**
-     *
-     * @param vendorCommodity
-     */
-    public static void setVendorCommodity(ArrayList<Commodity> vendorCommodity) {
-        Vendor.vendorCommodity = vendorCommodity;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getRate() {
-        return rate;
-    }
-
-    /**
-     *
-     * @param rate
-     */
-    public void setRate(int rate) {
-        this.rate = rate;
-    }
-    
-    /**
-     *
-     * @param item
+     *Method used to create advertisement of a commodity to be sold by  
+     * vendor and adds it to vendorCommodity ArrayList
+     * @param item Commodity
      */
     public void createAd(Commodity item) {
         
        vendorCommodity.add(item);
     } 
 
-    public static File getAccounts() {
-        return accounts;
-    }
-
-    public static ArrayList<User> getUserInfo() {
-        return userInfo;
-    }
-
-    public static void setAccounts(File accounts) {
-        User.accounts = accounts;
-    }
-
-    public static void setUserInfo(ArrayList<User> userInfo) {
-        User.userInfo = userInfo;
-    }
-
-   
 }

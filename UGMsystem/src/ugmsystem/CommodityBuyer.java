@@ -1011,9 +1011,10 @@ public class CommodityBuyer extends javax.swing.JFrame {
         try {
             Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-            MyAccount.color.getContentPane().setBackground(Color.WHITE);
-            MyAccount.color.setVisible(true);
-            this.setVisible(false);
+         Login.currentUser=null;
+        MainMenu.color.getContentPane().setBackground(Color.WHITE);
+        MainMenu.color.setVisible(true);
+        this.setVisible(false);
 
         } catch (IOException ex) {
             Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);

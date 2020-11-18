@@ -503,8 +503,8 @@ public class Sections extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
 
-    
-          String itemText = (String) jComboBox1.getSelectedItem();
+    String itemText= null;
+           itemText = (String) jComboBox1.getSelectedItem();
 
         if (itemText.equals("Books")) {
               jLabel4.setText("");

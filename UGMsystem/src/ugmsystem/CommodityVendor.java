@@ -5,7 +5,12 @@
  */
 package ugmsystem;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -20,10 +25,8 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     static CommodityVendor color = new CommodityVendor();
     DefaultComboBoxModel dml;
-    
-    
-    // public static String[] Names = new String[100];
 
+    // public static String[] Names = new String[100];
     /**
      * Creates new form Commodity
      */
@@ -288,40 +291,12 @@ public class CommodityVendor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void saveInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoActionPerformed
-       // try {
-            // TODO add your handling code here:
-            /*
-            if(Pprice.getText().length()==10 && Pprice.getText().matches("\\d+")){
-            Commodity.setName(Pname.getText().trim());
-            Commodity.setPrice(Integer.valueOf(Pprice.getText()));
-            Commodity.setDescription(Pdetail.getText());
-            }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
-             */
-           //(String vID, String pID, String Name, int Price, String filePic, String sec, String Description)
-            /*
-            Commodity c = new Commodity();
-            if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(2))) {  
-            c.setName(Pname.getText().trim());
-            c.setPrice(Integer.valueOf(Pprice.getText().trim()));
-            c.setDescription(Pdetail.getText().trim());
-            c = new Commodity(Commodity.GetEachVendorInfo().get(0),Commodity.GetEachVendorInfo().get(1)
-                    ,c.getName(),c.getPrice()
-                    ,Commodity.GetEachVendorInfo().get(4),Commodity.GetEachVendorInfo().get(6)
-                    ,c.getDescription());
-        } else if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(9))) {
-            Pname.setText(Commodity.GetEachVendorInfo().get(9));
-            Pprice.setText(Commodity.GetEachVendorInfo().get(10));
-            Pdetail.setText(Commodity.GetEachVendorInfo().get(12));
-        } else {
-            Pname.setText(Commodity.GetEachVendorInfo().get(16));
-            Pprice.setText(Commodity.GetEachVendorInfo().get(17));
-            Pdetail.setText(Commodity.GetEachVendorInfo().get(19));
-        }
-
-        } catch (IOException ex) {
-            Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-
+        // TODO add your handling code here:
+        String newName = Pname.getText().trim();
+        String newPrice = Pprice.getText().trim();
+        String newDescription = Pdetail.getText().trim();
+        Commodity.editCommodity(newName, newPrice, newDescription);
+        JOptionPane.showMessageDialog(this, "Information Update Success!");
     }//GEN-LAST:event_saveInfoActionPerformed
 
     private void PnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PnameActionPerformed
@@ -358,13 +333,13 @@ public class CommodityVendor extends javax.swing.JFrame {
     private void pNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pNameMouseEntered
         // TODO add your handling code here:
         Commodity.GetEachVendorInfo();
-        if(!(Commodity.EachVendorInfo.isEmpty())){
-        dml = new DefaultComboBoxModel();
-        dml.addElement("Choose");
-        dml.addElement(Commodity.EachVendorInfo.get(2));
-        dml.addElement(Commodity.EachVendorInfo.get(9));
-        dml.addElement(Commodity.EachVendorInfo.get(16));
-        pName.setModel(dml);
+        if (!(Commodity.EachVendorInfo.isEmpty())) {
+            dml = new DefaultComboBoxModel();
+            dml.addElement("Choose");
+            dml.addElement(Commodity.EachVendorInfo.get(2));
+            dml.addElement(Commodity.EachVendorInfo.get(9));
+            dml.addElement(Commodity.EachVendorInfo.get(16));
+            pName.setModel(dml);
         }
     }//GEN-LAST:event_pNameMouseEntered
 

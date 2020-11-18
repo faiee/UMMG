@@ -5,6 +5,7 @@
  */
 package ugmsystem;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -13,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static ugmsystem.Login.currentUser;
 import static ugmsystem.Login.vendor;
 
 /**
@@ -20,8 +22,9 @@ import static ugmsystem.Login.vendor;
  * @author reemalsolami
  */
 public class PaymentInfo extends javax.swing.JFrame {
-    
- static PaymentInfo color = new PaymentInfo();
+
+    static PaymentInfo color = new PaymentInfo();
+
     /**
      * Creates new form PaymentInfo
      */
@@ -29,260 +32,218 @@ public class PaymentInfo extends javax.swing.JFrame {
         initComponents();
         setTitle("Payment Info");
         setLocationRelativeTo(null);
-       
+
         // if he came from search bar
         // for search display
-       
-           if (Commodity.getBooksSectionAds().contains(Search.search)){
-             
-               
-               if(Commodity.getBooksSectionAds().get(2).equalsIgnoreCase(Search.search)){
-                 
+        if (Commodity.getBooksSectionAds().contains(Search.search)) {
+
+            if (Commodity.getBooksSectionAds().get(2).equalsIgnoreCase(Search.search)) {
+
                 jLabel3.setText("Price: "
                         + Commodity.getBooksSectionAds().get(3));
-                
-                int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                          
-               
-                   
-               }
-               if(Commodity.getBooksSectionAds().get(9).contains(Search.search)){
-                
- 
+
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+            if (Commodity.getBooksSectionAds().get(9).contains(Search.search)) {
+
                 jLabel3.setText(Commodity.getBooksSectionAds().get(10));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(10));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                }
-                
-                
-                if(Commodity.getBooksSectionAds().get(16).contains(Search.search)){
-                   
-                     
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+            }
+
+            if (Commodity.getBooksSectionAds().get(16).contains(Search.search)) {
+
                 jLabel3.setText(Commodity.getBooksSectionAds().get(17));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(17));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                    
-                }
-                
-                  if(Commodity.getBooksSectionAds().get(24).contains(Search.search)){
-               
-           
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+
+            if (Commodity.getBooksSectionAds().get(24).contains(Search.search)) {
+
                 jLabel3.setText(Commodity.getBooksSectionAds().get(24));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(24));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-            
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
-        }}
-          if (Commodity.getClothesSectionAds().contains(Search.search)){
-            
-               if(Commodity.getClothesSectionAds().get(2).equalsIgnoreCase(Search.search)){
-                    jLabel3.setText(Commodity.getClothesSectionAds().get(3));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-               }
-               
-               
-             if(Commodity.getClothesSectionAds().get(9).equalsIgnoreCase(Search.search)){
-                 jLabel3.setText(Commodity.getClothesSectionAds().get(10));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(10));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                 
-   
-             } 
-               if(Commodity.getClothesSectionAds().get(16).equalsIgnoreCase(Search.search)){
-                   
-                   jLabel3.setText(Commodity.getClothesSectionAds().get(17));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(17));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                  
-               }
-                if(Commodity.getClothesSectionAds().get(23).equalsIgnoreCase(Search.search)){
-                    jLabel3.setText(Commodity.getClothesSectionAds().get(24));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                   
-                    
-                }
-            
+            }
         }
-        
-          
-            if (Commodity.getFurnSectionAds().contains(Search.search)){
-            
-                
-                 if(Commodity.getFurnSectionAds().get(2).equalsIgnoreCase(Search.search)){
-                
-               jLabel3.setText(Commodity.getFurnSectionAds().get(3));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                
-                 }
-                
-                  if(Commodity.getFurnSectionAds().get(9).equalsIgnoreCase(Search.search)){
-               jLabel3.setText(Commodity.getFurnSectionAds().get(10));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(10));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                  }
-                
-                if(Commodity.getFurnSectionAds().get(16).equalsIgnoreCase(Search.search)){
-                  
-                      jLabel3.setText(Commodity.getFurnSectionAds().get(17));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(17));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                    
-                }
-                   if(Commodity.getFurnSectionAds().get(23).equalsIgnoreCase(Search.search)){
-                       
-                   jLabel3.setText(Commodity.getFurnSectionAds().get(24));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(24));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                       
-                   }
-                
-      
-        
-        }
-    
-    
-   // if he came from radio buttons
-        
-         if (Sections.check==Sections.T ) {
+        if (Commodity.getClothesSectionAds().contains(Search.search)) {
 
-            if (Sections.radio1==Sections.T) {
-             
+            if (Commodity.getClothesSectionAds().get(2).equalsIgnoreCase(Search.search)) {
+                jLabel3.setText(Commodity.getClothesSectionAds().get(3));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+            }
+
+            if (Commodity.getClothesSectionAds().get(9).equalsIgnoreCase(Search.search)) {
+                jLabel3.setText(Commodity.getClothesSectionAds().get(10));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+            if (Commodity.getClothesSectionAds().get(16).equalsIgnoreCase(Search.search)) {
+
+                jLabel3.setText(Commodity.getClothesSectionAds().get(17));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(17));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+            if (Commodity.getClothesSectionAds().get(23).equalsIgnoreCase(Search.search)) {
+                jLabel3.setText(Commodity.getClothesSectionAds().get(24));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+
+        }
+
+        if (Commodity.getFurnSectionAds().contains(Search.search)) {
+
+            if (Commodity.getFurnSectionAds().get(2).equalsIgnoreCase(Search.search)) {
+
+                jLabel3.setText(Commodity.getFurnSectionAds().get(3));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+
+            if (Commodity.getFurnSectionAds().get(9).equalsIgnoreCase(Search.search)) {
+                jLabel3.setText(Commodity.getFurnSectionAds().get(10));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+            }
+
+            if (Commodity.getFurnSectionAds().get(16).equalsIgnoreCase(Search.search)) {
+
+                jLabel3.setText(Commodity.getFurnSectionAds().get(17));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(17));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+            if (Commodity.getFurnSectionAds().get(23).equalsIgnoreCase(Search.search)) {
+
+                jLabel3.setText(Commodity.getFurnSectionAds().get(24));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(24));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+
+        }
+
+        // if he came from radio buttons
+        if (Sections.check == Sections.T) {
+
+            if (Sections.radio1 == Sections.T) {
+
                 jLabel3.setText("Price: "
                         + Commodity.getBooksSectionAds().get(3));
-                
-                int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                          
+
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
-            if (Sections.radio2==Sections.T) {
-               
+            if (Sections.radio2 == Sections.T) {
+
                 jLabel3.setText(Commodity.getBooksSectionAds().get(10));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(10));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
             }
 
-            if (Sections.radio3==Sections.T) {
-              
+            if (Sections.radio3 == Sections.T) {
 
-             
                 jLabel3.setText(Commodity.getBooksSectionAds().get(17));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(17));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
-           
             }
-            
-           if (Sections.radio4==Sections.T) {
-            
-                  
-               jLabel3.setText(Commodity.getBooksSectionAds().get(24));
-    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(24));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
+
+            if (Sections.radio4 == Sections.T) {
+
+                jLabel3.setText(Commodity.getBooksSectionAds().get(24));
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
+
+            }
+
         }
-        
-         }
-       
-        
-        if (Sections.check2==Sections.T) {
 
-            if (Sections.radio1==Sections.T) {
-             
+        if (Sections.check2 == Sections.T) {
+
+            if (Sections.radio1 == Sections.T) {
+
                 jLabel3.setText(Commodity.getClothesSectionAds().get(3));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
-            if (Sections.radio2==Sections.T) {
-             
-                jLabel3.setText( Commodity.getClothesSectionAds().get(10));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(10));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
+            if (Sections.radio2 == Sections.T) {
 
+                jLabel3.setText(Commodity.getClothesSectionAds().get(10));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
-            if (Sections.radio3==Sections.T) {
-              
+            if (Sections.radio3 == Sections.T) {
+
                 jLabel3.setText(Commodity.getClothesSectionAds().get(17));
-    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(17));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
-            if (Sections.radio4==Sections.T) {
+            if (Sections.radio4 == Sections.T) {
 
                 jLabel3.setText(
-                      Commodity.getClothesSectionAds().get(24));
-                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(24));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
-
+                        Commodity.getClothesSectionAds().get(24));
+                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(24));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
         }
 
-        if (Sections.check3==Sections.T) {
+        if (Sections.check3 == Sections.T) {
 
-            if (Sections.radio1==Sections.T) {
-             
+            if (Sections.radio1 == Sections.T) {
+
                 jLabel3.setText(
                         Commodity.getFurnSectionAds().get(3));
-                    int i =Integer.parseInt(  Commodity.getFurnSectionAds().get(3));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
-
-             
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
-            if (Sections.radio2==Sections.T) {
-               
+            if (Sections.radio2 == Sections.T) {
+
                 jLabel3.setText(Commodity.getFurnSectionAds().get(10));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(10));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-                     
-
+                int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
-            if (Sections.radio3==Sections.T) {
-             
-                jLabel3.setText( Commodity.getFurnSectionAds().get(17));
-                  int i =Integer.parseInt(  Commodity.getFurnSectionAds().get(17));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
+            if (Sections.radio3 == Sections.T) {
 
-           
+                jLabel3.setText(Commodity.getFurnSectionAds().get(17));
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(17));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
-            if (Sections.radio4==Sections.T) {
+            if (Sections.radio4 == Sections.T) {
 
-             
                 jLabel3.setText(
                         Commodity.getFurnSectionAds().get(24));
-                  int i =Integer.parseInt(  Commodity.getFurnSectionAds().get(24));
-                    jLabel10.setText("After VAT: "+Order.calculatePay( i));
-
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
+                jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
             }
 
         }
-           }
-    
-        
-    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -308,11 +269,6 @@ public class PaymentInfo extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -320,6 +276,11 @@ public class PaymentInfo extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -407,47 +368,6 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/myAccount2.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/homeGreen.png"))); // NOI18N
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/box.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/trooly.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 153, 153));
         jLabel9.setText("/");
@@ -482,53 +402,105 @@ public class PaymentInfo extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
+        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/myAccount2.png"))); // NOI18N
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/smallHome.png"))); // NOI18N
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture1logout.png"))); // NOI18N
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture1mesv1.png"))); // NOI18N
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addComponent(jLabel8)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addGap(6, 6, 6)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField1)
-                                .addGap(12, 12, 12))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(29, 29, 29))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextField1)
+                                        .addGap(9, 9, 9))))
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,7 +547,7 @@ public class PaymentInfo extends javax.swing.JFrame {
                         .addGap(11, 11, 11)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -610,14 +582,14 @@ public class PaymentInfo extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-        //باقي التفاصيل
+
         if (jTextField1.getText().trim().length() == 16) {
             if ((jTextField2.getText().length() == 2) && (Integer.valueOf(jTextField2.getText()) <= 12)) {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
                     if (jTextField4.getText().length() == 3) {
-                  //       Order o = new Order(Login.vendor.getId());
+                        //       Order o = new Order(Login.vendor.getId());
                         new SuccessOrder().setVisible(true);
+                         JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
 
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");
@@ -643,13 +615,58 @@ public class PaymentInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BackActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        if (currentUser.isGuest()) {
+            JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        } else {
+
+            try {
+                Login.currentUser = Buyer.findUser(Login.vendor.getId());
+
+                MyAccount.color.getContentPane().setBackground(Color.WHITE);
+                MyAccount.color.setVisible(true);
+                this.setVisible(false);
+
+            } catch (IOException ex) {
+                Logger.getLogger(PaymentInfo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        Login.currentUser = null;
+        MainMenu.color.getContentPane().setBackground(Color.WHITE);
+        MainMenu.color.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+
+        if (currentUser.isGuest()) {
+            JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        } else {
+            try {
+                Login.currentUser = Buyer.findUser(Login.vendor.getId());
+
+                ChatUser.color.getContentPane().setBackground(Color.WHITE);
+                ChatUser.color.setVisible(true);
+                this.setVisible(false);
+
+            } catch (IOException ex) {
+                Logger.getLogger(PaymentInfo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }//GEN-LAST:event_jButton28ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -682,23 +699,19 @@ public class PaymentInfo extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PaymentInfo().setVisible(true);
-                
-                
-                
-            
-                
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -713,8 +726,8 @@ public class PaymentInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

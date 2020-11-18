@@ -236,9 +236,9 @@ public class Sections extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(6, 6, 6)
                 .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
+                .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -813,9 +813,10 @@ public class Sections extends javax.swing.JFrame {
         try {
             Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-            MyAccount.color.getContentPane().setBackground(Color.WHITE);
-            MyAccount.color.setVisible(true);
-            this.setVisible(false);
+           Login.currentUser=null;
+        MainMenu.color.getContentPane().setBackground(Color.WHITE);
+        MainMenu.color.setVisible(true);
+        this.setVisible(false);
 
         } catch (IOException ex) {
             Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);

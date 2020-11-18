@@ -845,7 +845,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             
   
   // Radio buttons info
-           if (Sections.check==Sections.T) {
+           if (check==Sections.T) {
 
       if (Sections.radio1==Sections.T){
               
@@ -881,7 +881,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
            }
 
            
-           if (check2.equals("Clothes")) {
+           if (check2==Sections.T) {
 
       if (Sections.radio1==Sections.T){
               
@@ -916,7 +916,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
            }
 
-              if (check3.equals("Furniture")) {
+              if (check3==Sections.T) {
 
       if (Sections.radio1==Sections.T){
               

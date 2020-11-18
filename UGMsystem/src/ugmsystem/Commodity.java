@@ -32,6 +32,7 @@ public class Commodity {
     public static ArrayList<String> FurnSectionAds = new ArrayList<String>();
     public static ArrayList<String> AdsForVendor = new ArrayList<String>();    
     public static ArrayList<String> EachVendorInfo = new ArrayList<String>();
+  
 
     public Commodity(String vID, String pID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
@@ -403,14 +404,16 @@ public class Commodity {
             while ((line = read.readLine()) != null) {
                 
                 String[] SplitWords = line.split(",");
-                for (int i = 0; i < SplitWords.length; i++) {
+              for (int i = 0; i < SplitWords.length; i++) {
                     
                     if (line.contains(Login.vendor.getId())) {
-                        EachVendorInfo.add(SplitWords[i].trim());
+                        EachVendorInfo.add(SplitWords[i]);
                     }
                 }
                 
             }
+            
+         
             
             read.close();
             return EachVendorInfo;
@@ -420,7 +423,7 @@ public class Commodity {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return null;
+        return EachVendorInfo;
         
     }
 

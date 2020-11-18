@@ -33,20 +33,19 @@ public class myAdv extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
 
-        ArrayList<String> VendorInfo = Commodity.GetEachVendorInfo();
-        if (!(VendorInfo.isEmpty())) {//(VendorInfo.equals(true))
 
-            jLabel4.setText(VendorInfo.get(2));
-            jLabel6.setText(VendorInfo.get(9));
-            jLabel8.setText(VendorInfo.get(16));
-        }/*if(VendorInfo.size()==1){
-            new JLabel ();
-        }if(VendorInfo.size()==2){
-            new JLabel ();
-        }if(VendorInfo.size()==3){
-            new JLabel ();
-            new JLabel ();
-        }*/
+                
+            if(!Commodity.GetEachVendorInfo().get(2).isEmpty())   jLabel4.setText(Commodity.GetEachVendorInfo().get(2));
+             if(!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
+                 jLabel6.setText(Commodity.GetEachVendorInfo().get(9));
+             }
+           if(!Commodity.GetEachVendorInfo().get(16).isEmpty() &&  !Commodity.GetEachVendorInfo().get(16).equals(Commodity.GetEachVendorInfo().get(2))) {
+               
+               jLabel8.setText(Commodity.GetEachVendorInfo().get(16));
+           }
+           
+           
+        
     }
 
     /**
@@ -386,6 +385,8 @@ public class myAdv extends javax.swing.JFrame {
 
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
+                
+               
 
             }
         });

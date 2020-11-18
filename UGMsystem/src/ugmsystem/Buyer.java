@@ -9,7 +9,7 @@ import java.io.*;
 import static ugmsystem.User.userInfo;
 
 /**
- *This is  a class that is used  to create Buyer object when user logins in,registers in the system, enters as guest
+ *This is a class that is used to create Buyer object when user logins in,registers in the system, enters as guest
  * @author reemalsolami
  */
 public class Buyer extends User {
@@ -54,7 +54,7 @@ public class Buyer extends User {
     /**
      *This method is called to find user account in accounts file when trying to login
      * @param userId String
-     * @return
+     * @return Buyer
      * @throws IOException
      */
     public static Buyer findUser( String userId) throws IOException{

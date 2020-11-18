@@ -275,8 +275,7 @@ public class User {
                 trim.charAt(count-2)+trim.charAt(count-1);
          return rID;}
 
-
-
+   
     /**
      *Generates an id for guest users
      * Called in empty constructor

@@ -21,14 +21,14 @@ public class MainMenu extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu
      * static form objects are made
-     * static User Object is  created
+     * static User Object is  created.
      */
    
     static MainMenu color  = new MainMenu();
     static User guest;
     
     /**
-     *This is the  constructor of the MainMenu class
+     *This is the  constructor of the MainMenu class.
      */
     public MainMenu() {
         initComponents();

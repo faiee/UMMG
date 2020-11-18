@@ -16,7 +16,7 @@ import java.util.*;
 public class Vendor extends User{
 
     /**
-     *static ArrayList attribute used to store commodities sold by vendor.
+     *Static ArrayList attribute used to store commodities sold by vendor.
      */
     static public ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
 

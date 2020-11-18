@@ -583,13 +583,13 @@ public class PaymentInfo extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
-        //باقي التفاصيل
         if (jTextField1.getText().trim().length() == 16) {
             if ((jTextField2.getText().length() == 2) && (Integer.valueOf(jTextField2.getText()) <= 12)) {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
                     if (jTextField4.getText().length() == 3) {
                         //       Order o = new Order(Login.vendor.getId());
                         new SuccessOrder().setVisible(true);
+                         JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
 
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");

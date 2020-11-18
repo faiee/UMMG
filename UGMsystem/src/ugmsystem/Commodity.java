@@ -35,7 +35,6 @@ public class Commodity {
 
     public Commodity(String vID, String pID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
-        
         this.vID = Login.vendor.getId();
         this.pID = generateProductID();
         this.Price = Price;
@@ -67,7 +66,7 @@ public class Commodity {
     
     public void setYearOfPurchase(String YearOfPurchase) throws IOException {
         this.YearOfPurchase = YearOfPurchase;
-         editCommodity();
+
         
     }
     
@@ -77,7 +76,7 @@ public class Commodity {
     
     public void setvID(String vID) throws IOException {
         vID = vID;
-        editCommodity();
+
     }
     
     public String getpID() {
@@ -86,7 +85,7 @@ public class Commodity {
     
     public void setpID(String pID) throws IOException {
         pID = pID;
-        editCommodity();
+
     }
     
     public String getQuantity() {
@@ -95,7 +94,7 @@ public class Commodity {
     
     public void setQuantity(String Quantity) throws IOException {
         Quantity = Quantity;
-        editCommodity();
+   
     }
     
     public String getName() {
@@ -122,7 +121,7 @@ public class Commodity {
     
     public void setFilePic(String filePic) throws IOException {
         filePic = filePic;
-        editCommodity();
+
     }
     
     public  String getSec() {
@@ -132,7 +131,7 @@ public class Commodity {
     
     public void setSec(String sec) throws IOException {
         sec = sec;
-         editCommodity();
+     
     }
     
     public int getPrice() {
@@ -167,6 +166,7 @@ public class Commodity {
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
             Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
+            Write.write("\n");
             Vendor.vendorCommodity.add(this);
             
             Write.flush();
@@ -188,8 +188,6 @@ public class Commodity {
     
     public void editCommodity() throws IOException {
         String line;
-     //   fillArrayComodityFromFile();
-         //Commodity c = new Commodity(vID, pID, Name, Price, filePic, sec, Description);
         try {
             for (int i = 0; i <vendorCommodity.size(); i++) {
                 line = vendorCommodity.get(i).toString();
@@ -214,30 +212,6 @@ public class Commodity {
                 bufferedWriter2.write("\n");
             }
             bufferedWriter2.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
-    static void fillArrayComodityFromFile() {
-        String line;
-        
-        try {
-            BufferedReader read = new BufferedReader(new FileReader(Commodities));
-            while ((line = read.readLine()) != null) {
-                String SplitWords[] = line.split(",");
-                // for (int i = 0; i < SplitWords.length; i++) {
-                vendorCommodity.add(new Commodity(SplitWords[0].trim(), SplitWords[1].trim(), SplitWords[2].trim(),
-                        Integer.valueOf(SplitWords[3].trim()), SplitWords[4].trim(), SplitWords[5].trim(), SplitWords[6].trim()));
-
-                // }
-                System.out.println(Vendor.getVendorCommodity());
-            }
-            
-            read.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -297,10 +271,8 @@ public class Commodity {
         return null;
     }
     
-    public static ArrayList<String> getClothesSectionAds() {
-        
+    public static ArrayList<String> getClothesSectionAds() {     
         String line;
-        
         try {
             
             BufferedReader read = new BufferedReader(new FileReader(Commodities));
@@ -315,12 +287,9 @@ public class Commodity {
                     
                     if (line.contains("Furniture")) {
                         FurnSectionAds.add(SplitWords[i].trim());
-                    }
-                    
+                    }  
                 }
-                
             }
-            
             read.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
@@ -437,7 +406,6 @@ public class Commodity {
                 for (int i = 0; i < SplitWords.length; i++) {
                     
                     if (line.contains(Login.vendor.getId())) {
-                        
                         EachVendorInfo.add(SplitWords[i].trim());
                     }
                 }
@@ -445,33 +413,17 @@ public class Commodity {
             }
             
             read.close();
+            return EachVendorInfo;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return EachVendorInfo;
+        return null;
         
     }
-    
-       public static Commodity findCommodity( String userId) throws IOException{
-         
-           fillArrayComodityFromFile();
-           String line;
-           String [] setter;
-       
-          for (int i = 0; i < vendorCommodity.size(); i++)  {
-              line= vendorCommodity.get(i).toString();
-             if(line.contains(userId.trim())) {
-                 setter = line.split(",");
-                 return new Commodity( setter[0] , setter[1],setter[2],
-                            Integer.parseInt(setter[3].trim()), setter[4], setter[5], setter[6]);
-             }    
-          }
-        
-    
-    return null; }
+
     
     
 }

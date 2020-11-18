@@ -20,7 +20,6 @@ public class Vendor extends User{
      */
     static public ArrayList<Commodity> vendorCommodity = new ArrayList<Commodity>();
     private int rate;
-    private String id;
 
     /**
      *
@@ -94,10 +93,5 @@ public class Vendor extends User{
         User.userInfo = userInfo;
     }
 
-    public String getId() {
-        return id;
-    }
-    
-   
    
 }

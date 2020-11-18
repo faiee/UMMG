@@ -26,8 +26,8 @@ public class Advertisement extends javax.swing.JFrame {
         initComponents();
         setTitle("Create Advertisement");
         setLocationRelativeTo(null);
-        
-        
+        vID.setText(Login.vendor.getId());
+        pID.setText(commodities.getpID());
         
     }
 
@@ -280,11 +280,12 @@ public class Advertisement extends javax.swing.JFrame {
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-        vID.setText(Login.vendor.getId());
+        //vID.setText(Login.vendor.getId());
+        sec = String.valueOf(secType.getSelectedItem());
         commodities = new Commodity(vID.getText(), pID.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
         commodities.createCommodity();      
-        pID.setText(commodities.getpID());
-        sec = String.valueOf(secType.getSelectedItem());
+        //pID.setText(commodities.getpID());
+        
         
     }//GEN-LAST:event_AddActionPerformed
 

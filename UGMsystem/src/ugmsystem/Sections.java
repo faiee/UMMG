@@ -514,7 +514,7 @@ public class Sections extends javax.swing.JFrame {
             jLabel10.setText("");
             
             if(!Commodity.getBooksSectionAds().get(2).isEmpty())  jLabel4.setText(Commodity.getBooksSectionAds().get(2));
-           if(!Commodity.getBooksSectionAds().get(9).isEmpty())  jLabel5.setText(Commodity.getBooksSectionAds().get(9));
+           if(!Commodity.getBooksSectionAds().get(9).isEmpty() )  jLabel5.setText(Commodity.getBooksSectionAds().get(9));
             if(!Commodity.getBooksSectionAds().get(16).isEmpty())  jLabel6.setText(Commodity.getBooksSectionAds().get(16));
           
         

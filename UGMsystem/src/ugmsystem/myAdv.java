@@ -34,7 +34,7 @@ public class myAdv extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
 
-                
+                if(!Commodity.GetEachVendorInfo().isEmpty()){
             if(!Commodity.GetEachVendorInfo().get(2).isEmpty())   jLabel4.setText(Commodity.GetEachVendorInfo().get(2));
              if(!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
                  jLabel6.setText(Commodity.GetEachVendorInfo().get(9));
@@ -44,7 +44,7 @@ public class myAdv extends javax.swing.JFrame {
                jLabel8.setText(Commodity.GetEachVendorInfo().get(16));
            }
            
-           
+    }
         
     }
 

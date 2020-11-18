@@ -51,7 +51,7 @@ public class Sections extends javax.swing.JFrame {
         setTitle("Book Section");
         setLocationRelativeTo(null);
     
-           
+        
     }
 
     /**
@@ -508,11 +508,12 @@ public class Sections extends javax.swing.JFrame {
 
         if (itemText.equals("Books")) {
 
-            jLabel4.setText(Commodity.getBooksSectionAds().get(2));
-            jLabel5.setText(Commodity.getBooksSectionAds().get(9));
-            jLabel6.setText(Commodity.getBooksSectionAds().get(16));
+            if(!Commodity.getBooksSectionAds().get(2).isEmpty())  jLabel4.setText(Commodity.getBooksSectionAds().get(2));
+           if(!Commodity.getBooksSectionAds().get(9).isEmpty())  jLabel5.setText(Commodity.getBooksSectionAds().get(9));
+            if(!Commodity.getBooksSectionAds().get(16).isEmpty())  jLabel6.setText(Commodity.getBooksSectionAds().get(16));
+          
         
-           if(!Commodity.getBooksSectionAds().get(23).isEmpty() ){ 
+           if(!Commodity.getBooksSectionAds().get(23).isEmpty() && ! Commodity.getBooksSectionAds().get(23).equals(Commodity.getBooksSectionAds().get(2))){ 
                 jLabel11.setText(Commodity.getBooksSectionAds().get(23));
                 
            }
@@ -529,7 +530,7 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                  if(!Commodity.getBooksSectionAds().get(25).isEmpty()){  
+                  if(!Commodity.getBooksSectionAds().get(25).isEmpty() && ! Commodity.getBooksSectionAds().get(25).equals(Commodity.getBooksSectionAds().get(4))){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getBooksSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -553,7 +554,7 @@ public class Sections extends javax.swing.JFrame {
             jLabel6.setText(Commodity.getClothesSectionAds().get(16));
             
             
-            if(!Commodity.getClothesSectionAds().get(23).isEmpty()){  
+            if(!Commodity.getClothesSectionAds().get(23).isEmpty() && !Commodity.getClothesSectionAds().get(23).equals(Commodity.getClothesSectionAds().get(2))){  
                  jLabel11.setText(Commodity.getClothesSectionAds().get(23));
                 
             }
@@ -570,7 +571,7 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                      if(!Commodity.getClothesSectionAds().isEmpty()){  
+                      if(!Commodity.getClothesSectionAds().get(25).isEmpty() && !Commodity.getClothesSectionAds().get(25).equals(Commodity.getClothesSectionAds().get(4))){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getClothesSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -591,7 +592,7 @@ public class Sections extends javax.swing.JFrame {
             jLabel6.setText(Commodity.getFurnSectionAds().get(16));
             
             
-            if(!Commodity.getFurnSectionAds().get(23).isEmpty() ){  
+            if(!Commodity.getFurnSectionAds().get(23).isEmpty() &&  !Commodity.getFurnSectionAds().get(23).equals(Commodity.getFurnSectionAds().get(2))){  
                  jLabel11.setText(Commodity.getFurnSectionAds().get(23));
                 
             }
@@ -608,7 +609,7 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                      if(!Commodity.getFurnSectionAds().get(25).isEmpty()){  
+                      if(!Commodity.getFurnSectionAds().get(25).isEmpty() && !Commodity.getFurnSectionAds().get(25).equals(Commodity.getFurnSectionAds().get(4))){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getFurnSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 

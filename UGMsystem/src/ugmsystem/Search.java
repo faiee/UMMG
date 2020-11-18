@@ -567,9 +567,8 @@ public static Boolean SearchCheck;
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
  
           search= jTextField1.getText();
-          
-         
-        String s=Commodity.getBooksSectionAds().get(2);
+    
+      
        
         if (Commodity.getAdsForVendor().contains(search)){
         
@@ -579,12 +578,10 @@ public static Boolean SearchCheck;
         
         }
         
-       
-        
-        
-        
-        
-        
+        else {
+            
+            JOptionPane.showMessageDialog(this, "There is no such product.");
+        }
         
         
 

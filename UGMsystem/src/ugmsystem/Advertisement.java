@@ -26,8 +26,9 @@ public class Advertisement extends javax.swing.JFrame {
         initComponents();
         setTitle("Create Advertisement");
         setLocationRelativeTo(null);
+        
         vID.setText(Login.vendor.getId());
-        pID.setText(commodities.getpID());
+       /* pID.setText(commodities.getpID());*/
         
     }
 

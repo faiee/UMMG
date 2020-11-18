@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import static ugmsystem.Commodity.EachVendorInfo;
 
 /**
  *
@@ -19,6 +20,7 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     static CommodityVendor color = new CommodityVendor();
     DefaultComboBoxModel dml;
+    
     
     // public static String[] Names = new String[100];
 
@@ -61,7 +63,6 @@ public class CommodityVendor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Pdetail = new javax.swing.JTextArea();
         pName = new javax.swing.JComboBox<>();
-        Pshow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -183,14 +184,6 @@ public class CommodityVendor extends javax.swing.JFrame {
             }
         });
 
-        Pshow.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
-        Pshow.setText("Show");
-        Pshow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PshowActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -210,18 +203,6 @@ public class CommodityVendor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel11))
-                        .addGap(67, 67, 67)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pname)
-                            .addComponent(Pprice)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(pName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Pshow))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(5, 5, 5)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,25 +210,33 @@ public class CommodityVendor extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(saveInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane1))
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Pname, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(Pprice)))
+                    .addComponent(pName, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Back1)
-                        .addGap(26, 26, 26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Pshow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(Pname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -299,7 +288,7 @@ public class CommodityVendor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void saveInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoActionPerformed
-        try {
+       // try {
             // TODO add your handling code here:
             /*
             if(Pprice.getText().length()==10 && Pprice.getText().matches("\\d+")){
@@ -308,15 +297,30 @@ public class CommodityVendor extends javax.swing.JFrame {
             Commodity.setDescription(Pdetail.getText());
             }else{JOptionPane.showMessageDialog(this, "Please Enter a price!");}
              */
-           
+           //(String vID, String pID, String Name, int Price, String filePic, String sec, String Description)
+            /*
             Commodity c = new Commodity();
+            if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(2))) {  
             c.setName(Pname.getText().trim());
             c.setPrice(Integer.valueOf(Pprice.getText().trim()));
             c.setDescription(Pdetail.getText().trim());
+            c = new Commodity(Commodity.GetEachVendorInfo().get(0),Commodity.GetEachVendorInfo().get(1)
+                    ,c.getName(),c.getPrice()
+                    ,Commodity.GetEachVendorInfo().get(4),Commodity.GetEachVendorInfo().get(6)
+                    ,c.getDescription());
+        } else if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(9))) {
+            Pname.setText(Commodity.GetEachVendorInfo().get(9));
+            Pprice.setText(Commodity.GetEachVendorInfo().get(10));
+            Pdetail.setText(Commodity.GetEachVendorInfo().get(12));
+        } else {
+            Pname.setText(Commodity.GetEachVendorInfo().get(16));
+            Pprice.setText(Commodity.GetEachVendorInfo().get(17));
+            Pdetail.setText(Commodity.GetEachVendorInfo().get(19));
+        }
 
         } catch (IOException ex) {
             Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
 
     }//GEN-LAST:event_saveInfoActionPerformed
 
@@ -328,26 +332,21 @@ public class CommodityVendor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PpriceActionPerformed
 
-    private void PshowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PshowActionPerformed
-        // TODO add your handling code here:
-        Commodity.fillArrayComodityFromFile();
-    }//GEN-LAST:event_PshowActionPerformed
-
     private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
         // TODO add your handling code here:
         String SelectedItem = (String) pName.getSelectedItem();
-        if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(2))) {
-            Pname.setText(Commodity.GetEachVendorInfo().get(2));
-            Pprice.setText(Commodity.GetEachVendorInfo().get(3));
-            Pdetail.setText(Commodity.GetEachVendorInfo().get(5));
-        } else if (SelectedItem.equals(Commodity.GetEachVendorInfo().get(9))) {
-            Pname.setText(Commodity.GetEachVendorInfo().get(9));
-            Pprice.setText(Commodity.GetEachVendorInfo().get(10));
-            Pdetail.setText(Commodity.GetEachVendorInfo().get(12));
+        if (SelectedItem.equals(Commodity.EachVendorInfo.get(2))) {
+            Pname.setText(Commodity.EachVendorInfo.get(2));
+            Pprice.setText(Commodity.EachVendorInfo.get(3));
+            Pdetail.setText(Commodity.EachVendorInfo.get(5));
+        } else if (SelectedItem.equals(Commodity.EachVendorInfo.get(9))) {
+            Pname.setText(Commodity.EachVendorInfo.get(9));
+            Pprice.setText(Commodity.EachVendorInfo.get(10));
+            Pdetail.setText(Commodity.EachVendorInfo.get(12));
         } else {
-            Pname.setText(Commodity.GetEachVendorInfo().get(16));
-            Pprice.setText(Commodity.GetEachVendorInfo().get(17));
-            Pdetail.setText(Commodity.GetEachVendorInfo().get(19));
+            Pname.setText(Commodity.EachVendorInfo.get(16));
+            Pprice.setText(Commodity.EachVendorInfo.get(17));
+            Pdetail.setText(Commodity.EachVendorInfo.get(19));
         }
 
     }//GEN-LAST:event_pNameActionPerformed
@@ -358,12 +357,15 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     private void pNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pNameMouseEntered
         // TODO add your handling code here:
+        Commodity.GetEachVendorInfo();
+        if(!(Commodity.EachVendorInfo.isEmpty())){
         dml = new DefaultComboBoxModel();
         dml.addElement("Choose");
-        dml.addElement(Commodity.GetEachVendorInfo().get(2));
-        dml.addElement(Commodity.GetEachVendorInfo().get(9));
-        dml.addElement(Commodity.GetEachVendorInfo().get(16));
+        dml.addElement(Commodity.EachVendorInfo.get(2));
+        dml.addElement(Commodity.EachVendorInfo.get(9));
+        dml.addElement(Commodity.EachVendorInfo.get(16));
         pName.setModel(dml);
+        }
     }//GEN-LAST:event_pNameMouseEntered
 
     /**
@@ -407,7 +409,6 @@ public class CommodityVendor extends javax.swing.JFrame {
     private javax.swing.JTextArea Pdetail;
     private javax.swing.JTextField Pname;
     private javax.swing.JTextField Pprice;
-    private javax.swing.JButton Pshow;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

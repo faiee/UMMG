@@ -512,7 +512,7 @@ public class Sections extends javax.swing.JFrame {
             jLabel5.setText(Commodity.getBooksSectionAds().get(9));
             jLabel6.setText(Commodity.getBooksSectionAds().get(16));
         
-           if(Commodity.getBooksSectionAds().contains(Commodity.getBooksSectionAds().indexOf(23)) ){  // must be tested
+           if(!Commodity.getBooksSectionAds().get(23).isEmpty() ){ 
                 jLabel11.setText(Commodity.getBooksSectionAds().get(23));
                 
            }
@@ -529,7 +529,7 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                  if(Commodity.getBooksSectionAds().contains(Commodity.getBooksSectionAds().indexOf(25))){  // must be tested
+                  if(!Commodity.getBooksSectionAds().get(25).isEmpty()){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getBooksSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -553,7 +553,7 @@ public class Sections extends javax.swing.JFrame {
             jLabel6.setText(Commodity.getClothesSectionAds().get(16));
             
             
-            if(Commodity.getClothesSectionAds().contains(Commodity.getClothesSectionAds().indexOf(23)) ){  // must be tested
+            if(!Commodity.getClothesSectionAds().get(23).isEmpty()){  
                  jLabel11.setText(Commodity.getClothesSectionAds().get(23));
                 
             }
@@ -570,7 +570,7 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                      if(Commodity.getClothesSectionAds().contains(Commodity.getClothesSectionAds().indexOf(25))){  // must be tested
+                      if(!Commodity.getClothesSectionAds().isEmpty()){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getClothesSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -591,7 +591,7 @@ public class Sections extends javax.swing.JFrame {
             jLabel6.setText(Commodity.getFurnSectionAds().get(16));
             
             
-            if(Commodity.getFurnSectionAds().contains(Commodity.getFurnSectionAds().indexOf(23)) ){  // must be tested
+            if(!Commodity.getFurnSectionAds().get(23).isEmpty() ){  
                  jLabel11.setText(Commodity.getFurnSectionAds().get(23));
                 
             }
@@ -608,7 +608,7 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                      if(Commodity.getFurnSectionAds().contains(Commodity.getFurnSectionAds().indexOf(25))){  // must be tested
+                      if(!Commodity.getFurnSectionAds().get(25).isEmpty()){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getFurnSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -866,6 +866,12 @@ public class Sections extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Sections().setVisible(true);
+                
+                
+              
+                
+                
+                
                 
   
             }

@@ -225,7 +225,7 @@ public class PaymentInfo extends javax.swing.JFrame {
 
                 jLabel3.setText(
                       Commodity.getClothesSectionAds().get(24));
-                    int i =Integer.parseInt(  Commodity.getBooksSectionAds().get(24));
+                    int i =Integer.parseInt(  Commodity.getClothesSectionAds().get(24));
                     jLabel10.setText("After VAT: "+Order.calculatePay( i));
                      
 

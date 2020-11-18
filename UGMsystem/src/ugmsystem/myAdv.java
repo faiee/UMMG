@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
@@ -18,30 +19,34 @@ import static ugmsystem.Login.currentUser;
  * @author reemalsolami
  */
 public class myAdv extends javax.swing.JFrame {
- public static String [] Title= new String[400];
+
+    public static String[] Title = new String[400];
     /**
      * Creates new form myAdv
      */
-        
+
     static myAdv color = new myAdv();
+
     public myAdv() {
-        
-          setTitle("My Advertisments");
-          initComponents();
-          setLocationRelativeTo(null);
-          
-          
- if(!(Commodity.EachVendorInfo.isEmpty())){
-    
+
+        setTitle("My Advertisments");
+        initComponents();
+        setLocationRelativeTo(null);
+
+
+                
+            if(!Commodity.GetEachVendorInfo().get(2).isEmpty())   jLabel4.setText(Commodity.GetEachVendorInfo().get(2));
+             if(!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
+                 jLabel6.setText(Commodity.GetEachVendorInfo().get(9));
+             }
+           if(!Commodity.GetEachVendorInfo().get(16).isEmpty() &&  !Commodity.GetEachVendorInfo().get(16).equals(Commodity.GetEachVendorInfo().get(2))) {
                
-                jLabel4.setText(Commodity.EachVendorInfo.get(2));
-                jLabel6.setText(Commodity.EachVendorInfo.get(9));
-                jLabel8.setText(Commodity.EachVendorInfo.get(16));
-         
-       } 
-}
+               jLabel8.setText(Commodity.GetEachVendorInfo().get(16));
+           }
            
-    
+           
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -279,88 +284,72 @@ public class myAdv extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
-        
-          Advertisement.color.getContentPane().setBackground(Color.WHITE);
+        Advertisement.color.getContentPane().setBackground(Color.WHITE);
         Advertisement.color.setVisible(true);
         this.setVisible(false);
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-   if(currentUser.isGuest()){
-         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
-        }
-         
-        
-       else{
-        
-        try {
-            Login.currentUser = Buyer.findUser(Login.vendor.getId());
+        if (currentUser.isGuest()) {
+            JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        } else {
 
-            MyAccount.color.getContentPane().setBackground(Color.WHITE);
-            MyAccount.color.setVisible(true);
-            this.setVisible(false);
+            try {
+                Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-        } catch (IOException ex) {
-            Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+                MyAccount.color.getContentPane().setBackground(Color.WHITE);
+                MyAccount.color.setVisible(true);
+                this.setVisible(false);
+
+            } catch (IOException ex) {
+                Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-          }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
 
-         Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.getContentPane().setBackground(Color.WHITE);
         Search.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        
-      
-        if(currentUser.isGuest()){
-         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
-        }
-         
-        
-       else{
-        try {
-            Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-            MyAccount.color.getContentPane().setBackground(Color.WHITE);
-            MyAccount.color.setVisible(true);
-            this.setVisible(false);
+        if (currentUser.isGuest()) {
+            JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        } else {
+            try {
+                Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-        } catch (IOException ex) {
-            Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                MyAccount.color.getContentPane().setBackground(Color.WHITE);
+                MyAccount.color.setVisible(true);
+                this.setVisible(false);
+
+            } catch (IOException ex) {
+                Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-         
-         if(currentUser.isGuest()){
-         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
-        }
-         
-        
-       else{
-        try {
-            Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-           
-        
-        ChatUser.color.getContentPane().setBackground(Color.WHITE);
-        ChatUser.color.setVisible(true);
-        this.setVisible(false);
+        if (currentUser.isGuest()) {
+            JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        } else {
+            try {
+                Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-        } catch (IOException ex) {
-            Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+                ChatUser.color.getContentPane().setBackground(Color.WHITE);
+                ChatUser.color.setVisible(true);
+                this.setVisible(false);
+
+            } catch (IOException ex) {
+                Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        }  
     }//GEN-LAST:event_jButton28ActionPerformed
 
     /**
@@ -393,14 +382,12 @@ public class myAdv extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            
+
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
                 
-              
                
-                
-                
+
             }
         });
     }

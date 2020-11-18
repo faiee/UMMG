@@ -215,7 +215,7 @@ public class User {
     public static boolean login(String id, String password) throws IOException {
         
           fillArrayFromFile();
-          
+          //ArrayList<String> VendorInfo = Commodity.GetEachVendorInfo();  
           String t = isUser(id);
                    
           if(!(t.equals("-1"))){

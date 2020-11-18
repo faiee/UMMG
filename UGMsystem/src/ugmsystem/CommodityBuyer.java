@@ -808,8 +808,8 @@ public class CommodityBuyer extends javax.swing.JFrame {
        
         
              
-            Sections.color.getContentPane().setBackground(Color.WHITE);
-        Sections.color.setVisible(true);
+            Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
         this.setVisible(false);
         
         

@@ -18,6 +18,10 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 import static ugmsystem.Login.vendor;
 import static ugmsystem.Order.o;
+import static ugmsystem.Search.search;
+import static ugmsystem.Sections.check;
+import static ugmsystem.Sections.check2;
+import static ugmsystem.Sections.check3;
 
 /**
  *
@@ -49,16 +53,18 @@ public class PaymentInfo extends javax.swing.JFrame {
 
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                //(String ID, String Name, String CommodityType, int price, double Tax, double TotalPayment)
-                // orders = new Order(orders.generateOrderID(),Login.vendor.getId() ,Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-                System.out.println(orders);
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
+               
             }
             if (Commodity.getBooksSectionAds().get(9).contains(Search.search)) {
 
                 jLabel3.setText(Commodity.getBooksSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                    
+orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(9), Commodity.getBooksSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
             }
 
             if (Commodity.getBooksSectionAds().get(16).contains(Search.search)) {
@@ -66,14 +72,18 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-
+orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
             }
 
-            if (Commodity.getBooksSectionAds().get(24).contains(Search.search)) {
+            if (Commodity.getBooksSectionAds().get(23).contains(Search.search)) {
 
                 jLabel3.setText(Commodity.getBooksSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                orders.createOrder();  
 
             }
         }
@@ -83,12 +93,17 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                  orders.createOrder(); 
             }
 
             if (Commodity.getClothesSectionAds().get(9).equalsIgnoreCase(Search.search)) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
             if (Commodity.getClothesSectionAds().get(16).equalsIgnoreCase(Search.search)) {
@@ -96,12 +111,17 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
             if (Commodity.getClothesSectionAds().get(23).equalsIgnoreCase(Search.search)) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                orders.createOrder();  
 
             }
 
@@ -112,29 +132,39 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
             if (Commodity.getFurnSectionAds().get(2).equalsIgnoreCase(Search.search)) {
 
                 jLabel3.setText(Commodity.getFurnSectionAds().get(3));
-                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
             if (Commodity.getFurnSectionAds().get(9).equalsIgnoreCase(Search.search)) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(10));
-                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                 orders.createOrder();  
             }
 
             if (Commodity.getFurnSectionAds().get(16).equalsIgnoreCase(Search.search)) {
 
                 jLabel3.setText(Commodity.getFurnSectionAds().get(17));
-                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(17));
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                 orders.createOrder();  
 
             }
             if (Commodity.getFurnSectionAds().get(23).equalsIgnoreCase(Search.search)) {
 
                 jLabel3.setText(Commodity.getFurnSectionAds().get(24));
-                int i = Integer.parseInt(Commodity.getClothesSectionAds().get(24));
+                int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(23), Commodity.getFurnSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -150,6 +180,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
 
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                      orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -158,6 +190,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                  
+orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(9), Commodity.getBooksSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -166,6 +201,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -174,6 +211,10 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                orders.createOrder();  
+                
 
             }
 
@@ -186,6 +227,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                    orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                  orders.createOrder(); 
 
             }
             if (Sections.radio2 == Sections.T) {
@@ -193,6 +237,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -201,6 +247,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -210,6 +258,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                         Commodity.getClothesSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                  orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                orders.createOrder();  
 
             }
 
@@ -223,6 +274,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                         Commodity.getFurnSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
             if (Sections.radio2 == Sections.T) {
@@ -230,6 +283,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getFurnSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                 orders.createOrder();  
 
             }
 
@@ -238,6 +294,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getFurnSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                  orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+
+                 orders.createOrder();  
 
             }
 
@@ -247,6 +306,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                         Commodity.getFurnSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(23), Commodity.getFurnSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+   orders.createOrder();
 
             }
 
@@ -590,19 +651,17 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-/*
+
         if (jTextField1.getText().trim().length() == 16) {
             if ((jTextField2.getText().length() == 2) && (Integer.valueOf(jTextField2.getText()) <= 12)) {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
-                    if (jTextField4.getText().length() == 3) {     */
-//int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));        
-//orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                    if (jTextField4.getText().length() == 3) {     
 
-        orders.createOrder();
+     
         new SuccessOrder().setVisible(true);
         JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
         
-        /* 
+        
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");
                     }
@@ -614,9 +673,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
             }
         } else {
             JOptionPane.showMessageDialog(this, "Card number denied! It should be 16 digits long");
-        }*/
-
-
+        }
+        
+ 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

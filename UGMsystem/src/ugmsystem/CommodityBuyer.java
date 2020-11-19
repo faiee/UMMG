@@ -56,7 +56,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                    
                     jLabel3.setText(Commodity.getBooksSectionAds().get(2));
 
-                jLabel5.setText("Available");
+              
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(5));
 
@@ -77,7 +77,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                if(Commodity.getBooksSectionAds().get(9).contains(Search.search)){
                       jLabel3.setText(Commodity.getBooksSectionAds().get(9));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(12));
 
@@ -100,7 +100,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                     
                            jLabel3.setText(Commodity.getBooksSectionAds().get(16));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(19));
 
@@ -123,7 +123,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                   if(Commodity.getBooksSectionAds().get(23).contains(Search.search)){
                  jLabel3.setText(Commodity.getBooksSectionAds().get(23));
 
-               jLabel5.setText("Available");
+              
                jTextArea1.setText("\n" + "\n"
                        + Commodity.getBooksSectionAds().get(26));
 
@@ -141,7 +141,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                if(Commodity.getClothesSectionAds().get(2).equalsIgnoreCase(Search.search)){
               jLabel3.setText(Commodity.getClothesSectionAds().get(2));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(5));
 
@@ -164,7 +164,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                  
                   jLabel3.setText(Commodity.getClothesSectionAds().get(9));
 
-                jLabel5.setText("Available");
+                
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(12));
 
@@ -186,7 +186,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                    
                     jLabel3.setText(Commodity.getClothesSectionAds().get(16));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(19));
 
@@ -207,7 +207,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                     
                      jLabel3.setText(Commodity.getClothesSectionAds().get(23));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(26));
 
@@ -228,7 +228,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                 
                  jLabel3.setText(Commodity.getFurnSectionAds().get(2));
                
-                   jLabel5.setText("Available"); 
+                  
               
             
                 jTextArea1.setText("\n" + "\n"
@@ -251,7 +251,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                   if(Commodity.getFurnSectionAds().get(9).equalsIgnoreCase(Search.search)){
                       jLabel3.setText(Commodity.getFurnSectionAds().get(9));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(12));
 
@@ -272,7 +272,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                     
                     jLabel3.setText(Commodity.getFurnSectionAds().get(16));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(19));
 
@@ -295,7 +295,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
                        
                 jLabel3.setText(Commodity.getFurnSectionAds().get(23));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(26));
 
@@ -317,12 +317,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
             if (Sections.radio1==Sections.T) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(2));
-                if (Commodity.isAvailable() == true) {
-                    jLabel5.setText("Available");
-                }
-                if (Commodity.isAvailable() == false) {
-                    jLabel5.setText("Not Available");
-                }
+             
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(5));
 
@@ -343,7 +338,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio2==Sections.T) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(9));
 
-                jLabel5.setText("Available");
+                
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(12));
 
@@ -364,7 +359,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio3==Sections.T) {
                 jLabel3.setText(Commodity.getBooksSectionAds().get(16));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getBooksSectionAds().get(19));
 
@@ -386,7 +381,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             
                       jLabel3.setText(Commodity.getBooksSectionAds().get(23));
 
-               jLabel5.setText("Available");
+              
                jTextArea1.setText("\n" + "\n"
                        + Commodity.getBooksSectionAds().get(26));
 
@@ -403,7 +398,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio1==Sections.T) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(2));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(5));
 
@@ -423,7 +418,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio2==Sections.T) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(9));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(12));
 
@@ -444,7 +439,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio3==Sections.T) {
                 jLabel3.setText(Commodity.getClothesSectionAds().get(16));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(19));
 
@@ -466,7 +461,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 jLabel3.setText(Commodity.getClothesSectionAds().get(23));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getClothesSectionAds().get(26));
 
@@ -483,7 +478,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio1==Sections.T) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(2));
 
-                jLabel5.setText("Available");
+              
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(5));
 
@@ -503,7 +498,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio2==Sections.T) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(9));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(12));
 
@@ -524,7 +519,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
             if (Sections.radio3==Sections.T) {
                 jLabel3.setText(Commodity.getFurnSectionAds().get(16));
 
-                jLabel5.setText("Available");
+                
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(19));
 
@@ -546,7 +541,7 @@ public class CommodityBuyer extends javax.swing.JFrame {
 
                 jLabel3.setText(Commodity.getFurnSectionAds().get(23));
 
-                jLabel5.setText("Available");
+               
                 jTextArea1.setText("\n" + "\n"
                         + Commodity.getFurnSectionAds().get(26));
 

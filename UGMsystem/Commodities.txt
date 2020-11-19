@@ -7,7 +7,5 @@
 33536996,1069,white chair,300,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/ch.png,Handmaid white chair with guarantee for 3 years.,Furniture
 33536996,1016,led lamp,70,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/l.png,used led lamp for sale.,Furniture
 33536996,104,grey sofa,400,/Users/fayaldosa/Documents/UMMG/UGMsystem/src/Pictures/s.png,Grey sofa used for only one week.,Furniture
-33536446,1000,WERTYU,41,C:\Users\Jae\Desktop\beach.jpg,QWERYUI,Clothes
-33536446,1066,WERTYHJK,7410,C:\Users\Jae\Desktop\beach.jpg,SDFGHJK,Clothes
-33536446,1027,DFGHJ,41,C:\Users\Jae\Desktop\beach.jpg,QWERTY,Clothes
-33536446,10230,WERTYUIO,754,C:\Users\Jae\Desktop\beach.jpg,RGHJKL,Books
+33536446,1021,i,400,C:\Users\Jae\Desktop\beach.jpg,iiioo,Clothes
+33536446,1021,i,400,C:\Users\Jae\Desktop\beach.jpg,iiioo,Clothes

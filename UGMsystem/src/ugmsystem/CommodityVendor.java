@@ -313,9 +313,10 @@ public class CommodityVendor extends javax.swing.JFrame {
             Pname.setText(Commodity.EachVendorInfo.get(2));
             Pprice.setText(Commodity.EachVendorInfo.get(3));
             Pdetail.setText(Commodity.EachVendorInfo.get(5));
-
-
-        } else if (SelectedItem.equals(Commodity.EachVendorInfo.get(9))) {
+ }
+        
+        
+        else if (SelectedItem.equals(Commodity.EachVendorInfo.get(9))) {
             Pname.setText(Commodity.EachVendorInfo.get(9));
             Pprice.setText(Commodity.EachVendorInfo.get(10));
             Pdetail.setText(Commodity.EachVendorInfo.get(12));

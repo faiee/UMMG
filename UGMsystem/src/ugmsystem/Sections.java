@@ -534,7 +534,10 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                  if(!Commodity.getBooksSectionAds().get(25).isEmpty() ){  
+                  if(!Commodity.getBooksSectionAds().get(25).isEmpty()  && ! Commodity.getBooksSectionAds().get(25).equals(Commodity.getBooksSectionAds().get(4))
+                              && ! Commodity.getBooksSectionAds().get(25).equals(Commodity.getBooksSectionAds().get(11)) 
+                              && ! Commodity.getBooksSectionAds().get(25).equals(Commodity.getBooksSectionAds().get(18)))
+                     {  
                       ImageIcon icon4 = new ImageIcon (Commodity.getBooksSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -579,7 +582,9 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                      if(!Commodity.getClothesSectionAds().get(25).isEmpty() ){  
+                      if(!Commodity.getClothesSectionAds().get(25).isEmpty()  && ! Commodity.getClothesSectionAds().get(25).equals(Commodity.getClothesSectionAds().get(4))
+                              && ! Commodity.getClothesSectionAds().get(25).equals(Commodity.getClothesSectionAds().get(11)) 
+                              && ! Commodity.getClothesSectionAds().get(25).equals(Commodity.getClothesSectionAds().get(18))){
                       ImageIcon icon4 = new ImageIcon (Commodity.getClothesSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 
@@ -624,7 +629,9 @@ public class Sections extends javax.swing.JFrame {
                 jLabel7.setIcon(icon2);
                 jLabel8.setIcon(icon3);
                 
-                      if(!Commodity.getFurnSectionAds().get(25).isEmpty() ){  
+                      if(!Commodity.getFurnSectionAds().get(25).isEmpty() && ! Commodity.getFurnSectionAds().get(25).equals(Commodity.getFurnSectionAds().get(4))
+                              && ! Commodity.getFurnSectionAds().get(25).equals(Commodity.getFurnSectionAds().get(11)) 
+                              && ! Commodity.getFurnSectionAds().get(25).equals(Commodity.getFurnSectionAds().get(18))){  
                       ImageIcon icon4 = new ImageIcon (Commodity.getFurnSectionAds().get(25));
                  jLabel10.setIcon(icon4);
                 

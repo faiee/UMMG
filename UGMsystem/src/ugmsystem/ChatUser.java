@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package ugmsystem;
+
 import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
+
 /**
  *
  * @author Jae
@@ -19,8 +21,8 @@ public class ChatUser extends javax.swing.JFrame {
     /**
      * Creates new form BuyerChat
      */
-    
     static ChatUser color = new ChatUser();
+
     public ChatUser() {
         initComponents();
         setTitle("Chat");
@@ -72,12 +74,16 @@ public class ChatUser extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel1.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
+        jLabel5.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 51, 0)));
 
+        jLabel3.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
+        jLabel9.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 51, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -121,6 +127,11 @@ public class ChatUser extends javax.swing.JFrame {
 
         Login1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         Login1.setText("Send");
+        Login1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Login1ActionPerformed(evt);
+            }
+        });
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -218,6 +229,9 @@ public class ChatUser extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BackActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -261,8 +275,8 @@ public class ChatUser extends javax.swing.JFrame {
             try {
                 Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-                ChatUser.color.getContentPane().setBackground(Color.WHITE);
-                ChatUser.color.setVisible(true);
+                ChatPage.color.getContentPane().setBackground(Color.WHITE);
+                ChatPage.color.setVisible(true);
                 this.setVisible(false);
 
             } catch (IOException ex) {
@@ -270,6 +284,23 @@ public class ChatUser extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed
+        // TODO add your handling code here:
+        if (currentUser.isGuest()) {
+            JOptionPane.showMessageDialog(this, "You can't chat, register first.");
+        } else {
+            String text = jTextField2.getText();
+            if (!text.isEmpty()) {
+                jLabel1.setText(" "+text);
+                JOptionPane.showMessageDialog(this, "Your message is successfully added ");
+            }
+            if (text.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "You didn't enter any text!");
+            }
+        }
+
+    }//GEN-LAST:event_Login1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,7 +335,7 @@ public class ChatUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }
@@ -318,10 +349,6 @@ public class ChatUser extends javax.swing.JFrame {
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -329,7 +356,6 @@ public class ChatUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField2;

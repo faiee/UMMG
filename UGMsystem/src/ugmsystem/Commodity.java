@@ -37,7 +37,7 @@ public class Commodity {
     public Commodity(String vID, String pID, int Price, String Quantity, String Name, String Description,
             String YearOfPurchase, boolean State) {
         this.vID = Login.vendor.getId();
-        this.pID = generateProductID();
+        this.pID = pID;
         this.Price = Price;
         this.Quantity = Quantity;
         this.Name = Name;
@@ -161,8 +161,7 @@ public class Commodity {
         try {
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
-            Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description + "\n");
-            Write.write("\n");
+            Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description+"\n");
             Vendor.vendorCommodity.add(this);
 
             Write.flush();
@@ -225,7 +224,7 @@ public class Commodity {
         }
     }
 
-    private String generateProductID() {
+    public static String generateProductID() {
         String trim = "10";
         int p = (int) (Math.random() * 100);
         String pID = trim + p;

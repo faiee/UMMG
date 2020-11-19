@@ -33,19 +33,20 @@ public class myAdv extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
 
+        if (!Commodity.GetEachVendorInfo().isEmpty()) {
+            if (!Commodity.GetEachVendorInfo().get(2).isEmpty()) {
+                jLabel4.setText("*" + Commodity.GetEachVendorInfo().get(2));
+            }
+            if (!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
+                jLabel6.setText("*" + Commodity.GetEachVendorInfo().get(9));
+            }
+            if (!Commodity.GetEachVendorInfo().get(16).isEmpty() && !Commodity.GetEachVendorInfo().get(16).equals(Commodity.GetEachVendorInfo().get(2))) {
 
-                if(!Commodity.GetEachVendorInfo().isEmpty()){
-            if(!Commodity.GetEachVendorInfo().get(2).isEmpty())   jLabel4.setText("*"+Commodity.GetEachVendorInfo().get(2));
-             if(!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
-                 jLabel6.setText("*"+Commodity.GetEachVendorInfo().get(9));
-             }
-           if(!Commodity.GetEachVendorInfo().get(16).isEmpty() &&  !Commodity.GetEachVendorInfo().get(16).equals(Commodity.GetEachVendorInfo().get(2))) {
-               
-               jLabel8.setText("*"+Commodity.GetEachVendorInfo().get(16));
-           }
-           
-    }
-        
+                jLabel8.setText("*" + Commodity.GetEachVendorInfo().get(16));
+            }
+
+        }
+
     }
 
     /**
@@ -104,7 +105,7 @@ public class myAdv extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(222, 89, 0));
         jLabel9.setText("My Advertisments");
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jLabel7.setText("Name of Advertisment");
 
         jButton11.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
@@ -115,7 +116,7 @@ public class myAdv extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jButton1.setText("New ad");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,28 +222,23 @@ public class myAdv extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(Back3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(86, 86, 86))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel9))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(71, 71, 71)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel7)))
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel9)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,17 +246,17 @@ public class myAdv extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Back3)
-                .addGap(19, 19, 19)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel9)
-                .addGap(30, 30, 30)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -273,6 +269,9 @@ public class myAdv extends javax.swing.JFrame {
 
     private void Back3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back3ActionPerformed
         // TODO add your handling code here:
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_Back3ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -324,10 +323,10 @@ public class myAdv extends javax.swing.JFrame {
             try {
                 Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-                Login.currentUser=null;
-        MainMenu.color.getContentPane().setBackground(Color.WHITE);
-        MainMenu.color.setVisible(true);
-        this.setVisible(false);
+                Login.currentUser = null;
+                MainMenu.color.getContentPane().setBackground(Color.WHITE);
+                MainMenu.color.setVisible(true);
+                this.setVisible(false);
 
             } catch (IOException ex) {
                 Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
@@ -343,8 +342,8 @@ public class myAdv extends javax.swing.JFrame {
             try {
                 Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-                ChatUser.color.getContentPane().setBackground(Color.WHITE);
-                ChatUser.color.setVisible(true);
+                ChatPage.color.getContentPane().setBackground(Color.WHITE);
+                ChatPage.color.setVisible(true);
                 this.setVisible(false);
 
             } catch (IOException ex) {
@@ -386,8 +385,6 @@ public class myAdv extends javax.swing.JFrame {
 
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
-                
-               
 
             }
         });

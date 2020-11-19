@@ -33,7 +33,7 @@ public class Advertisement extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         vID.setText(Login.vendor.getId());
-       /* pID.setText(commodities.getpID());*/
+
         
     }
 
@@ -298,6 +298,8 @@ public class Advertisement extends javax.swing.JFrame {
         // TODO add your handling code here:
         //vID.setText(Login.vendor.getId());
         sec = String.valueOf(secType.getSelectedItem());
+        String id= commodities.generateProductID();
+        pID.setText(id);
         commodities = new Commodity(vID.getText(), pID.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
         commodities.createCommodity();      
         //pID.setText(commodities.getpID());
@@ -312,6 +314,9 @@ public class Advertisement extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BackActionPerformed
 
     private void PpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PpriceActionPerformed
@@ -359,8 +364,8 @@ public class Advertisement extends javax.swing.JFrame {
             try {
                 Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-                ChatUser.color.getContentPane().setBackground(Color.WHITE);
-                ChatUser.color.setVisible(true);
+                ChatPage.color.getContentPane().setBackground(Color.WHITE);
+                ChatPage.color.setVisible(true);
                 this.setVisible(false);
 
             } catch (IOException ex) {

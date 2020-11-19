@@ -54,17 +54,17 @@ public class PaymentInfo extends javax.swing.JFrame {
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
-               
+                orders.createOrder();
+
             }
             if (Commodity.getBooksSectionAds().get(9).contains(Search.search)) {
 
                 jLabel3.setText(Commodity.getBooksSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                    
-orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(9), Commodity.getBooksSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(9), Commodity.getBooksSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
             }
 
             if (Commodity.getBooksSectionAds().get(16).contains(Search.search)) {
@@ -72,8 +72,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
             }
 
             if (Commodity.getBooksSectionAds().get(23).contains(Search.search)) {
@@ -83,7 +83,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                orders.createOrder();  
+                orders.createOrder();
 
             }
         }
@@ -95,7 +95,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                  orders.createOrder(); 
+                orders.createOrder();
             }
 
             if (Commodity.getClothesSectionAds().get(9).equalsIgnoreCase(Search.search)) {
@@ -103,7 +103,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders.createOrder();
 
             }
             if (Commodity.getClothesSectionAds().get(16).equalsIgnoreCase(Search.search)) {
@@ -112,7 +112,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders.createOrder();
 
             }
             if (Commodity.getClothesSectionAds().get(23).equalsIgnoreCase(Search.search)) {
@@ -121,7 +121,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                orders.createOrder();  
+                orders.createOrder();
 
             }
 
@@ -135,7 +135,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders.createOrder();
 
             }
 
@@ -145,7 +145,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                 orders.createOrder();  
+                orders.createOrder();
             }
 
             if (Commodity.getFurnSectionAds().get(16).equalsIgnoreCase(Search.search)) {
@@ -155,7 +155,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                 orders.createOrder();  
+                orders.createOrder();
 
             }
             if (Commodity.getFurnSectionAds().get(23).equalsIgnoreCase(Search.search)) {
@@ -164,7 +164,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(23), Commodity.getFurnSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders.createOrder();
 
             }
 
@@ -180,8 +180,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
 
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                      orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(2), Commodity.getBooksSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
 
             }
 
@@ -190,9 +190,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                  
-orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(9), Commodity.getBooksSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(9), Commodity.getBooksSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
 
             }
 
@@ -202,7 +202,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders.createOrder();
 
             }
 
@@ -211,10 +211,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getBooksSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                orders.createOrder();  
-                
+                orders.createOrder();
 
             }
 
@@ -227,9 +226,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                    orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                  orders.createOrder(); 
+                orders.createOrder();
 
             }
             if (Sections.radio2 == Sections.T) {
@@ -237,8 +236,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
 
             }
 
@@ -247,8 +246,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getClothesSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
 
             }
 
@@ -258,9 +257,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                         Commodity.getClothesSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                  orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                orders.createOrder();  
+                orders.createOrder();
 
             }
 
@@ -274,8 +273,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                         Commodity.getFurnSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders.createOrder();
 
             }
             if (Sections.radio2 == Sections.T) {
@@ -283,9 +282,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getFurnSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                   orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                 orders.createOrder();  
+                orders.createOrder();
 
             }
 
@@ -294,9 +293,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 jLabel3.setText(Commodity.getFurnSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
-                  orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
+                orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
 
-                 orders.createOrder();  
+                orders.createOrder();
 
             }
 
@@ -307,7 +306,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(23), Commodity.getFurnSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
-   orders.createOrder();
+                orders.createOrder();
 
             }
 
@@ -450,6 +449,10 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel3.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -466,9 +469,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
@@ -532,24 +535,25 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(24, 24, 24)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -557,13 +561,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                                         .addComponent(jLabel9)
                                         .addGap(6, 6, 6)
                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField1)
-                                        .addGap(9, 9, 9))))
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))))
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(93, 93, 93)
@@ -586,7 +584,7 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                         .addGap(46, 46, 46)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,26 +594,24 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel9)))
+                        .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton4)))
+                            .addComponent(jLabel6)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton2))
+                .addGap(76, 76, 76)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -655,13 +651,11 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
         if (jTextField1.getText().trim().length() == 16) {
             if ((jTextField2.getText().length() == 2) && (Integer.valueOf(jTextField2.getText()) <= 12)) {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
-                    if (jTextField4.getText().length() == 3) {     
+                    if (jTextField4.getText().length() == 3) {
 
-     
-        new SuccessOrder().setVisible(true);
-        JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
-        
-        
+                        new SuccessOrder().setVisible(true);
+                        JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
+
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");
                     }
@@ -674,8 +668,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
         } else {
             JOptionPane.showMessageDialog(this, "Card number denied! It should be 16 digits long");
         }
-        
- 
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -684,6 +678,9 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BackActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -728,8 +725,8 @@ orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.get
             try {
                 Login.currentUser = Buyer.findUser(Login.vendor.getId());
 
-                ChatUser.color.getContentPane().setBackground(Color.WHITE);
-                ChatUser.color.setVisible(true);
+                ChatPage.color.getContentPane().setBackground(Color.WHITE);
+                ChatPage.color.setVisible(true);
                 this.setVisible(false);
 
             } catch (IOException ex) {

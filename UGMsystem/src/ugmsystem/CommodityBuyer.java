@@ -7,29 +7,18 @@ package ugmsystem;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static ugmsystem.Commodity.Commodities;
 import static ugmsystem.Login.currentUser;
 import static ugmsystem.Search.search;
 import static ugmsystem.Sections.check;
 import static ugmsystem.Sections.check2;
 import static ugmsystem.Sections.check3;
-import static ugmsystem.Sections.radio1;
-import static ugmsystem.Sections.radio2;
-import static ugmsystem.Sections.radio3;
-import static ugmsystem.Sections.radio4;
-import static ugmsystem.User.accounts;
 
 /**
  *

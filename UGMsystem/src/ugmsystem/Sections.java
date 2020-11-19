@@ -7,22 +7,13 @@ package ugmsystem;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import static java.lang.Integer.parseInt;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.io.*;
 import javax.swing.JOptionPane;
-import static ugmsystem.Commodity.Commodities;
 import static ugmsystem.Login.currentUser;
 
 

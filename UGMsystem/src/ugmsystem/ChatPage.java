@@ -23,6 +23,9 @@ static ChatPage color = new ChatPage();
      */
     public ChatPage() {
         initComponents();
+        setTitle("ChatPage");
+        setLocationRelativeTo(null);
+       
     }
 
     /**

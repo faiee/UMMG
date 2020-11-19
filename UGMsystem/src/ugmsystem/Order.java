@@ -205,21 +205,6 @@ public class Order {
 
     }
 
-    public void shipOrder() {
-
-    }
-
-    public boolean Payment() {
-        return true;
-    }
-
-    public void orderDelivered() {
-
-    }
-
-    public void endOrderProcess() {
-
-    }
 
     public double totalPayment(Commodity PurchaseCom) {
         return 0;

@@ -17,7 +17,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 import static ugmsystem.Login.vendor;
-import static ugmsystem.Order.o;
 import static ugmsystem.Search.search;
 import static ugmsystem.Sections.check;
 import static ugmsystem.Sections.check2;
@@ -32,7 +31,7 @@ public class PaymentInfo extends javax.swing.JFrame {
     // public static ArrayList<String> orderBOOK = Commodity.getBooksSectionAds();
     static PaymentInfo color = new PaymentInfo();
     static Order orders;
-    //static Order o;
+
 
     /**
      * Creates new form PaymentInfo

@@ -17,12 +17,11 @@ import java.util.logging.Logger;
  */
 public class Commodity {
 
-    private String vID, pID, Quantity, Name, Description, YearOfPurchase, filePic, sec;
+    private String vID, pID, Name, Description, filePic, sec;
     private int Price;
-    private boolean State;
 
     /**
-     *
+     *Static file object that saves all commodities for users.
      */
     public static File Commodities = new File("Commodities.txt");
 
@@ -52,33 +51,9 @@ public class Commodity {
     public static ArrayList<String> EachVendorInfo = new ArrayList<String>();
 
     /**
-     *
+     *Static ArrayList attribute used to store commodities for update or delete.
      */
     public static ArrayList<String> UpdateDeleteInfo = new ArrayList<String>();
-
-    /**
-     *
-     * @param vID
-     * @param pID
-     * @param Price
-     * @param Quantity
-     * @param Name
-     * @param Description
-     * @param YearOfPurchase
-     * @param State
-     */
-    public Commodity(String vID, String pID, int Price, String Quantity, String Name, String Description,
-            String YearOfPurchase, boolean State) {
-        this.vID = Login.vendor.getId();
-        this.pID = pID;
-        this.Price = Price;
-        this.Quantity = Quantity;
-        this.Name = Name;
-        this.Description = Description;
-        this.YearOfPurchase = YearOfPurchase;
-        this.State = State;
-
-    }
 
     /**
      *
@@ -108,33 +83,15 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
-     */
-    public String getYearOfPurchase() {
-        return YearOfPurchase;
-    }
-
-    /**
-     *
-     * @param YearOfPurchase
-     * @throws IOException
-     */
-    public void setYearOfPurchase(String YearOfPurchase) throws IOException {
-        this.YearOfPurchase = YearOfPurchase;
-
-    }
-
-    /**
-     *
-     * @return
+     *Get method returns user id
+     * @return String
      */
     public String getvID() {
         return vID;
     }
 
     /**
-     *
+     *Set method sets user id
      * @param vID
      * @throws IOException
      */
@@ -144,15 +101,15 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
+     *Get method returns product/commodity id
+     * @return string
      */
     public String getpID() {
         return pID;
     }
 
     /**
-     *
+     *Set method sets product/commodity id
      * @param pID
      * @throws IOException
      */
@@ -162,33 +119,15 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
-     */
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    /**
-     *
-     * @param Quantity
-     * @throws IOException
-     */
-    public void setQuantity(String Quantity) throws IOException {
-        Quantity = Quantity;
-
-    }
-
-    /**
-     *
-     * @return
+     *Get method returns commodity name
+     * @return string
      */
     public String getName() {
         return Name;
     }
 
     /**
-     *
+     *Set method sets commodity name
      * @param Name
      */
     public void setName(String Name) {
@@ -196,15 +135,15 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
+     *Get method returns commodity description
+     * @return string
      */
     public String getDescription() {
         return Description;
     }
 
     /**
-     *
+     *Set method sets ommodity description
      * @param Description
      */
     public void setDescription(String Description) {
@@ -212,15 +151,15 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
+     *Get method returns commodity picture
+     * @return string
      */
     public String getFilePic() {
         return filePic;
     }
 
     /**
-     *
+     *Set method sets ommodity picture
      * @param filePic
      */
     public void setFilePic(String filePic) {
@@ -228,8 +167,8 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
+     *Get method returns commodity section
+     * @return string
      */
     public String getSec() {
         return sec;
@@ -237,7 +176,7 @@ public class Commodity {
     }
 
     /**
-     *
+     *Set method sets ommodity section
      * @param sec
      * @throws IOException
      */
@@ -247,8 +186,8 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
+     *Get method returns commodity price
+     * @return integer
      */
     public int getPrice() {
         return Price;
@@ -256,7 +195,7 @@ public class Commodity {
     }
 
     /**
-     *
+     *Set method sets ommodity price
      * @param Price
      * @throws IOException
      */
@@ -265,32 +204,15 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
-     */
-    public boolean isState() {
-        return State;
-    }
-
-    /**
-     *
-     * @param State
-     */
-    public void setState(boolean State) {
-        State = State;
-
-    }
-
-    /**
-     *
-     * @return
+     *Get method returns commodity file
+     * @return file
      */
     public File getCommodities() {
         return Commodities;
     }
 
     /**
-     *
+     *Set method sets ommodity file
      * @param Commodities
      */
     public void setCommodities(File Commodities) {
@@ -298,7 +220,8 @@ public class Commodity {
     }
 
     /**
-     *
+     *This method used to create commodity for vendor logged in and 
+     * store it in commodities file and on vendor commodity array list. 
      */
     public void createCommodity() {
         try {
@@ -316,20 +239,17 @@ public class Commodity {
         }
     }
 
+    /**
+     *Override Method toString that converts commodity object to string
+     * @return  String
+     */
     @Override
     public String toString() {
         return vID + "," + pID + "," + Name + "," + Price + "," + sec + "," + filePic + "," + Description + "\n";
     }
-
+    
     /**
-     *
-     */
-    public void addCommodity() {
-
-    }
-
-    /**
-     *
+     *This method used to receive update of vendor commodity information and updates file and ArrayList UpdateDeleteInfo.
      * @param newName
      * @param newPrice
      * @param newDescription
@@ -425,8 +345,9 @@ public class Commodity {
     */
 
     /**
-     *
-     * @return
+     * This method used to generates an id for commodity
+     * Called in constructor
+     * @return String
      */
 
     public static String generateProductID() {
@@ -437,7 +358,7 @@ public class Commodity {
     }
 
     /**
-     *
+     *This method used to delete vendor commodity information and updates file and ArrayList UpdateDeleteInfo.
      * @param commodity
      */
     public static void deleteCommodity(String commodity) {
@@ -480,77 +401,6 @@ public class Commodity {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }
-
-    /**
-     *
-     */
-    public void purchaseCommodity() {
-
-    }
-
-    /**
-     *
-     * @return
-     */
-    public static boolean isAvailable() {
-
-        return false;
-    }
-
-    /**
-     *
-     */
-    public void advertisee() {
-
-    }
-
-    /**
-     *
-     */
-    public void updateCommodityDatabase() {
-
-    }
-
-    /**
-     *
-     */
-    public void addToOrder() {
-
-    }
-
-    /**
-     *
-     */
-    public void endPurchase() {
-
-    }
-
-    /**
-     *
-     */
-    public void checkout() {
-
-    }
-
-    /**
-     *
-     * @param Msg
-     * @return
-     */
-    public ChatUser ContactVendor(ChatUser Msg) {
-
-        return null;
-    }
-
-    /**
-     *
-     * @param Msg
-     * @return
-     */
-    public ChatUser ContactBuyer(ChatUser Msg) {
-
-        return null;
     }
 
     /**
@@ -725,8 +575,9 @@ public class Commodity {
     }
 
     /**
-     *
-     * @return
+     *Read all content of commodities file and check if the current user has an advertisement 
+     * to update or delete then store all the information of the advertisement into the array
+     * @return ArrayList 
      */
     public static ArrayList<String> GetUpdateDeleteInfo() {
 

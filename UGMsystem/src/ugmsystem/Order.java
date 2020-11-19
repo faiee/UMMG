@@ -22,18 +22,31 @@ import java.util.logging.Logger;
  */
 public class Order {
 
-    private String Name, ID, VenID, Description;
+    private String Name, ID, VenID;
     private int price;
-    private String Date;
-    private String SaleLicense;
-    private Commodity PurchaseCom;
-    private String CommodityType;//section
-    private String CommodityNo;//Product id
-    public static double TotalPayment, Tax;
-    public static Order o;
+    private String CommodityType;
+    private String CommodityNo;
+    public static double TotalPayment,Tax;
+    /**
+     *Static file object that saves all orders for user.
+     */
     public static File Orders = new File("Orders.txt");
+
+    /**
+     *Static ArrayList attribute used to store all orders in one array.
+     */
     public static ArrayList<String> EachOrderInfo = new ArrayList<String>();
 
+    /**
+     *
+     * @param ID
+     * @param VenID
+     * @param Name
+     * @param CommodityType
+     * @param price
+     * @param Tax
+     * @param TotalPayment
+     */
     public Order(String ID, String VenID, String Name, String CommodityType, int price, double Tax, double TotalPayment) {
         this.ID = ID;
         this.VenID=VenID;
@@ -44,96 +57,130 @@ public class Order {
         this.TotalPayment = calculatePay(price);
     }
 
-    public Order() {
-
-    }
-
-    //Get and set
+    /**
+     *Get method returns order id
+     * @return string
+     */
     public String getoID() {
         return ID;
     }
 
+    /**
+     *Get method returns user id
+     * @return
+     */
     public String getVenID() {
         return VenID;
     }
 
+    /**
+     *Set method sets order id
+     * @param ID
+     */
     public void setoID(String ID) {
         this.ID = ID;
     }
 
+    /**
+     *Get method returns commodity name
+     * @return
+     */
     public String getName() {
         return Name;
     }
 
+    /**
+     *Get method returns commodity price
+     * @return
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     *Set method sets commodity price
+     * @param price
+     */
     public void setPrice(int price) {
         this.price = price;
     }
 
+    /**
+     *Get method returns commodity tax
+     * @return
+     */
     public double getTax() {
         return Tax;
     }
 
+    /**
+     *Set method sets commodity tax
+     * @param Tax
+     */
     public void setTax(double Tax) {
         Order.Tax = Tax;
     }
 
+    /**
+     *Set method sets commodity name
+     * @param Name
+     */
     public void setName(String Name) {
         this.Name = Name;
     }
 
-    public String getDate() {
-        return Date;
-    }
-
-    public void setDate(String Date) {
-        this.Date = Date;
-    }
-
-    public String getSaleLicense() {
-        return SaleLicense;
-    }
-
-    public void setSaleLicense(String SaleLicense) {
-        this.SaleLicense = SaleLicense;
-    }
-
-    public Commodity getPurchaseCom() {
-        return PurchaseCom;
-    }
-
-    public void setPurchaseCom(Commodity PurchaseCom) {
-        this.PurchaseCom = PurchaseCom;
-    }
-
+    /**
+     *Get method returns commodity section
+     * @return string
+     */
     public String getCommodityType() {
         return CommodityType;
     }
 
+    /**
+     *Set method sets commodity section
+     * @param CommodityType
+     */
     public void setCommodityType(String CommodityType) {
         this.CommodityType = CommodityType;
     }
 
+    /**
+     *Get method returns commodity id
+     * @return string
+     */
     public String getCommodityNo() {
         return CommodityNo;
     }
 
+    /**
+     *Set method sets commodity id
+     * @param CommodityNo
+     */
     public void setCommodityNo(String CommodityNo) {
         this.CommodityNo = CommodityNo;
     }
 
+    /**
+     *Get method returns total payment
+     * @return double
+     */
     public double getTotalPayment() {
         return TotalPayment;
     }
 
+    /**
+     *Set method sets total payment
+     * @param TotalPayment
+     */
     public void setTotalPayment(double TotalPayment) {
         this.TotalPayment = TotalPayment;
     }
 
-    //Method
+    /**
+     *This method used to create order for user logged in and 
+     * store it in orders file. 
+     */
     public void createOrder() {
         try {
             FileWriter fileWriter = new FileWriter(Orders, true);
@@ -148,6 +195,11 @@ public class Order {
         }
     }
 
+    /**
+     *Read all content of orders file and check if the current user has an order 
+     * then store all the information into the array
+     * @return ArrayList
+     */
     public static ArrayList<String> GetEachOrderInfo() {
 
         String line;
@@ -177,6 +229,12 @@ public class Order {
 
     }
 
+    /**
+     *This method used to calculate total payment 
+     * Called in constructor
+     * @param p
+     * @return double
+     */
     public static double calculatePay(int p) {
         double tax = 0.0;
         tax = (p * 0.15);
@@ -184,12 +242,22 @@ public class Order {
         return TotalPayment;
     }
 
+    /**
+     *This method used to calculate tax for commodity 
+     * Called in constructor
+     * @param p
+     * @return
+     */
     public static double calculateTax(int p) {
         double tax = 0.0;
         tax = (p * 0.15);
         return tax;
     }
 
+    /**
+     *This method used to generates an id for order
+     * @return string
+     */
     public static String generateOrderID() {
         String trim = "00";
         int p = (int) (Math.random() * 100);
@@ -197,16 +265,4 @@ public class Order {
         return pID;
     }
 
-    public boolean isAccepted() {
-        return true;
-    }
-
-    public void deleteOrder() {
-
-    }
-
-
-    public double totalPayment(Commodity PurchaseCom) {
-        return 0;
-    }
 }

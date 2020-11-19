@@ -56,7 +56,7 @@ public class Commodity {
     public static ArrayList<String> UpdateDeleteInfo = new ArrayList<String>();
 
     /**
-     *
+     *Empty constructor to create objects from commodity.
      */
     public Commodity() {
 

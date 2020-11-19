@@ -31,6 +31,7 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     static CommodityVendor color = new CommodityVendor();
     DefaultComboBoxModel dml;
+    String SelectedItem;
 
     // public static String[] Names = new String[100];
     /**
@@ -54,11 +55,9 @@ public class CommodityVendor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         saveInfo = new javax.swing.JButton();
-        pict = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         Back1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         Pname = new javax.swing.JTextField();
@@ -87,12 +86,6 @@ public class CommodityVendor extends javax.swing.JFrame {
             }
         });
 
-        pict.setFont(new java.awt.Font("Gadugi", 0, 13)); // NOI18N
-        pict.setForeground(new java.awt.Color(204, 204, 204));
-        pict.setText("Picture here");
-        pict.setToolTipText("");
-        pict.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-
         jLabel6.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(222, 89, 0));
         jLabel6.setText("Advertisement");
@@ -102,9 +95,6 @@ public class CommodityVendor extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jLabel9.setText("Details:");
-
-        jLabel10.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        jLabel10.setText("Picture:");
 
         Back1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/orangeBack2.png"))); // NOI18N
@@ -227,14 +217,6 @@ public class CommodityVendor extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel9)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(5, 5, 5)
-                                .addComponent(pict, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(saveInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(saveInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +226,12 @@ public class CommodityVendor extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Pname)
                                     .addComponent(Pprice, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(pName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(saveInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(saveInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -273,16 +260,11 @@ public class CommodityVendor extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(saveInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(saveInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel10)
-                                .addComponent(pict, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(saveInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(saveInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(59, 59, 59)))
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -326,26 +308,23 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
         // TODO add your handling code here:
-        String SelectedItem = (String) pName.getSelectedItem();
+        SelectedItem = (String) pName.getSelectedItem();
         if (SelectedItem.equals(Commodity.EachVendorInfo.get(2))) {
             Pname.setText(Commodity.EachVendorInfo.get(2));
             Pprice.setText(Commodity.EachVendorInfo.get(3));
             Pdetail.setText(Commodity.EachVendorInfo.get(5));
-            ImageIcon icon = new ImageIcon(Commodity.EachVendorInfo.get(4));
-            pict.setIcon(icon);
+
 
         } else if (SelectedItem.equals(Commodity.EachVendorInfo.get(9))) {
             Pname.setText(Commodity.EachVendorInfo.get(9));
             Pprice.setText(Commodity.EachVendorInfo.get(10));
             Pdetail.setText(Commodity.EachVendorInfo.get(12));
-            ImageIcon icon = new ImageIcon(Commodity.EachVendorInfo.get(11));
-            pict.setIcon(icon);
+
         } else {
             Pname.setText(Commodity.EachVendorInfo.get(16));
             Pprice.setText(Commodity.EachVendorInfo.get(17));
             Pdetail.setText(Commodity.EachVendorInfo.get(19));
-            ImageIcon icon = new ImageIcon(Commodity.EachVendorInfo.get(18));
-            pict.setIcon(icon);
+
         }
 
     }//GEN-LAST:event_pNameActionPerformed
@@ -420,12 +399,11 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     private void saveInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfo1ActionPerformed
 
-      Commodity.GetEachVendorInfo();
-        
-        
-        
-        
-        
+      Commodity.deleteCommodity(SelectedItem);
+      JOptionPane.showMessageDialog(this, "Commodity Deleted Successfullt!");
+      Pname.setText(null);
+      Pprice.setText(null);
+      Pdetail.setText(null);
     }//GEN-LAST:event_saveInfo1ActionPerformed
 
     /**
@@ -473,7 +451,6 @@ public class CommodityVendor extends javax.swing.JFrame {
     private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton35;
     private javax.swing.JButton jButton36;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
@@ -483,7 +460,6 @@ public class CommodityVendor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> pName;
-    private javax.swing.JLabel pict;
     private javax.swing.JButton saveInfo;
     private javax.swing.JButton saveInfo1;
     // End of variables declaration//GEN-END:variables

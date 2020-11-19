@@ -101,7 +101,7 @@ public class Commodity {
         return Name;
     }
 
-    public void setName(String Name){
+    public void setName(String Name) {
         Name = Name;
     }
 
@@ -109,7 +109,7 @@ public class Commodity {
         return Description;
     }
 
-    public void setDescription(String Description){
+    public void setDescription(String Description) {
         Description = Description;
     }
 
@@ -117,7 +117,7 @@ public class Commodity {
         return filePic;
     }
 
-    public void setFilePic(String filePic){
+    public void setFilePic(String filePic) {
         filePic = filePic;
     }
 
@@ -161,7 +161,8 @@ public class Commodity {
         try {
             FileWriter fileWriter = new FileWriter(Commodities, true);
             BufferedWriter Write = new BufferedWriter(fileWriter);
-            Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description+"\n");
+            Write.write(this.vID + "," + this.pID + "," + this.Name + "," + this.Price + "," + sec + "," + filePic + "," + this.Description);
+            Write.write("\n");
             Vendor.vendorCommodity.add(this);
 
             Write.flush();
@@ -189,13 +190,13 @@ public class Commodity {
                 String[] lineArr;
                 while ((line = file.readLine()) != null) {
                     lineArr = line.split(",");
-                    if (lineArr[0].equals(UpdateDeleteInfo.get(0))) {
-                        Temp.add(UpdateDeleteInfo.get(0) + ","
-                                + UpdateDeleteInfo.get(1) + ","
+                    if (lineArr[0].equals(GetUpdateDeleteInfo().get(0))) {
+                        Temp.add(GetUpdateDeleteInfo().get(0) + ","
+                                + GetUpdateDeleteInfo().get(1) + ","
                                 + newName + "," + newPrice + ","
-                                + UpdateDeleteInfo.get(4) + ","
+                                + GetUpdateDeleteInfo().get(4) + ","
                                 + newDescription + ","
-                                + UpdateDeleteInfo.get(6));
+                                + GetUpdateDeleteInfo().get(6));
                     } else {
                         Temp.add(line);
                     }
@@ -203,10 +204,10 @@ public class Commodity {
                 file.close();
 
             } catch (Exception ex) {
-                Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (Exception ex) {
-            Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
         //
         try {
@@ -217,10 +218,10 @@ public class Commodity {
                 Pfile.close();
 
             } catch (Exception ex) {
-                Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (Exception ex) {
-            Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -231,7 +232,7 @@ public class Commodity {
         return pID;
     }
 
-    public static void deleteCommodity() {
+    public static void deleteCommodity(String commodity) {
         ArrayList<String> Temp = new ArrayList<String>();
         try {
             try (BufferedReader file = new BufferedReader(new FileReader(Commodities))) {
@@ -239,11 +240,11 @@ public class Commodity {
                 String[] lineArr;
                 while ((line = file.readLine()) != null) {
                     lineArr = line.split(",");
-                    if (lineArr[0].equals(EachVendorInfo.get(0))) {
-                        Temp.remove(EachVendorInfo.get(0)+EachVendorInfo.get(1)
-                        +EachVendorInfo.get(2)+EachVendorInfo.get(3)
-                        +EachVendorInfo.get(4)+EachVendorInfo.get(5)
-                        +EachVendorInfo.get(6));
+                    if (lineArr[0].equals(GetUpdateDeleteInfo().get(0))) {
+                        Temp.remove(GetUpdateDeleteInfo().get(0) + GetUpdateDeleteInfo().get(1)
+                                + commodity + GetUpdateDeleteInfo().get(3)
+                                + GetUpdateDeleteInfo().get(4) + GetUpdateDeleteInfo().get(5)
+                                + GetUpdateDeleteInfo().get(6));
                     } else {
                         Temp.add(line);
                     }
@@ -251,10 +252,10 @@ public class Commodity {
                 file.close();
 
             } catch (Exception ex) {
-                Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (Exception ex) {
-            Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
         //
         try {
@@ -265,10 +266,10 @@ public class Commodity {
                 Pfile.close();
 
             } catch (Exception ex) {
-                Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (Exception ex) {
-            Logger.getLogger(CommodityVendor.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -464,7 +465,7 @@ public class Commodity {
         return EachVendorInfo;
 
     }
-    
+
     public static ArrayList<String> GetUpdateDeleteInfo() {
 
         String line;

@@ -185,6 +185,52 @@ public class Commodity {
     public static void editCommodity(String newName, String newPrice, String newDescription) {
         ArrayList<String> Temp = new ArrayList<String>();
         try {
+      
+                String line="";
+                String[] lineArr;
+                for (int i = 0; i < GetUpdateDeleteInfo().size(); i++)  {
+                    lineArr = line.split(",");
+                    if (lineArr[0].equals(GetUpdateDeleteInfo().get(0))) {
+                        Temp.add(GetUpdateDeleteInfo().get(0) + ","
+                                + GetUpdateDeleteInfo().get(1) + ","
+                                + newName + "," + newPrice + ","
+                                + GetUpdateDeleteInfo().get(4) + ","
+                                + newDescription + ","
+                                + GetUpdateDeleteInfo().get(6));
+                    }
+                  else {
+                        Temp.add(line);
+                    }
+                }
+
+
+        FileWriter fileWriter = new FileWriter(Commodities, false);
+                   BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                   bufferedWriter.write("");
+                   bufferedWriter.close();
+                   
+                   FileWriter fileWriter2 = new FileWriter(Commodities, true);
+                   BufferedWriter bufferedWriter2 = new BufferedWriter(fileWriter2);
+                   
+                   for (int i = 0; i < GetUpdateDeleteInfo().size(); i++) {
+                   
+                   bufferedWriter2.write(GetUpdateDeleteInfo().get(i).toString());
+                   bufferedWriter2.write("\n");
+                  
+                    }
+                  bufferedWriter2.close();
+
+            } catch (Exception ex) {
+                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } 
+
+  
+
+    /*
+    public static void editCommodity(String newName, String newPrice, String newDescription) {
+        ArrayList<String> Temp = new ArrayList<String>();
+        try {
             try (BufferedReader file = new BufferedReader(new FileReader(Commodities))) {
                 String line;
                 String[] lineArr;
@@ -197,7 +243,7 @@ public class Commodity {
                                 + GetUpdateDeleteInfo().get(4) + ","
                                 + newDescription + ","
                                 + GetUpdateDeleteInfo().get(6));
-                    } else {
+                    }else {
                         Temp.add(line);
                     }
                 }
@@ -224,7 +270,7 @@ public class Commodity {
             Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    */
     public static String generateProductID() {
         String trim = "10";
         int p = (int) (Math.random() * 100);

@@ -21,14 +21,14 @@ import static ugmsystem.Login.currentUser;
  * @author fayaldosa
  */
 public class Search extends javax.swing.JFrame {
-public static String search;
-public static Boolean SearchCheck;
+
+    public static String search;
+    public static Boolean SearchCheck;
+    static Search color = new Search();
 
     /**
-     * Creates new form Search
+     *Creates new form Search.
      */
-    
-    static Search color = new Search();
     public Search() {
         setTitle("Home");
         initComponents();

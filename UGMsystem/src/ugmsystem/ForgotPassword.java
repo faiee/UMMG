@@ -15,11 +15,11 @@ import javax.swing.JOptionPane;
  */
 public class ForgotPassword extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ForgotPassword
-     */
     static  ForgotPassword color = new ForgotPassword();
     
+    /**
+     *Creates new form ForgotPassword.
+     */
     public ForgotPassword() {
         initComponents();
         setTitle("Forgot Password");

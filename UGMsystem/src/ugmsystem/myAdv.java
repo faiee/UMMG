@@ -17,14 +17,12 @@ import static ugmsystem.Login.currentUser;
  * @author reemalsolami
  */
 public class myAdv extends javax.swing.JFrame {
-
-    public static String[] Title = new String[400];
-    /**
-     * Creates new form myAdv
-     */
-
+  
     static myAdv color = new myAdv();
 
+    /**
+     *Creates new form myAdv.
+     */
     public myAdv() {
 
         setTitle("My Advertisments");

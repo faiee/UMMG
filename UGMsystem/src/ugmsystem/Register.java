@@ -17,14 +17,10 @@ import static ugmsystem.Login.vendor;
  */
 public class Register extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Register
-     */
-    
     static Register color = new Register();
     
     /**
-     *
+     *Creates new form Register.
      */
     public Register() {
         setTitle("Create Account");

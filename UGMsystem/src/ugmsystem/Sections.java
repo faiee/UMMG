@@ -25,15 +25,51 @@ import static ugmsystem.Login.currentUser;
 public class Sections extends javax.swing.JFrame {
 
  static Sections color = new Sections();
- public static Boolean check;
-  public static Boolean check2;
-   public static Boolean check3;
- public static Boolean radio1;
-  public static Boolean radio2;
-   public static Boolean radio3;
+
+    /**
+     *
+     */
+    public static Boolean check;
+
+    /**
+     *
+     */
+    public static Boolean check2;
+
+    /**
+     *
+     */
+    public static Boolean check3;
+
+    /**
+     *
+     */
+    public static Boolean radio1;
+
+    /**
+     *
+     */
+    public static Boolean radio2;
+
+    /**
+     *
+     */
+    public static Boolean radio3;
+
+    /**
+     *
+     */
     public static Boolean radio4;
-      public static Boolean SelectSection;
-      public static Boolean T=true;
+
+    /**
+     *
+     */
+    public static Boolean SelectSection;
+
+    /**
+     *
+     */
+    public static Boolean T=true;
     /**
      * Creates new form Books
      */

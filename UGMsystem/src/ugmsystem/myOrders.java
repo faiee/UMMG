@@ -18,11 +18,11 @@ import static ugmsystem.Login.currentUser;
  */
 public class myOrders extends javax.swing.JFrame {
 
-    /**
-     * Creates new form myOrders
-     */
     static myOrders color = new myOrders();
-
+    
+    /**
+     * Creates new form My Orders.
+     */
     public myOrders() {
         setTitle("my Order");
         initComponents();

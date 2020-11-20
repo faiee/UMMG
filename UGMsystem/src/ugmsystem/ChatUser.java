@@ -18,11 +18,11 @@ import static ugmsystem.Login.currentUser;
  */
 public class ChatUser extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BuyerChat
-     */
     static ChatUser color = new ChatUser();
 
+    /**
+     *Creates new form BuyerChat.
+     */
     public ChatUser() {
         initComponents();
         setTitle("Chat");

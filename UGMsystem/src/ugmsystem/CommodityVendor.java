@@ -31,7 +31,7 @@ public class CommodityVendor extends javax.swing.JFrame {
         initComponents();
         setTitle("Vendor Commodity");
         setLocationRelativeTo(null);
-Commodity.GetEachVendorInfo();
+        Commodity.GetEachVendorInfo();
     }
 
     /**

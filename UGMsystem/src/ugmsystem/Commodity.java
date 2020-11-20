@@ -74,7 +74,7 @@ public class Commodity {
      */
     public Commodity(String vID, String pID, String Name, int Price, String filePic, String sec, String Description) {
         this.vID = Login.vendor.getId();
-        this.pID = generateProductID();
+        this.pID = pID;
         this.Name = Name;
         this.Price = Price;
         this.Description = Description;

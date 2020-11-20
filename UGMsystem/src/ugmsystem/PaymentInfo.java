@@ -12,9 +12,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
-
 /**
- *This is an interface class that allows buyer to enter payment information to finalize order
+ * This is an interface class that allows buyer to enter payment information to
+ * finalize order
+ *
  * @author reemalsolami
  */
 public class PaymentInfo extends javax.swing.JFrame {
@@ -22,7 +23,6 @@ public class PaymentInfo extends javax.swing.JFrame {
     // public static ArrayList<String> orderBOOK = Commodity.getBooksSectionAds();
     static PaymentInfo color = new PaymentInfo();
     static Order orders;
-
 
     /**
      * Creates new form PaymentInfo
@@ -643,11 +643,10 @@ public class PaymentInfo extends javax.swing.JFrame {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
                     if (jTextField4.getText().length() == 3) {
 
-
                         JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
                         SuccessOrder.color.getContentPane().setBackground(Color.WHITE);
-        SuccessOrder.color.setVisible(true);
-        this.setVisible(false);
+                        SuccessOrder.color.setVisible(true);
+                        this.setVisible(false);
 
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");

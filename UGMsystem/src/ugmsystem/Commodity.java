@@ -253,8 +253,9 @@ public class Commodity {
      * @param newName String
      * @param newPrice String
      * @param newDescription String
+     * @param select String
      */
-    public static void editCommodity(String newName, String newPrice, String newDescription) {
+    public static void editCommodity(String select,String newName, String newPrice, String newDescription) {
         ArrayList<String> Temp = new ArrayList<String>();
         try {
             try (BufferedReader file = new BufferedReader(new FileReader(Commodities))) {
@@ -262,20 +263,13 @@ public class Commodity {
                 String[] lineArr;
                 while ((line = file.readLine()) != null) {
                     lineArr = line.split(",");
-                    if (lineArr[2].equals(GetUpdateDeleteInfo().get(2))) {
-                        Temp.add(GetUpdateDeleteInfo().get(0) + ","
-                                + GetUpdateDeleteInfo().get(1) + ","
+                    if (lineArr[2].equals(select)) {
+                        Temp.add(lineArr[0] + ","
+                                + lineArr[1] + ","
                                 + newName + "," + newPrice + ","
-                                + GetUpdateDeleteInfo().get(4) + ","
+                                + lineArr[4] + ","
                                 + newDescription + ","
-                                + GetUpdateDeleteInfo().get(6));
-                    }if (lineArr[2].equals(GetUpdateDeleteInfo().get(2))) {
-                        Temp.add(GetUpdateDeleteInfo().get(0) + ","
-                                + GetUpdateDeleteInfo().get(1) + ","
-                                + newName + "," + newPrice + ","
-                                + GetUpdateDeleteInfo().get(4) + ","
-                                + newDescription + ","
-                                + GetUpdateDeleteInfo().get(6));
+                                + lineArr[6]);
                     } else {
                         Temp.add(line);
                     }
@@ -304,53 +298,6 @@ public class Commodity {
         }
         } 
 
-  
-
-    /*
-    public static void editCommodity(String newName, String newPrice, String newDescription) {
-        ArrayList<String> Temp = new ArrayList<String>();
-        try {
-            try (BufferedReader file = new BufferedReader(new FileReader(Commodities))) {
-                String line;
-                String[] lineArr;
-                while ((line = file.readLine()) != null) {
-                    lineArr = line.split(",");
-                    if (lineArr[0].equals(GetUpdateDeleteInfo().get(0))) {
-                        Temp.add(GetUpdateDeleteInfo().get(0) + ","
-                                + GetUpdateDeleteInfo().get(1) + ","
-                                + newName + "," + newPrice + ","
-                                + GetUpdateDeleteInfo().get(4) + ","
-                                + newDescription + ","
-                                + GetUpdateDeleteInfo().get(6));
-                    }else {
-                        Temp.add(line);
-                    }
-                }
-                file.close();
-
-            } catch (Exception ex) {
-                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //
-        try {
-            try (PrintWriter Pfile = new PrintWriter(Commodities)) {
-                for (String str : Temp) {
-                    Pfile.println(str);
-                }
-                Pfile.close();
-
-            } catch (Exception ex) {
-                Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(Commodity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    */
-
     /**
      * This method used to generates an id for commodity
      * Called in constructor
@@ -376,11 +323,11 @@ public class Commodity {
                 String[] lineArr;
                 while ((line = file.readLine()) != null) {
                     lineArr = line.split(",");
-                    if (lineArr[0].equals(GetUpdateDeleteInfo().get(0))) {
-                        Temp.remove(GetUpdateDeleteInfo().get(0) + GetUpdateDeleteInfo().get(1)
-                                + commodity + GetUpdateDeleteInfo().get(3)
-                                + GetUpdateDeleteInfo().get(4) + GetUpdateDeleteInfo().get(5)
-                                + GetUpdateDeleteInfo().get(6));
+                    if (lineArr[2].equals(commodity)) {
+                        Temp.remove(lineArr[0] + lineArr[1]
+                                + commodity + lineArr[3]
+                                + lineArr[4] + lineArr[5]
+                                + lineArr[6]);
                     } else {
                         Temp.add(line);
                     }

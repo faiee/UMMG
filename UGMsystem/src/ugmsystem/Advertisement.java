@@ -302,7 +302,7 @@ public class Advertisement extends javax.swing.JFrame {
         pID.setText(id);
         commodities = new Commodity(vID.getText(), pID.getText(), Pname.getText(), Integer.valueOf(Pprice.getText()), detail.getText(), file, sec);
         commodities.createCommodity();      
-        //pID.setText(commodities.getpID());
+        JOptionPane.showMessageDialog(this, "Commodity Add Successfully!");
         
         
     }//GEN-LAST:event_AddActionPerformed

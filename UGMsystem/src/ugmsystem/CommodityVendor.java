@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *This is an interface class that displays advertisement details for vendor
+ * This is an interface class that displays advertisement details for vendor
+ *
  * @author fayaldosa
  */
 public class CommodityVendor extends javax.swing.JFrame {
@@ -284,7 +285,7 @@ public class CommodityVendor extends javax.swing.JFrame {
         String newName = Pname.getText().trim();
         String newPrice = Pprice.getText().trim();
         String newDescription = Pdetail.getText().trim();
-        Commodity.editCommodity(newName, newPrice, newDescription);
+        Commodity.editCommodity(SelectedItem, newName, newPrice, newDescription);
         JOptionPane.showMessageDialog(this, "Information Update Success!");
     }//GEN-LAST:event_saveInfoActionPerformed
 
@@ -312,7 +313,6 @@ public class CommodityVendor extends javax.swing.JFrame {
             Pname.setText(Commodity.EachVendorInfo.get(16));
             Pprice.setText(Commodity.EachVendorInfo.get(17));
             Pdetail.setText(Commodity.EachVendorInfo.get(19));
-
         }
 
     }//GEN-LAST:event_pNameActionPerformed
@@ -323,15 +323,21 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     private void pNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pNameMouseEntered
         // TODO add your handling code here:
-        Commodity.GetEachVendorInfo();
-        if (!(Commodity.EachVendorInfo.isEmpty())) {
+        if (!(Commodity.GetEachVendorInfo().isEmpty())) {
             dml = new DefaultComboBoxModel();
             dml.addElement("Choose");
-            dml.addElement(Commodity.EachVendorInfo.get(2));
-            dml.addElement(Commodity.EachVendorInfo.get(9));
-            dml.addElement(Commodity.EachVendorInfo.get(16));
+            if (!Commodity.GetEachVendorInfo().get(2).isEmpty()) {
+                dml.addElement(Commodity.GetEachVendorInfo().get(2));
+            }
+            if (!Commodity.GetEachVendorInfo().get(9).isEmpty() && !Commodity.GetEachVendorInfo().get(9).equals(Commodity.GetEachVendorInfo().get(2))) {
+                dml.addElement(Commodity.GetEachVendorInfo().get(9));
+            }
+            if (!Commodity.GetEachVendorInfo().get(16).isEmpty() && !Commodity.GetEachVendorInfo().get(16).equals(Commodity.GetEachVendorInfo().get(2))) {
+                dml.addElement(Commodity.GetEachVendorInfo().get(16));
+            }
             pName.setModel(dml);
         }
+
     }//GEN-LAST:event_pNameMouseEntered
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
@@ -388,7 +394,7 @@ public class CommodityVendor extends javax.swing.JFrame {
     private void saveInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfo1ActionPerformed
 
         Commodity.deleteCommodity(SelectedItem);
-        JOptionPane.showMessageDialog(this, "Commodity Deleted Successfullt!");
+        JOptionPane.showMessageDialog(this, "Commodity Delete Successfully!");
         Pname.setText(null);
         Pprice.setText(null);
         Pdetail.setText(null);

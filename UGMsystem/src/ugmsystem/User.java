@@ -44,7 +44,7 @@ public class User {
      * @param lName String
      * @param phoneNumber String
      * @param email String
-     * @throws IOException
+     * @throws IOException calls generateID() method
      */
     public User(String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         
@@ -65,7 +65,7 @@ public class User {
      * @param lName String
      * @param phoneNumber String
      * @param email String
-     * @throws IOException
+     * @throws IOException to avoid user input errors
      */
     public User(String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         
@@ -80,7 +80,7 @@ public class User {
     
     /**
      *Constructors used to make guest user object and calls generateGuestID() method
-     * @throws IOException
+     * @throws IOException calls generateGuestID()
      */
     public User() throws IOException {
         
@@ -148,7 +148,7 @@ public class User {
     /**
      *Mutator/set method sets user password
      * @param password String
-     * @throws IOException
+     * @throws IOException calls update method that updates password in file 
      */
     public void setPassword(String password) throws IOException {
           
@@ -160,7 +160,7 @@ public class User {
     /**
      *Mutator/set method sets user first name
      * @param fName String
-     * @throws IOException
+     * @throws IOException calls update method that updates user first name in file
      */
     public void setfName(String fName) throws IOException {
       
@@ -171,7 +171,7 @@ public class User {
     /**
      *Mutator/set method sets user last name
      * @param lName String
-     * @throws IOException
+     * @throws IOException calls update method that updates user last name in file
      */
     public void setlName(String lName) throws IOException {
      
@@ -182,7 +182,7 @@ public class User {
     /**
      *Mutator/set method sets user phoneNumber
      * @param phoneNumber String
-     * @throws IOException
+     * @throws IOException calls update method that updates user phoneNumber in file
      */
     public void setPhoneNumber(String phoneNumber) throws IOException {
        
@@ -193,7 +193,7 @@ public class User {
     /**
      *Mutator/set method sets user email
      * @param email String
-     * @throws IOException
+     * @throws IOException calls update method that updates user's email in file
      */
     public void setEmail(String email) throws IOException {
        
@@ -207,7 +207,7 @@ public class User {
      * @param id String
      * @param password String
      * @return boolean
-     * @throws IOException
+     * @throws IOException calls fillArrayFromFile() method that fills used array from file by using buffered reader
      */
     
     public static boolean login(String id, String password) throws IOException {
@@ -225,7 +225,7 @@ public class User {
      *Register Method: checks that no user account of same info exists 
      * then creates a new account for user and registers user's information in accounts file
      * @return integer
-     * @throws IOException
+     * @throws IOException calls fillArrayFromFile() method that fills used array from file by using buffered reader
      */
     
     public int register( ) throws IOException {
@@ -366,7 +366,7 @@ public class User {
     /**
      * Method that receives update of user account information and updates file and ArrayList userInfo
      * @param newUpdate String
-     * @throws IOException
+     * @throws IOException calls fillArrayFromFile() method that fills used array from file by using buffered reader
      */
     public void Update(String newUpdate) throws IOException{
           String line;
@@ -419,8 +419,8 @@ public class User {
 
     /**
      *Method that is called by login to read all user accounts from file into ArrayList userInfo
-     * @throws FileNotFoundException
-     * @throws IOException
+     * @throws FileNotFoundException to create a file object that reads from account file
+     * @throws IOException fills used static array from file by using buffered reader
      */
       public static void fillArrayFromFile() throws FileNotFoundException, IOException{
           String line;

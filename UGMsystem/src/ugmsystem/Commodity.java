@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *This is commodity class that creates commodity objects for vendor to advertise
  * @author fayaldosa
  */
 public class Commodity {
@@ -64,13 +64,13 @@ public class Commodity {
 
     /**
      *
-     * @param vID
-     * @param pID
-     * @param Name
-     * @param Price
-     * @param filePic
-     * @param sec
-     * @param Description
+     * @param vID String
+     * @param pID String
+     * @param Name String
+     * @param Price integer
+     * @param filePic String
+     * @param sec String
+     * @param Description String
      */
     public Commodity(String vID, String pID, String Name, int Price, String filePic, String sec, String Description) {
         this.vID = Login.vendor.getId();
@@ -92,11 +92,11 @@ public class Commodity {
 
     /**
      *Set method sets user id
-     * @param vID
-     * @throws IOException
+     * @param vID String
+     * 
      */
-    public void setvID(String vID) throws IOException {
-        vID = vID;
+    public void setvID(String vID)  {
+        this.vID = vID;
 
     }
 
@@ -110,11 +110,11 @@ public class Commodity {
 
     /**
      *Set method sets product/commodity id
-     * @param pID
-     * @throws IOException
+     * @param pID String
+     * 
      */
-    public void setpID(String pID) throws IOException {
-        pID = pID;
+    public void setpID(String pID)  {
+        this.pID = pID;
 
     }
 
@@ -128,10 +128,10 @@ public class Commodity {
 
     /**
      *Set method sets commodity name
-     * @param Name
+     * @param Name String
      */
     public void setName(String Name) {
-        Name = Name;
+       this. Name = Name;
     }
 
     /**
@@ -143,8 +143,8 @@ public class Commodity {
     }
 
     /**
-     *Set method sets ommodity description
-     * @param Description
+     *Set method sets commodity description
+     * @param Description String
      */
     public void setDescription(String Description) {
         Description = Description;
@@ -159,8 +159,8 @@ public class Commodity {
     }
 
     /**
-     *Set method sets ommodity picture
-     * @param filePic
+     *Set method sets commodity picture
+     * @param filePic String
      */
     public void setFilePic(String filePic) {
         filePic = filePic;
@@ -176,12 +176,12 @@ public class Commodity {
     }
 
     /**
-     *Set method sets ommodity section
-     * @param sec
-     * @throws IOException
+     *Set method sets commodity section
+     * @param sec String
+     * 
      */
-    public void setSec(String sec) throws IOException {
-        sec = sec;
+    public void setSec(String sec)  {
+        this.sec = sec;
 
     }
 
@@ -195,12 +195,12 @@ public class Commodity {
     }
 
     /**
-     *Set method sets ommodity price
-     * @param Price
-     * @throws IOException
+     *Set method sets commodity price
+     * @param Price integer
+     * 
      */
-    public void setPrice(int Price) throws IOException {
-        Price = Price;
+    public void setPrice(int Price) {
+        this.Price = Price;
     }
 
     /**
@@ -212,8 +212,8 @@ public class Commodity {
     }
 
     /**
-     *Set method sets ommodity file
-     * @param Commodities
+     *Set method sets commodity file
+     * @param Commodities File
      */
     public void setCommodities(File Commodities) {
         Commodity.Commodities = Commodities;
@@ -250,9 +250,9 @@ public class Commodity {
     
     /**
      *This method used to receive update of vendor commodity information and updates file and ArrayList UpdateDeleteInfo.
-     * @param newName
-     * @param newPrice
-     * @param newDescription
+     * @param newName String
+     * @param newPrice String
+     * @param newDescription String
      */
     public static void editCommodity(String newName, String newPrice, String newDescription) {
         ArrayList<String> Temp = new ArrayList<String>();
@@ -366,7 +366,7 @@ public class Commodity {
 
     /**
      *This method used to delete vendor commodity information and updates file and ArrayList UpdateDeleteInfo.
-     * @param commodity
+     * @param commodity String
      */
     public static void deleteCommodity(String commodity) {
         ArrayList<String> Temp = new ArrayList<String>();

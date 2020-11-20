@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class that all user's chats
  * @author Jae
  */
 public class ChatPage extends javax.swing.JFrame {

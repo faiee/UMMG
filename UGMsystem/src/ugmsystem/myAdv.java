@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class that displays commodities being advertised by user
  * @author reemalsolami
  */
 public class myAdv extends javax.swing.JFrame {

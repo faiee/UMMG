@@ -7,7 +7,7 @@ package ugmsystem;
 
 
 /**
- *This is the main class of our project it was used to test out classes  and methods before linking them with interfaces
+ *This is the main class of our project it was used to test out classes and methods before linking them with interfaces
  * @author reemalsolami
  */
 public class UGMsystem {

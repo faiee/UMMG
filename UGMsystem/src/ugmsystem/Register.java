@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 import static ugmsystem.Login.vendor;
 /**
- *
+ *This is an interface class for user registration into the system
  * @author Jae
  */
 public class Register extends javax.swing.JFrame {

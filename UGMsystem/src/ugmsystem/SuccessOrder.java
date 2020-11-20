@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ * This is an interface class that displays user success of order and invoice of payment
  * @author reemalsolami
  */
 public class SuccessOrder extends javax.swing.JFrame {

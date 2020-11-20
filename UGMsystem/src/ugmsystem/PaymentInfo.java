@@ -6,24 +6,15 @@
 package ugmsystem;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
-import static ugmsystem.Login.vendor;
-import static ugmsystem.Search.search;
-import static ugmsystem.Sections.check;
-import static ugmsystem.Sections.check2;
-import static ugmsystem.Sections.check3;
+
 
 /**
- *
+ *This is an interface class that allows buyer to enter payment information to finalize order
  * @author reemalsolami
  */
 public class PaymentInfo extends javax.swing.JFrame {

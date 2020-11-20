@@ -19,7 +19,7 @@ import static ugmsystem.Login.currentUser;
 
 
 /**
- *
+ *This is an interface class that displays sections of commodities being advertised by different vendors
  * @author fayaldosa
  */
 public class Sections extends javax.swing.JFrame {

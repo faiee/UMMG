@@ -21,7 +21,7 @@ import static ugmsystem.Sections.check2;
 import static ugmsystem.Sections.check3;
 
 /**
- *
+ *This is an interface class that displays advertisement details for buyer
  * @author fayaldosa
  */
 public class CommodityBuyer extends javax.swing.JFrame {

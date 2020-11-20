@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class is considered the home page that displays different sections of commodities
  * @author fayaldosa
  */
 public class Search extends javax.swing.JFrame {

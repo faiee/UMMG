@@ -22,7 +22,7 @@ public class Buyer extends User {
      * @param lName String
      * @param phoneNumber String
      * @param email String
-     * @throws IOException
+     * @throws IOException parent calls generateID() method
      */
     public Buyer( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super(id,password, fName, lName, phoneNumber, email);
@@ -36,7 +36,7 @@ public class Buyer extends User {
      * @param lName String
      * @param phoneNumber String
      * @param email String
-     * @throws IOException
+     * @throws IOException parent calls generateID() method
      */
     public Buyer( String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super(password, fName, lName, phoneNumber, email);
@@ -45,7 +45,7 @@ public class Buyer extends User {
 
     /**
      *This constructor is  used to create buyer objects from class buyer when user is a guest
-     * @throws IOException
+     * @throws IOException parent calls generateGuestID() method
      */
     public Buyer() throws IOException {
         super();
@@ -55,7 +55,7 @@ public class Buyer extends User {
      *This method is called to find user account in accounts file when trying to login
      * @param userId String
      * @return Buyer
-     * @throws IOException
+     * @throws IOException to call fillArrayFromFile() method that uses buffer reader
      */
     public static Buyer findUser( String userId) throws IOException{
          

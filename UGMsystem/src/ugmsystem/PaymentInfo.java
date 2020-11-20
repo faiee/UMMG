@@ -652,8 +652,11 @@ public class PaymentInfo extends javax.swing.JFrame {
                 if ((jTextField3.getText().length() == 2) && (Integer.valueOf(jTextField3.getText()) >= 20)) {
                     if (jTextField4.getText().length() == 3) {
 
-                        new SuccessOrder().setVisible(true);
+
                         JOptionPane.showMessageDialog(this, "You Have Sucessfully Placed Your Order!");
+                        SuccessOrder.color.getContentPane().setBackground(Color.WHITE);
+        SuccessOrder.color.setVisible(true);
+        this.setVisible(false);
 
                     } else {
                         JOptionPane.showMessageDialog(this, "CVV denied! It should be 3 digits long");

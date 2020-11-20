@@ -18,6 +18,7 @@ import static ugmsystem.Login.currentUser;
  */
 public class SuccessOrder extends javax.swing.JFrame {
 
+    static SuccessOrder color = new SuccessOrder();
     /**
      * Creates new form SuccessOrder
      */

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class used to create advertisements of commodities
  * @author Jae
  */
 public class Advertisement extends javax.swing.JFrame {

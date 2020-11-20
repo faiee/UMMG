@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class that allows chat between buyer and vendor (from buyer's side of view)
  * @author Jae
  */
 public class ChatUser extends javax.swing.JFrame {

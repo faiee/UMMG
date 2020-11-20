@@ -17,7 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *This is an Order class that creates order object when user  creates and pays for order
  * @author Jae
  */
 public class Order {
@@ -39,13 +39,13 @@ public class Order {
 
     /**
      *
-     * @param ID
-     * @param VenID
-     * @param Name
-     * @param CommodityType
-     * @param price
-     * @param Tax
-     * @param TotalPayment
+     * @param ID String
+     * @param VenID String
+     * @param Name String
+     * @param CommodityType String
+     * @param price integer
+     * @param Tax double
+     * @param TotalPayment double
      */
     public Order(String ID, String VenID, String Name, String CommodityType, int price, double Tax, double TotalPayment) {
         this.ID = ID;
@@ -67,7 +67,7 @@ public class Order {
 
     /**
      *Get method returns user id
-     * @return
+     * @return String
      */
     public String getVenID() {
         return VenID;
@@ -75,7 +75,7 @@ public class Order {
 
     /**
      *Set method sets order id
-     * @param ID
+     * @param ID String
      */
     public void setoID(String ID) {
         this.ID = ID;
@@ -83,7 +83,7 @@ public class Order {
 
     /**
      *Get method returns commodity name
-     * @return
+     * @return String
      */
     public String getName() {
         return Name;
@@ -91,7 +91,7 @@ public class Order {
 
     /**
      *Get method returns commodity price
-     * @return
+     * @return integer
      */
     public int getPrice() {
         return price;
@@ -99,7 +99,7 @@ public class Order {
 
     /**
      *Set method sets commodity price
-     * @param price
+     * @param price integer
      */
     public void setPrice(int price) {
         this.price = price;
@@ -107,7 +107,7 @@ public class Order {
 
     /**
      *Get method returns commodity tax
-     * @return
+     * @return double
      */
     public double getTax() {
         return Tax;
@@ -115,7 +115,7 @@ public class Order {
 
     /**
      *Set method sets commodity tax
-     * @param Tax
+     * @param Tax double
      */
     public void setTax(double Tax) {
         Order.Tax = Tax;
@@ -123,7 +123,7 @@ public class Order {
 
     /**
      *Set method sets commodity name
-     * @param Name
+     * @param Name String
      */
     public void setName(String Name) {
         this.Name = Name;
@@ -139,7 +139,7 @@ public class Order {
 
     /**
      *Set method sets commodity section
-     * @param CommodityType
+     * @param CommodityType String
      */
     public void setCommodityType(String CommodityType) {
         this.CommodityType = CommodityType;
@@ -155,7 +155,7 @@ public class Order {
 
     /**
      *Set method sets commodity id
-     * @param CommodityNo
+     * @param CommodityNo String
      */
     public void setCommodityNo(String CommodityNo) {
         this.CommodityNo = CommodityNo;
@@ -171,7 +171,7 @@ public class Order {
 
     /**
      *Set method sets total payment
-     * @param TotalPayment
+     * @param TotalPayment double
      */
     public void setTotalPayment(double TotalPayment) {
         this.TotalPayment = TotalPayment;
@@ -232,7 +232,7 @@ public class Order {
     /**
      *This method used to calculate total payment 
      * Called in constructor
-     * @param p
+     * @param p integer
      * @return double
      */
     public static double calculatePay(int p) {
@@ -245,8 +245,8 @@ public class Order {
     /**
      *This method used to calculate tax for commodity 
      * Called in constructor
-     * @param p
-     * @return
+     * @param p integer
+     * @return double
      */
     public static double calculateTax(int p) {
         double tax = 0.0;

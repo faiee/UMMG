@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
+ *This is an interface class that displays a way for user retrieval of forgotten password
  * @author reemalsolami
  */
 public class ForgotPassword extends javax.swing.JFrame {

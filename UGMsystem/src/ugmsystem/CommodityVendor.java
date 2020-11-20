@@ -6,25 +6,15 @@
 package ugmsystem;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static ugmsystem.Commodity.EachVendorInfo;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class that displays advertisement details for vendor
  * @author fayaldosa
  */
 public class CommodityVendor extends javax.swing.JFrame {

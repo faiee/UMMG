@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 /**
- *
+ *This is an interface class that allows chat between buyer and vendor (from buyer's side of view)
  * @author Jae
  */
 public class BuyerChat extends javax.swing.JFrame {

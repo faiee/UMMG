@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import static ugmsystem.Login.currentUser;
 
 /**
- *
+ *This is an interface class that displays orders made but users
  * @author reemalsolami
  */
 public class myOrders extends javax.swing.JFrame {

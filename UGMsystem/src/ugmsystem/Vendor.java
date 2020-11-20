@@ -28,7 +28,7 @@ public class Vendor extends User{
      * @param lName String
      * @param phoneNumber String
      * @param email String
-     * @throws IOException
+     * @throws IOException parent calls generateID() method
      */
     public Vendor( String id, String password, String fName, String lName, String phoneNumber, String email) throws IOException {
         super( id, password, fName, lName, phoneNumber, email);

@@ -24,7 +24,6 @@ public class CommodityVendor extends javax.swing.JFrame {
     DefaultComboBoxModel dml;
     String SelectedItem;
 
-    // public static String[] Names = new String[100];
     /**
      * Creates new form Commodity
      */
@@ -32,6 +31,7 @@ public class CommodityVendor extends javax.swing.JFrame {
         initComponents();
         setTitle("Vendor Commodity");
         setLocationRelativeTo(null);
+Commodity.GetEachVendorInfo();
     }
 
     /**
@@ -300,7 +300,12 @@ public class CommodityVendor extends javax.swing.JFrame {
     private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
         // TODO add your handling code here:
         SelectedItem = (String) pName.getSelectedItem();
-        if (SelectedItem.equals(Commodity.EachVendorInfo.get(2))) {
+        Commodity.GetEachVendorInfo();
+        if (SelectedItem.equals("Choose")) {
+            Pname.setText(null);
+            Pprice.setText(null);
+            Pdetail.setText(null);
+        } else if (SelectedItem.equals(Commodity.EachVendorInfo.get(2))) {
             Pname.setText(Commodity.EachVendorInfo.get(2));
             Pprice.setText(Commodity.EachVendorInfo.get(3));
             Pdetail.setText(Commodity.EachVendorInfo.get(5));
@@ -308,7 +313,6 @@ public class CommodityVendor extends javax.swing.JFrame {
             Pname.setText(Commodity.EachVendorInfo.get(9));
             Pprice.setText(Commodity.EachVendorInfo.get(10));
             Pdetail.setText(Commodity.EachVendorInfo.get(12));
-
         } else {
             Pname.setText(Commodity.EachVendorInfo.get(16));
             Pprice.setText(Commodity.EachVendorInfo.get(17));
@@ -323,6 +327,7 @@ public class CommodityVendor extends javax.swing.JFrame {
 
     private void pNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pNameMouseEntered
         // TODO add your handling code here:
+        Commodity.GetEachVendorInfo();
         if (!(Commodity.GetEachVendorInfo().isEmpty())) {
             dml = new DefaultComboBoxModel();
             dml.addElement("Choose");

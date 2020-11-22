@@ -5,327 +5,47 @@
  */
 package ugmsystem;
 
-import java.io.IOException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author reemalsolami
+ * @author Jae
  */
 public class UserTest {
-    
-    public UserTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getId method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testGetId() throws IOException {
-        System.out.println("getId");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getId();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getPassword method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testGetPassword() throws IOException {
-        System.out.println("getPassword");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getPassword();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getfName method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testGetfName() throws IOException {
-        System.out.println("getfName");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getfName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getlName method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testGetlName() throws IOException {
-        System.out.println("getlName");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getlName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getPhoneNumber method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testGetPhoneNumber() throws IOException {
-        System.out.println("getPhoneNumber");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getPhoneNumber();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getEmail method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testGetEmail() throws IOException {
-        System.out.println("getEmail");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getEmail();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setId method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testSetId() throws IOException {
-        System.out.println("setId");
-        String id = "";
-        User instance = new User();
-        instance.setId(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setPassword method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testSetPassword() throws Exception {
-        System.out.println("setPassword");
-        String password = "";
-        User instance = new User();
-        instance.setPassword(password);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setfName method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testSetfName() throws Exception {
-        System.out.println("setfName");
-        String fName = "";
-        User instance = new User();
-        instance.setfName(fName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setlName method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testSetlName() throws Exception {
-        System.out.println("setlName");
-        String lName = "";
-        User instance = new User();
-        instance.setlName(lName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setPhoneNumber method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testSetPhoneNumber() throws Exception {
-        System.out.println("setPhoneNumber");
-        String phoneNumber = "";
-        User instance = new User();
-        instance.setPhoneNumber(phoneNumber);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setEmail method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testSetEmail() throws Exception {
-        System.out.println("setEmail");
-        String email = "";
-        User instance = new User();
-        instance.setEmail(email);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of login method, of class User.
-     * @throws java.lang.Exception
      */
     @Test
     public void testLogin() throws Exception {
         System.out.println("login");
-        String id = "";
-        String password = "";
-        boolean expResult = false;
+        String id = "33536666";
+        String password = "A1234567";
+        boolean expResult = true;
         boolean result = User.login(id, password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of register method, of class User.
-     * @throws java.lang.Exception
      */
     @Test
     public void testRegister() throws Exception {
-        System.out.println("register");
-        User instance = new User();
-        int expResult = 0;
+        User instance = new User("M1234567","Samaher","Alghamdi","0567321459","samaher123@gmail.com");
+        int expResult = 1;
         int result = instance.register();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
+        if(result==1)
+        {
+          assertEquals(expResult, result);
+        }
+        else
+        {
+            System.out.println("User Account With Same Information Already Exists! Please Specify New User Information.");
+            assertTrue(result==-1);
+        }
     }
 
-    /**
-     * Test of isUser method, of class User.
-     */
-    @Test
-    public void testIsUser() {
-        System.out.println("isUser");
-        String testId = "";
-        String expResult = "";
-        String result = User.isUser(testId);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isGuest method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testIsGuest() throws IOException {
-        System.out.println("isGuest");
-        User instance = new User();
-        boolean expResult = false;
-        boolean result = instance.isGuest();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of noMatch method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testNoMatch() throws IOException {
-        System.out.println("noMatch");
-        User instance = new User();
-        boolean expResult = false;
-        boolean result = instance.noMatch();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of Update method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testUpdate() throws Exception {
-        System.out.println("Update");
-        String newUpdate = "";
-        User instance = new User();
-        instance.Update(newUpdate);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of toString method, of class User.
-     * @throws java.io.IOException
-     */
-    @Test
-    public void testToString() throws IOException {
-        System.out.println("toString");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of fillArrayFromFile method, of class User.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testFillArrayFromFile() throws Exception {
-        System.out.println("fillArrayFromFile");
-        User.fillArrayFromFile();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }

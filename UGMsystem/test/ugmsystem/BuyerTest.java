@@ -5,50 +5,27 @@
  */
 package ugmsystem;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author reemalsolami
+ * @author Jae
  */
 public class BuyerTest {
-    
-    public BuyerTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of findUser method, of class Buyer.
      */
     @Test
     public void testFindUser() throws Exception {
-        System.out.println("findUser");
-        String userId = "";
-        Buyer expResult = null;
+        String userId = "33536996";
+        Buyer expResult = new Buyer ("33536996","D1234567","Anas","Khaled","0566666667","anas@gmail.com");
         Buyer result = Buyer.findUser(userId);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String expbuyerArray []={expResult.getId(), expResult.getPassword(), expResult.getfName(), expResult.getlName(), expResult.getPhoneNumber(), expResult.getEmail()};
+        String resultbuyerArray []= {result.getId(), result.getPassword(), result.getfName(), result.getlName(), result.getPhoneNumber(), result.getEmail()};
+        
+        assertArrayEquals(expbuyerArray, resultbuyerArray);
     }
     
 }

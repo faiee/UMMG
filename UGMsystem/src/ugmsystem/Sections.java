@@ -539,12 +539,23 @@ public class Sections extends javax.swing.JFrame {
             jLabel11.setText("");
             jLabel10.setText("");
             
-            if(!Commodity.getBooksSectionAds().get(2).isEmpty())  jLabel4.setText(Commodity.getBooksSectionAds().get(2));
-           if(!Commodity.getBooksSectionAds().get(9).isEmpty() )  jLabel5.setText(Commodity.getBooksSectionAds().get(9));
-            if(!Commodity.getBooksSectionAds().get(16).isEmpty())  jLabel6.setText(Commodity.getBooksSectionAds().get(16));
+        
+            if(!Commodity.getBooksSectionAds().get(2).isEmpty() ) {
+                jLabel4.setText(Commodity.getBooksSectionAds().get(2));
+            }
+           if(!Commodity.getBooksSectionAds().get(9).isEmpty() && !Commodity.getBooksSectionAds().get(9).equals(Commodity.getBooksSectionAds().get(2)) ) {
+               jLabel5.setText(Commodity.getBooksSectionAds().get(9));
+           }
+            if(!Commodity.getBooksSectionAds().get(16).isEmpty() &&   !Commodity.getBooksSectionAds().get(16).equals(Commodity.getBooksSectionAds().get(2))
+                     && !Commodity.getBooksSectionAds().get(16).equals(Commodity.getBooksSectionAds().get(9))){
+                
+                jLabel6.setText(Commodity.getBooksSectionAds().get(16));
+            }
           
         
-           if(!Commodity.getBooksSectionAds().get(23).isEmpty() && ! Commodity.getBooksSectionAds().get(23).equals(Commodity.getBooksSectionAds().get(2))){ 
+           if(!Commodity.getBooksSectionAds().get(23).isEmpty() && ! Commodity.getBooksSectionAds().get(23).equals(Commodity.getBooksSectionAds().get(2))
+                    && !Commodity.getBooksSectionAds().get(23).equals(Commodity.getBooksSectionAds().get(9)) 
+                    && !Commodity.getBooksSectionAds().get(23).equals(Commodity.getBooksSectionAds().get(16))){ 
                 jLabel11.setText(Commodity.getBooksSectionAds().get(23));
                 
            }
@@ -588,14 +599,26 @@ public class Sections extends javax.swing.JFrame {
             jLabel11.setText("");
             jLabel10.setText("");
                 
-            if(!Commodity.getClothesSectionAds().get(2).isEmpty())  jLabel4.setText(Commodity.getClothesSectionAds().get(2));
-           if(!Commodity.getClothesSectionAds().get(9).isEmpty())   jLabel5.setText(Commodity.getClothesSectionAds().get(9));
-            if(!Commodity.getClothesSectionAds().get(16).isEmpty())   jLabel6.setText(Commodity.getClothesSectionAds().get(16));
-          
-            if(!Commodity.getClothesSectionAds().get(23).isEmpty() && !Commodity.getClothesSectionAds().get(23).equals(Commodity.getClothesSectionAds().get(2))){  
-                 jLabel11.setText(Commodity.getClothesSectionAds().get(23));
-                
+               
+            if(!Commodity.getClothesSectionAds().get(2).isEmpty() ) {
+                jLabel4.setText(Commodity.getClothesSectionAds().get(2));
             }
+           if(!Commodity.getClothesSectionAds().get(9).isEmpty() && !Commodity.getClothesSectionAds().get(9).equals(Commodity.getClothesSectionAds().get(2)) ) {
+               jLabel5.setText(Commodity.getClothesSectionAds().get(9));
+           }
+            if(!Commodity.getClothesSectionAds().get(16).isEmpty() &&   !Commodity.getClothesSectionAds().get(16).equals(Commodity.getClothesSectionAds().get(2))
+                     && !Commodity.getClothesSectionAds().get(16).equals(Commodity.getClothesSectionAds().get(9))){
+                
+                jLabel6.setText(Commodity.getClothesSectionAds().get(16));
+            }
+          
+        
+           if(!Commodity.getClothesSectionAds().get(23).isEmpty() && ! Commodity.getClothesSectionAds().get(23).equals(Commodity.getClothesSectionAds().get(2))
+                    && !Commodity.getClothesSectionAds().get(23).equals(Commodity.getClothesSectionAds().get(9)) 
+                    && !Commodity.getClothesSectionAds().get(23).equals(Commodity.getClothesSectionAds().get(16))){ 
+                jLabel11.setText(Commodity.getClothesSectionAds().get(23));
+                
+           }
 
             try {
 
@@ -633,16 +656,25 @@ public class Sections extends javax.swing.JFrame {
                    jLabel11.setText("");
                    jLabel10.setText("");
                    
-                   
-          if(!Commodity.getFurnSectionAds().get(2).isEmpty())   jLabel4.setText(Commodity.getFurnSectionAds().get(2));
-           if(!Commodity.getFurnSectionAds().get(9).isEmpty())     jLabel5.setText(Commodity.getFurnSectionAds().get(9));
-            if(!Commodity.getFurnSectionAds().get(16).isEmpty())    jLabel6.setText(Commodity.getFurnSectionAds().get(16));
-          
-            
-            if(!Commodity.getFurnSectionAds().get(23).isEmpty() &&  !Commodity.getFurnSectionAds().get(23).equals(Commodity.getFurnSectionAds().get(2))){  
-                 jLabel11.setText(Commodity.getFurnSectionAds().get(23));
-                
+        if(!Commodity.getFurnSectionAds().get(2).isEmpty() ) {
+                jLabel4.setText(Commodity.getFurnSectionAds().get(2));
             }
+           if(!Commodity.getFurnSectionAds().get(9).isEmpty() && !Commodity.getFurnSectionAds().get(9).equals(Commodity.getFurnSectionAds().get(2)) ) {
+               jLabel5.setText(Commodity.getFurnSectionAds().get(9));
+           }
+            if(!Commodity.getFurnSectionAds().get(16).isEmpty() &&   !Commodity.getFurnSectionAds().get(16).equals(Commodity.getFurnSectionAds().get(2))
+                     && !Commodity.getFurnSectionAds().get(16).equals(Commodity.getFurnSectionAds().get(9))){
+                
+                jLabel6.setText(Commodity.getFurnSectionAds().get(16));
+            }
+          
+        
+           if(!Commodity.getFurnSectionAds().get(23).isEmpty() && ! Commodity.getFurnSectionAds().get(23).equals(Commodity.getFurnSectionAds().get(2))
+                    && !Commodity.getFurnSectionAds().get(23).equals(Commodity.getFurnSectionAds().get(9)) 
+                    && !Commodity.getFurnSectionAds().get(23).equals(Commodity.getFurnSectionAds().get(16))){ 
+                jLabel11.setText(Commodity.getFurnSectionAds().get(23));
+                
+           }
 
             try {
 

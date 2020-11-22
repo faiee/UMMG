@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Jae
+ * @author reemalsolami
  */
 public class BuyerTest {
 

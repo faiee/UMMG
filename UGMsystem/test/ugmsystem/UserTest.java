@@ -19,7 +19,7 @@ public class UserTest {
      */
     @Test
     public void testLogin() throws Exception {
-        System.out.println("login");
+    
         String id = "33536666";
         String password = "A1234567";
         boolean expResult = true;

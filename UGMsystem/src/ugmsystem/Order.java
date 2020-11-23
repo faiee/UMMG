@@ -236,8 +236,7 @@ public class Order {
      * @return double
      */
     public static double calculatePay(int p) {
-        double tax = 0.0;
-        tax = (p * 0.15);
+        double tax = calculateTax(p);
         TotalPayment = p + tax;
         return TotalPayment;
     }

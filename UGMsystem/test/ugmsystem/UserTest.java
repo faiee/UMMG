@@ -25,36 +25,36 @@ public class UserTest {
         String password = "A1234567";
         boolean expResult = true;
         boolean result = User.login(id, password);
-        
-        if(result)
-        {
-        assertEquals(expResult, result);}
-        else
-        {System.out.println("UserName/Password are Incorrect");
-        }
+        assertEquals(expResult, result);
         
     }
 
     /**
-     * Test of register method, of class User.
+     * Test of register method, of class User when user is have not registered before.
      * @throws java.lang.Exception
      */
     @Test
-    public void testRegister() throws Exception {
+    public void testRegister1() throws Exception {
+        
         User instance = new User("M1234567","Samaher","Alghamdi","0567321459","samaher123@gmail.com");
         int expResult = 1;
         int result = instance.register();
-    
-        if(result==1)
-        {
-          assertEquals(expResult, result);
-        }
-        else
-        {
-            System.out.println("User Account With Same Information Already Exists! Please Specify New User Information.");
-            assertTrue(result==-1);
-        }
+        assertEquals(expResult, result);
+       
     } 
 
-    
+        /**
+     * Test of register method, of class User when user is already registered.
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testRegister2() throws Exception {
+        User instance = new User("33563459","G1234567","Reem","Alsolami","0567123459","reem123@gmail.com");
+        int expResult = -1;
+        int result = instance.register();
+        assertEquals(expResult, result);
+       
+           
+        
+    }
 }

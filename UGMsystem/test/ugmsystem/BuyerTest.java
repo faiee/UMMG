@@ -23,8 +23,12 @@ public class BuyerTest {
         String userId = "33536996";
         Buyer expResult = new Buyer ("33536996","D1234567","Anas","Khaled","0566666667","anas@gmail.com");
         Buyer result = Buyer.findUser(userId);
-        String expbuyerArray []={expResult.getId(), expResult.getPassword(), expResult.getfName(), expResult.getlName(), expResult.getPhoneNumber(), expResult.getEmail()};
-        String resultbuyerArray []= {result.getId(), result.getPassword(), result.getfName(), result.getlName(), result.getPhoneNumber(), result.getEmail()};
+        
+        String expbuyerArray []={expResult.getId(), expResult.getPassword(),
+            expResult.getfName(), expResult.getlName(), expResult.getPhoneNumber(), expResult.getEmail()};
+        
+        String resultbuyerArray []= {result.getId(), result.getPassword(),
+            result.getfName(), result.getlName(), result.getPhoneNumber(), result.getEmail()};
         
         assertArrayEquals(expbuyerArray, resultbuyerArray);
     }

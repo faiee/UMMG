@@ -72,7 +72,7 @@ public class CommodityTest {
   
     System.out.println("************getAdsForVendor************");
      
-        String ID="33537777";
+        String ID="33536996";
         ArrayList<String> result = Commodity.getAdsForVendor();
         assertFalse(result.get(0).equals(ID));
         

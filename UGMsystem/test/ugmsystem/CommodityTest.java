@@ -20,27 +20,7 @@ import static org.junit.Assert.*;
  */
 public class CommodityTest {
     
-    public CommodityTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-
-    /**
+  /**
      * Test of getClothesSectionAds method, of class Commodity
      * This test will check if the method is reading the file
      * and storing the content of CLOTHES section and only CLOTHES section into Arraylsi
@@ -56,8 +36,9 @@ public class CommodityTest {
 
         ArrayList<String> result = Commodity.getClothesSectionAds();
         assertTrue(result.contains(expResult.get(0)));
+        
         System.out.println("");
-        System.out.println("This item is exist in the CLOTHES section");
+        System.out.println("This item is exist in the CLOTHES section.");
     
     }
 
@@ -72,19 +53,43 @@ public class CommodityTest {
   
     System.out.println("************getAdsForVendor************");
      
-        String ID="33537777";
+        String ID="33536446"; // This ID doesn't have any ads in the files.
         ArrayList<String> result = Commodity.getAdsForVendor();
-        assertFalse(result.get(0).equals(ID));
-        
+  
+        for (int i = 0; i < result.size(); i++) {
+             assertNotEquals(result.get(i),ID);
+        }
+       
         System.out.println("");
-        System.out.println("This VENDOR ID does not have any advertisements");
+        System.out.println("This VENDOR ID does not have any advertisements.");
         System.out.println("");
        
     }
-    
-    
-    
-    
+
+   
+
+    /**
+     * Test of deleteCommodity method, of class Commodity
+     * this method will take the name of the commodity 
+     * and delete it from the file, the test will pass 
+     * if and only if the file doesn't contain the name of the deleted commodity.
+     * 
+     */
+    @Test
+    public void testDeleteCommodity() {
+        System.out.println("************deleteCommodity************");
+        String commodity = "Blue Dress"; // name of the commodity
+        Commodity.deleteCommodity(commodity);// call the method to Delete the commodity
+     
+        assertFalse(Commodity.getAdsForVendor().contains(commodity));
+         System.out.println("");
+        System.out.println("This commodity isn't in the system.");
+        System.out.println("");
+   
+        
+    }
+
+   
     
     
     

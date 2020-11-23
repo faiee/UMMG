@@ -20,19 +20,6 @@ import static org.junit.Assert.*;
 public class OrderTest {
 
     /**
-     * Test of GetEachOrderInfo method, of class Order.
-     */
-    /*@Test
-    public void testGetEachOrderInfo() {
-        System.out.println("GetEachOrderInfo");
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = Order.GetEachOrderInfo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-
-    /**
      * Test of calculatePay method, of class Order.
      */
     @Test

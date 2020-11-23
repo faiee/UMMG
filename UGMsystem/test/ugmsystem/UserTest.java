@@ -16,6 +16,7 @@ public class UserTest {
 
     /**
      * Test of login method, of class User.
+     * @throws java.lang.Exception
      */
     @Test
     public void testLogin() throws Exception {
@@ -24,11 +25,19 @@ public class UserTest {
         String password = "A1234567";
         boolean expResult = true;
         boolean result = User.login(id, password);
-        assertEquals(expResult, result);
+        
+        if(result)
+        {
+        assertEquals(expResult, result);}
+        else
+        {System.out.println("UserName/Password are Incorrect");
+        }
+        
     }
 
     /**
      * Test of register method, of class User.
+     * @throws java.lang.Exception
      */
     @Test
     public void testRegister() throws Exception {
@@ -45,7 +54,7 @@ public class UserTest {
             System.out.println("User Account With Same Information Already Exists! Please Specify New User Information.");
             assertTrue(result==-1);
         }
-    }
+    } 
 
     
 }

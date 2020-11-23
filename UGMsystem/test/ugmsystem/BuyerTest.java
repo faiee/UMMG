@@ -16,7 +16,6 @@ public class BuyerTest {
 
     /**
      * Test of findUser method, of class Buyer.
-     * @throws java.lang.Exception
      */
     @Test
     public void testFindUser() throws Exception {

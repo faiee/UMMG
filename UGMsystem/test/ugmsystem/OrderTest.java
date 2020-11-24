@@ -5,11 +5,6 @@
  */
 package ugmsystem;
 
-import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -24,6 +19,7 @@ public class OrderTest {
      */
     @Test
     public void testCalculatePay() {
+        System.out.println("************calculatePay************");
         int p = 500;
         double expResult = 575.0;
         double result = Order.calculatePay(p);
@@ -35,6 +31,7 @@ public class OrderTest {
      */
     @Test
     public void testCalculateTax() {
+        System.out.println("************calculateTax************");
         int p = 150;
         double expResult = 22.5;
         double result = Order.calculateTax(p);
@@ -42,5 +39,4 @@ public class OrderTest {
 
     }
 
-    
 }

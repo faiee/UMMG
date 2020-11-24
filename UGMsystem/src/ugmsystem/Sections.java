@@ -404,7 +404,9 @@ public class Sections extends javax.swing.JFrame {
     }//GEN-LAST:event_BackActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-  String itemText = (String) jComboBox1.getSelectedItem();
+     CommodityBuyer c = null;
+       String itemText=null;
+         itemText = (String) jComboBox1.getSelectedItem();
   
 
   check=itemText.equals("Books");
@@ -420,107 +422,135 @@ public class Sections extends javax.swing.JFrame {
 
       if (jRadioButton1.isSelected()){
               
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
+          if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+      
                 
             }
       
-         if (jRadioButton2.isSelected()){
-              
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
+      else if (jRadioButton2.isSelected()){
+         if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+      
             }
          
-           if (jRadioButton3.isSelected()){
-              
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
+      else if (jRadioButton3.isSelected()){
+              if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+       
                 
             }
-             if (jRadioButton4.isSelected()){
+      else   if (jRadioButton4.isSelected()){
               
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
+          if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+         
                 
             }
 
            }
 
            
-           if (itemText.equals("Clothes")) {
+         else  if (itemText.equals("Clothes")) {
 
       if (jRadioButton1.isSelected()){
               
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
+             if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+        
                 
             }
       
-         if (jRadioButton2.isSelected()){
+      else  if (jRadioButton2.isSelected()){
               
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
+               if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+    
             }
          
-           if (jRadioButton3.isSelected()){
+          else if (jRadioButton3.isSelected()){
               
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
+              if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+              
             }
-             if (jRadioButton4.isSelected()){
+           else  if (jRadioButton4.isSelected()){
               
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
+            if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+            
+            }
+
+           }
+
+             else if (itemText.equals("Furniture")) {
+
+      if (jRadioButton1.isSelected()){
+              
+            if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+        
+            }
+      
+        else if (jRadioButton2.isSelected()){
+              
+                if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+        
+            }
+         
+        else   if (jRadioButton3.isSelected()){
+              
+             if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+       
+            }
+          else   if (jRadioButton4.isSelected()){
+              
+              if (c== null){
+              c=new CommodityBuyer();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+         
                 
             }
 
            }
 
-              if (itemText.equals("Furniture")) {
-
-      if (jRadioButton1.isSelected()){
-              
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
-            }
-      
-         if (jRadioButton2.isSelected()){
-              
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
-            }
-         
-           if (jRadioButton3.isSelected()){
-              
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
-            }
-             if (jRadioButton4.isSelected()){
-              
-            CommodityBuyer.color.getContentPane().setBackground(Color.WHITE);
-        CommodityBuyer.color.setVisible(true);
-        this.setVisible(false);
-                
-            }
-
-           }
 
 
 
@@ -710,8 +740,22 @@ public class Sections extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-
-         String itemText = (String) jComboBox1.getSelectedItem();
+ if(currentUser.isGuest()){
+         JOptionPane.showMessageDialog(this, "You can't access this page, register first.");
+        }
+         
+        
+      else{
+            try {
+            Login.currentUser = Buyer.findUser(Login.vendor.getId());
+        
+        } catch (IOException ex) {
+            Logger.getLogger(Sections.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       PaymentInfo c = null;
+       String itemText=null;
+         itemText = (String) jComboBox1.getSelectedItem();
   
 
   check=itemText.equals("Books");
@@ -727,109 +771,137 @@ public class Sections extends javax.swing.JFrame {
 
       if (jRadioButton1.isSelected()){
               
-            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
+          if (c== null){
+              c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+      
                 
             }
       
-         if (jRadioButton2.isSelected()){
-              
-           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
-                
+      else if (jRadioButton2.isSelected()){
+         if (c== null){
+              c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+      
             }
          
-           if (jRadioButton3.isSelected()){
-              
-           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
+      else if (jRadioButton3.isSelected()){
+              if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+       
                 
             }
-             if (jRadioButton4.isSelected()){
+      else   if (jRadioButton4.isSelected()){
               
-          PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
+          if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+         
                 
             }
 
            }
 
            
-           if (itemText.equals("Clothes")) {
+         else  if (itemText.equals("Clothes")) {
 
       if (jRadioButton1.isSelected()){
               
-            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
+             if (c== null){
+              c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+        
                 
             }
       
-         if (jRadioButton2.isSelected()){
+      else  if (jRadioButton2.isSelected()){
               
-           PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
-                
+               if (c== null){
+              c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+    
             }
          
-           if (jRadioButton3.isSelected()){
+          else if (jRadioButton3.isSelected()){
               
-            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
-                
+              if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+              
             }
-             if (jRadioButton4.isSelected()){
+           else  if (jRadioButton4.isSelected()){
               
-            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
-                
+            if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+            
             }
 
            }
 
-              if (itemText.equals("Furniture")) {
+             else if (itemText.equals("Furniture")) {
 
       if (jRadioButton1.isSelected()){
               
-            PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
-                
+            if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+        
             }
       
-         if (jRadioButton2.isSelected()){
+        else if (jRadioButton2.isSelected()){
               
-             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
+                if (c== null){
+              c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+        
             }
          
-           if (jRadioButton3.isSelected()){
+        else   if (jRadioButton3.isSelected()){
               
-             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
-                
+             if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+       
             }
-             if (jRadioButton4.isSelected()){
+          else   if (jRadioButton4.isSelected()){
               
-             PaymentInfo.color.getContentPane().setBackground(Color.WHITE);
-        PaymentInfo.color.setVisible(true);
-        this.setVisible(false);
+              if (c== null){
+               c=new PaymentInfo();
+          }
+          c.setVisible(true);
+          this.setVisible(false);
+         
                 
             }
 
            }
-             
+  
         
-        
+ }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed

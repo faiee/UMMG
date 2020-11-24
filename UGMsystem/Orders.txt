@@ -1,2 +1,10 @@
 0064,33536666,Harry Potter,Books,150,22.5,172.5
 0058,33536446,Red Dress,Clothes,500,75.0,575.0
+0083,33536666,grey sofa,Furniture,400,60.0,460.0
+0065,33536666,grey sofa,Furniture,400,60.0,460.0
+0063,33536666,grey sofa,Furniture,400,60.0,460.0
+0078,33536666,Harry Potter,Books,150,22.5,172.5
+0049,33536666,Brother karamazov,Books,180,27.0,207.0
+0092,33536666,led lamp,Furniture,130,19.5,149.5
+0051,33536666,led lamp,Furniture,130,19.5,149.5
+0026,33536666,white chair,Furniture,300,45.0,345.0

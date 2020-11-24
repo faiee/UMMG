@@ -19,7 +19,6 @@ public class BuyerTest {
      */
     @Test
     public void testFindUser() throws Exception {
-        System.out.println("************findUser************");
         String userId = "33536996";
         Buyer expResult = new Buyer("33536996", "D1234567", "Anas", "Khaled", "0566666667", "anas@gmail.com");
         Buyer result = Buyer.findUser(userId);

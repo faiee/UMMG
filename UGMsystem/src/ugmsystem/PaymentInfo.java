@@ -49,7 +49,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
             if (Commodity.getBooksSectionAds().get(9).contains(Search.search)) {
 
-                jLabel3.setText(Commodity.getBooksSectionAds().get(10));
+                jLabel3.setText("Price: "
+                        + Commodity.getBooksSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
@@ -59,7 +60,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Commodity.getBooksSectionAds().get(16).contains(Search.search)) {
 
-                jLabel3.setText(Commodity.getBooksSectionAds().get(17));
+                jLabel3.setText("Price: "
+                        + Commodity.getBooksSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -68,7 +70,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Commodity.getBooksSectionAds().get(23).contains(Search.search)) {
 
-                jLabel3.setText(Commodity.getBooksSectionAds().get(24));
+                jLabel3.setText("Price: "
+                        + Commodity.getBooksSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -80,7 +83,8 @@ public class PaymentInfo extends javax.swing.JFrame {
         if (Commodity.getClothesSectionAds().contains(Search.search)) {
 
             if (Commodity.getClothesSectionAds().get(2).equalsIgnoreCase(Search.search)) {
-                jLabel3.setText(Commodity.getClothesSectionAds().get(3));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -89,7 +93,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
 
             if (Commodity.getClothesSectionAds().get(9).equalsIgnoreCase(Search.search)) {
-                jLabel3.setText(Commodity.getClothesSectionAds().get(10));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -98,7 +103,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
             if (Commodity.getClothesSectionAds().get(16).equalsIgnoreCase(Search.search)) {
 
-                jLabel3.setText(Commodity.getClothesSectionAds().get(17));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -106,7 +112,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             }
             if (Commodity.getClothesSectionAds().get(23).equalsIgnoreCase(Search.search)) {
-                jLabel3.setText(Commodity.getClothesSectionAds().get(24));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -121,7 +128,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Commodity.getFurnSectionAds().get(2).equalsIgnoreCase(Search.search)) {
 
-                jLabel3.setText(Commodity.getFurnSectionAds().get(3));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -130,7 +138,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
 
             if (Commodity.getFurnSectionAds().get(9).equalsIgnoreCase(Search.search)) {
-                jLabel3.setText(Commodity.getFurnSectionAds().get(10));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -140,7 +149,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Commodity.getFurnSectionAds().get(16).equalsIgnoreCase(Search.search)) {
 
-                jLabel3.setText(Commodity.getFurnSectionAds().get(17));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -150,7 +160,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
             if (Commodity.getFurnSectionAds().get(23).equalsIgnoreCase(Search.search)) {
 
-                jLabel3.setText(Commodity.getFurnSectionAds().get(24));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(23), Commodity.getFurnSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -177,7 +188,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio2 == Sections.T) {
 
-                jLabel3.setText(Commodity.getBooksSectionAds().get(10));
+                jLabel3.setText("Price: "
+                        + Commodity.getBooksSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
 
@@ -188,7 +200,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio3 == Sections.T) {
 
-                jLabel3.setText(Commodity.getBooksSectionAds().get(17));
+                jLabel3.setText("Price: "
+                        + Commodity.getBooksSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(16), Commodity.getBooksSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -198,7 +211,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio4 == Sections.T) {
 
-                jLabel3.setText(Commodity.getBooksSectionAds().get(24));
+                jLabel3.setText("Price: "
+                        + Commodity.getBooksSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getBooksSectionAds().get(23), Commodity.getBooksSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -213,7 +227,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio1 == Sections.T) {
 
-                jLabel3.setText(Commodity.getClothesSectionAds().get(3));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(2), Commodity.getClothesSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -223,7 +238,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
             if (Sections.radio2 == Sections.T) {
 
-                jLabel3.setText(Commodity.getClothesSectionAds().get(10));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(9), Commodity.getClothesSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -233,7 +249,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio3 == Sections.T) {
 
-                jLabel3.setText(Commodity.getClothesSectionAds().get(17));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(16), Commodity.getClothesSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -243,8 +260,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio4 == Sections.T) {
 
-                jLabel3.setText(
-                        Commodity.getClothesSectionAds().get(24));
+                jLabel3.setText("Price: "
+                        + Commodity.getClothesSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getClothesSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getClothesSectionAds().get(23), Commodity.getClothesSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -259,8 +276,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio1 == Sections.T) {
 
-                jLabel3.setText(
-                        Commodity.getFurnSectionAds().get(3));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(3));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(3));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(2), Commodity.getFurnSectionAds().get(6), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -269,7 +286,8 @@ public class PaymentInfo extends javax.swing.JFrame {
             }
             if (Sections.radio2 == Sections.T) {
 
-                jLabel3.setText(Commodity.getFurnSectionAds().get(10));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(10));
                 int i = Integer.parseInt(Commodity.getBooksSectionAds().get(10));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(9), Commodity.getFurnSectionAds().get(13), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -280,7 +298,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio3 == Sections.T) {
 
-                jLabel3.setText(Commodity.getFurnSectionAds().get(17));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(17));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(17));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(16), Commodity.getFurnSectionAds().get(20), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));
@@ -291,8 +310,8 @@ public class PaymentInfo extends javax.swing.JFrame {
 
             if (Sections.radio4 == Sections.T) {
 
-                jLabel3.setText(
-                        Commodity.getFurnSectionAds().get(24));
+                jLabel3.setText("Price: "
+                        + Commodity.getFurnSectionAds().get(24));
                 int i = Integer.parseInt(Commodity.getFurnSectionAds().get(24));
                 jLabel10.setText("After VAT: " + Order.calculatePay(i));
                 orders = new Order(orders.generateOrderID(), Login.vendor.getId(), Commodity.getFurnSectionAds().get(23), Commodity.getFurnSectionAds().get(27), i, (int) Order.calculateTax(i), (int) Order.calculatePay(i));

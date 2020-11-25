@@ -8,17 +8,18 @@ package ugmsystem;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
-
 /**
- *This is an interface class that displays a way for user retrieval of forgotten password
+ * This is an interface class that displays a way for user retrieval of
+ * forgotten password
+ *
  * @author reemalsolami
  */
 public class ForgotPassword extends javax.swing.JFrame {
 
-    static  ForgotPassword color = new ForgotPassword();
-    
+    static ForgotPassword color = new ForgotPassword();
+
     /**
-     *Creates new form ForgotPassword.
+     * Creates new form ForgotPassword.
      */
     public ForgotPassword() {
         initComponents();
@@ -229,60 +230,55 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        Login.color.getContentPane().setBackground(Color.WHITE);
+        Login.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-/*
-        try {
-            currentUser = new Buyer();
-
-            Search.color.getContentPane().setBackground(Color.WHITE);
-            Search.color.setVisible(true);
-            this.setVisible(false);
-
-        } catch (IOException ex) {
-            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-*/
+        Search.color.getContentPane().setBackground(Color.WHITE);
+        Search.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        Login.currentUser = null;
+        MainMenu.color.getContentPane().setBackground(Color.WHITE);
+        MainMenu.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+        Login.color.getContentPane().setBackground(Color.WHITE);
+        Login.color.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+
         MainMenu.color.getContentPane().setBackground(Color.WHITE);
         MainMenu.color.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(!(jTextField1.getText().equals("")))
-        {
-             if((jTextField1.getText().contains("@") && jTextField1.getText().contains(".com")) || jTextField1.getText().matches("\\d+")){
-             JOptionPane.showMessageDialog(this, "Recovery Link has been sent!");
-             
-             }         
-             else
-             {
-              JOptionPane.showMessageDialog(this, "Please Enter Correct Email/Phone Number!");
-             
-             }      
-            
-            
+        if (!(jTextField1.getText().equals(""))) {
+            if ((jTextField1.getText().contains("@") && jTextField1.getText().contains(".com")) || jTextField1.getText().matches("\\d+")) {
+                JOptionPane.showMessageDialog(this, "Recovery Link has been sent!");
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Enter Correct Email/Phone Number!");
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Please Enter Your Email or Phone Number!");
+
         }
-        else
-        {JOptionPane.showMessageDialog(this, "Please Enter Your Email or Phone Number!");
-        
-        
-        }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
@@ -322,7 +318,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              
+
                 color.getContentPane().setBackground(Color.WHITE);
                 color.setVisible(true);
             }

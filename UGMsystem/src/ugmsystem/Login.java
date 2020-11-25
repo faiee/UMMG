@@ -72,6 +72,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        Login.setBackground(new java.awt.Color(255, 255, 255));
         Login.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         Login.setText("Login");
         Login.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +95,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/Picture11.jpg"))); // NOI18N
 
+        Back1.setBackground(new java.awt.Color(255, 255, 255));
         Back1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/orangeBack2.png"))); // NOI18N
         Back1.addActionListener(new java.awt.event.ActionListener() {

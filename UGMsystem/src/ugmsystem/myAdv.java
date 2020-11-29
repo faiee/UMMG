@@ -105,7 +105,7 @@ public class myAdv extends javax.swing.JFrame {
         jLabel7.setText("Name of Advertisment");
 
         jButton11.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        jButton11.setText("Edit Advertismenet");
+        jButton11.setText("Edit Advertisment");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -113,7 +113,7 @@ public class myAdv extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        jButton1.setText("New Advertismenet");
+        jButton1.setText("New Advertisment");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

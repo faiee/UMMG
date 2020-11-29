@@ -316,8 +316,8 @@ public class Advertisement extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-        Search.color.getContentPane().setBackground(Color.WHITE);
-        Search.color.setVisible(true);
+        myAdv.color.getContentPane().setBackground(Color.WHITE);
+        myAdv.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BackActionPerformed
 

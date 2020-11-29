@@ -14,3 +14,9 @@
 0098,33536446,Vans shoes,Clothes,60,9.0,69.0
 002,33536446,Vans shoes,Clothes,60,9.0,69.0
 0096,33536446,Vans shoes,Clothes,60,9.0,69.0
+0059,33563459,grey sofa,Furniture,400,60.0,460.0
+006,33563459,grey sofa,Furniture,400,60.0,460.0
+0071,34131459,Harry Potter,Books,150,22.5,172.5
+0055,34131459,Harry Potter,Books,150,22.5,172.5
+0067,34131459,Harry Potter,Books,150,22.5,172.5
+0033,34131459,Harry Potter,Books,150,22.5,172.5

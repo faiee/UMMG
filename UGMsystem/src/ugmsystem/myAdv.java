@@ -266,8 +266,8 @@ public class myAdv extends javax.swing.JFrame {
 
     private void Back3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back3ActionPerformed
         // TODO add your handling code here:
-        Search.color.getContentPane().setBackground(Color.WHITE);
-        Search.color.setVisible(true);
+        MyAccount.color.getContentPane().setBackground(Color.WHITE);
+        MyAccount.color.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Back3ActionPerformed
 

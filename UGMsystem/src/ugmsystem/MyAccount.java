@@ -103,7 +103,6 @@ public class MyAccount extends javax.swing.JFrame {
             }
         });
 
-        Save.setBackground(new java.awt.Color(255, 255, 255));
         Save.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         Save.setText("Save");
         Save.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +123,6 @@ public class MyAccount extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/trooly.png"))); // NOI18N
         jButton6.setText("My Orders");
@@ -134,7 +132,6 @@ public class MyAccount extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/box.png"))); // NOI18N
         jButton5.setText("My Advertisments");

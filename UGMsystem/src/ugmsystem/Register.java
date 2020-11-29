@@ -87,7 +87,6 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        registerButton.setBackground(new java.awt.Color(255, 255, 255));
         registerButton.setFont(new java.awt.Font("Gadugi", 0, 16)); // NOI18N
         registerButton.setText("Register");
         registerButton.addActionListener(new java.awt.event.ActionListener() {

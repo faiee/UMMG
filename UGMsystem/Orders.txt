@@ -20,3 +20,6 @@
 0055,34131459,Harry Potter,Books,150,22.5,172.5
 0067,34131459,Harry Potter,Books,150,22.5,172.5
 0033,34131459,Harry Potter,Books,150,22.5,172.5
+0060,33536446,Brother karamazov,Books,180,27.0,207.0
+0047,33536446,Brother karamazov,Books,180,27.0,207.0
+0060,33536446,Brother karamazov,Books,180,27.0,207.0

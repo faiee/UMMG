@@ -20,3 +20,9 @@
 0055,34131459,Harry Potter,Books,150,22.5,172.5
 0067,34131459,Harry Potter,Books,150,22.5,172.5
 0033,34131459,Harry Potter,Books,150,22.5,172.5
+0065,33536666,Brother karamazov,Books,180,27.0,207.0
+000,33536666,Brother karamazov,Books,180,27.0,207.0
+0090,34131459,white chair,Furniture,300,45.0,345.0
+0035,34131459,white chair,Furniture,300,45.0,345.0
+0072,34131459,white chair,Furniture,300,45.0,345.0
+0067,34131459,white chair,Furniture,300,45.0,345.0
